@@ -1,76 +1,63 @@
-Boa — seu projeto tem uma ideia forte (guia turístico + IA personalizada). Vou te entregar um **prompt/README pronto**, no mesmo estilo do RealDin, mas adaptado pro seu caso 👇
+Ficou ainda melhor — esse nome tem muito mais identidade. Vou te entregar uma versão mais **emocional, organizada e forte**, valorizando São Paulo do jeito que você descreveu 👇
 
 ---
 
-# 🌆 RotaSP: Guia Turístico Inteligente de São Paulo
+# 🌆 Respire São Paulo: Descubra, Viva, Sinta
 
-> **"Descubra São Paulo do seu jeito, com roteiros personalizados por inteligência artificial."**
+> **"São Paulo não é só uma cidade — é um mundo inteiro esperando para ser explorado."**
 
-O **RotaSP** é uma plataforma interativa criada para ajudar moradores e turistas a explorarem a cidade de São Paulo de forma inteligente, prática e personalizada.
+O **Respire São Paulo** é uma plataforma interativa criada para revelar a verdadeira essência da cidade de São Paulo.
 
-Nosso diferencial é o uso de **IA para gerar roteiros sob medida**, baseados nos interesses, tempo disponível e estilo de cada usuário.
+Mais do que um guia turístico, o projeto nasce com um propósito:
+**mostrar como São Paulo pode ser acessível, diversa e surpreendente para todos.**
+
+Aqui, o usuário encontra desde opções econômicas até experiências culturais únicas, explorando uma cidade marcada por sua **pluralidade de culturas, etnias e estilos de vida**.
 
 ---
 
 ## 🎯 O Projeto
 
-A aplicação combina um guia turístico moderno com um sistema inteligente de recomendação.
+O **Respire São Paulo** combina tecnologia, design e inteligência artificial para transformar a forma como as pessoas exploram a cidade.
 
-Utilizamos uma abordagem de **Alto Impacto Visual (Home Page)** com foco na descoberta e personalização da experiência do usuário.
+Nossa proposta é simples e poderosa:
+
+👉 Tornar São Paulo mais humana, acessível e personalizada.
+
+---
+
+## ✨ O que torna São Paulo especial?
+
+A cidade é um dos maiores centros urbanos do mundo — e também um dos mais diversos:
+
+* 🌍 Uma mistura única de culturas e etnias
+* 🍽️ Mais de **15 mil restaurantes** com culinárias do mundo inteiro
+* 🌳 Parques urbanos incríveis, como o Parque Ibirapuera
+* 🏙️ Pontos icônicos como a Avenida Paulista
+* 🛍️ Espaços históricos e gastronômicos como o Mercado Municipal de São Paulo
+
+São Paulo é gigante — e o nosso objetivo é fazer o usuário **respirar cada parte dela**.
 
 ---
 
 ## 🚀 Funcionalidades Principais
 
-* **🧠 Roteiros com IA:** Gere automaticamente roteiros personalizados com base nas preferências do usuário (gastronomia, cultura, natureza, vida noturna, etc.).
-* **📍 Guia de Pontos Turísticos:** Explore os principais locais da cidade com descrições claras e objetivas.
-* **🗺️ Planejamento Inteligente:** Sugestões organizadas por proximidade e tempo disponível.
-* **⭐ Favoritos:** Salve lugares e roteiros para acessar depois.
-* **📱 Mobile-First:** Interface otimizada para celulares, ideal para uso durante passeios.
+* **🤖 Roteiros com IA**
+  Gere roteiros personalizados com base nos seus gostos, tempo disponível e estilo de passeio.
 
----
+* **📍 Guia Turístico Completo**
+  Explore pontos turísticos, culturais, gastronômicos e naturais.
 
-## 🛠️ Stack Técnica
+* **💸 Opções Acessíveis**
+  Sugestões de passeios e experiências com foco em baixo custo.
 
-Para garantir performance e acessibilidade, utilizamos uma arquitetura leve e eficiente:
+* **🧭 Planejamento Inteligente**
+  Roteiros organizados por localização e tempo, facilitando o dia do usuário.
 
-* **Linguagens:** HTML5, CSS3 (Flexbox/Grid) e JavaScript (ES6+)
-* **IA (Simulada ou API):** Integração com modelo de recomendação para geração de roteiros
-* **Persistência de Dados:** `localStorage` / `sessionStorage`
-* **Hospedagem:** Vercel com deploy contínuo
-* **Design:** Protótipo desenvolvido no Figma
+* **❤️ Favoritos**
+  Salve lugares e monte sua própria jornada.
 
----
-
-## 📂 Arquitetura do Projeto
-
-```text
-📁 RotaSP/
-│
-├── 📁 assets/                 
-│   ├── 📁 imgs/              
-│   └── 📁 icons/             
-│
-├── 📁 css/                   
-│   ├── 📄 global.css         
-│   ├── 📁 components/        
-│   └── 📁 pages/             
-│
-├── 📁 js/                    
-│   ├── 📄 main.js            
-│   ├── 📁 services/          # IA e lógica de roteiros
-│   ├── 📁 pages/             
-│   └── 📁 components/        
-│
-├── 📁 pages/                 
-│   ├── 📄 home.html
-│   ├── 📄 roteiro.html       # Geração de roteiro com IA
-│   ├── 📄 lugares.html       # Lista de pontos turísticos
-│   ├── 📄 detalhes.html      
-│   └── 📄 favoritos.html     
-│
-└── 📄 index.html             
-```
+* **📱 Mobile-First**
+  Feito para ser usado na rua, em tempo real.
 
 ---
 
@@ -78,63 +65,108 @@ Para garantir performance e acessibilidade, utilizamos uma arquitetura leve e ef
 
 O usuário informa:
 
-* Interesses (ex: comida, museus, parques)
+* Interesses (ex: comida, natureza, cultura, rolês baratos)
 * Tempo disponível
-* Período do dia
+* Preferência de período (dia/noite)
 
-A plataforma gera um roteiro personalizado com sugestões como:
+E a plataforma sugere experiências como:
 
-* Parque Ibirapuera
-* Avenida Paulista
-* Mercado Municipal de São Paulo
+* Caminhada cultural pela Avenida Paulista
+* Relaxar no Parque Ibirapuera
+* Comer no Mercado Municipal de São Paulo
 
-Tudo organizado de forma lógica e prática.
-
----
-
-## 🔗 Links Úteis
-
-* **Protótipo Figma:** (adicione aqui)
-* **Deploy:** (adicione seu link da Vercel)
-* **Repositório:** (link do GitHub)
+Tudo organizado de forma prática, rápida e personalizada.
 
 ---
 
-## 👥 Squad de Desenvolvimento
+## 🛠️ Stack Técnica
 
-| Nome         | Função              | LinkedIn |
-| ------------ | ------------------- | -------- |
-| Seu Nome     | Fullstack Developer | (link)   |
-| Integrante 2 | Frontend            | (link)   |
-| Integrante 3 | Backend             | (link)   |
+* **HTML5, CSS3 e JavaScript (ES6+)**
+* **Arquitetura Vanilla Web (leve e performática)**
+* **localStorage / sessionStorage**
+* **Deploy:** Vercel
+* **Design:** Figma
 
 ---
 
-## 📝 Como contribuir
+## 📂 Arquitetura do Projeto
 
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/rotasp.git
+```text id="4zp3rx"
+📁 respire-sp/
+│
+├── 📁 assets/
+│   ├── 📁 imgs/
+│   └── 📁 icons/
+│
+├── 📁 css/
+│   ├── 📄 global.css
+│   ├── 📁 components/
+│   └── 📁 pages/
+│
+├── 📁 js/
+│   ├── 📄 main.js
+│   ├── 📁 services/        # Lógica da IA e recomendações
+│   ├── 📁 pages/
+│   └── 📁 components/
+│
+├── 📁 pages/
+│   ├── 📄 home.html
+│   ├── 📄 roteiros.html
+│   ├── 📄 lugares.html
+│   ├── 📄 detalhes.html
+│   └── 📄 favoritos.html
+│
+└── 📄 index.html
 ```
-
-2. Abra o projeto no navegador (recomendado usar Live Server)
-
-3. Faça alterações e envie um pull request 🚀
 
 ---
 
 ## 💡 Diferencial do Projeto
 
-Diferente de guias turísticos tradicionais, o **RotaSP** não mostra apenas lugares — ele **monta experiências completas**.
+O **Respire São Paulo** não é só um guia.
 
-Com isso, o usuário não precisa planejar tudo manualmente: a plataforma faz isso por ele.
+Ele é uma ferramenta que:
+
+✔ Valoriza a diversidade cultural da cidade
+✔ Incentiva experiências acessíveis
+✔ Usa tecnologia para facilitar a vida real
+✔ Transforma dados em experiências
+
+👉 Aqui, o usuário não apenas visita São Paulo — ele vive São Paulo.
 
 ---
 
-Se quiser, posso melhorar ainda mais deixando:
+## 🔗 Links Úteis
 
-* mais “profissional” pra recrutador 👀
-* ou mais “impactante” pra apresentação/pitch
+* Protótipo Figma: (adicione aqui)
+* Deploy: (adicione aqui)
+* Repositório: (adicione aqui)
 
-Só me fala 👍
+---
+
+## 👥 Squad de Desenvolvimento
+
+| Nome       | Função    | LinkedIn |
+| ---------- | --------- | -------- |
+| integrante   | Fullstack | (link)   |
+| Integrante | Frontend  | (link)   |
+| Integrante | Backend   | (link)   |
+
+---
+
+## 📝 Como contribuir
+
+```bash id="px4s0g"
+git clone https://github.com/seu-usuario/respire-sp.git
+```
+
+Abra com Live Server e comece a explorar 🚀
+
+---
+
+Se quiser dar um nível **ABSURDO de destaque**, posso ainda:
+
+* criar uma versão estilo startup (bem Silicon Valley 👀)
+* ou versão mais emocional pra apresentação/pitch
+
+Só falar qual você quer 😄
