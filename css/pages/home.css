@@ -1,0 +1,106 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container{
+    width: 100%;
+    height: 2048px;
+    background-color: #0E1115 ;
+    margin: auto;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#fundo{
+    position: relative;
+    background-image: url(/assets/imgs/São\ Paulo\ ao\ pôr\ do\ sol\ \(1\).png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 2048px;
+    display: flex;
+    flex-direction: center;
+    flex-direction: column;
+}
+.gradient {
+  	width: 100%;
+  	height: 1024px;
+  	position: relative;
+  	background: linear-gradient(90deg, rgba(14, 17, 21, 0.6), rgba(14, 17, 21, 0) 50%, rgba(14, 17, 21, 0));
+}
+
+.gradient2 {
+  	width: 100%;
+  	height: 1024px;
+  	position: relative;
+  	background: linear-gradient(180deg, rgba(14, 17, 21, 0.7), rgba(14, 17, 21, 0.4) 50%, #0e1115);
+}
+
+#cabecalho{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: #21242c4f;
+}
+
+#navegacao{
+    display: flex;
+    align-items: center; 
+    flex-direction: row; 
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.fundo1{
+    width: 100%;
+    height: 1024px;
+    background-color: rgba(0, 179, 24, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.p1{
+    color: #FFA31A;
+    font-weight: 500;
+    font-size: 25px;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
+}
+.respire{
+    font-size: 98px;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+}
+.respire span{
+    font-size: 100px;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800px;
+    color: #FF5500;
+}
+.p2{
+    font-size: 25px;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.637);
+}
+
+input{
+    width: 600px;
+    height: 80px;
+    margin-top: 60px;
+    background-color: #272c35be;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+}
+
