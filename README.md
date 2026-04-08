@@ -163,10 +163,3 @@ git clone https://github.com/seu-usuario/respire-sp.git
 Abra com Live Server e comece a explorar 🚀
 
 ---
-
-Se quiser dar um nível **ABSURDO de destaque**, posso ainda:
-
-* criar uma versão estilo startup (bem Silicon Valley 👀)
-* ou versão mais emocional pra apresentação/pitch
-
-Só falar qual você quer 😄
