@@ -1,6 +1,4 @@
-Ficou ainda melhor — esse nome tem muito mais identidade. Vou te entregar uma versão mais **emocional, organizada e forte**, valorizando São Paulo do jeito que você descreveu 👇
 
----
 
 # 🌆 Respire São Paulo: Descubra, Viva, Sinta
 
