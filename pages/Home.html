@@ -1,53 +1,90 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
 
-    <link rel="stylesheet" href="/css/pages/home.css" type="text/css" />
+        <!-- IMPORTANDO POPPINS (faltava isso) -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
 
+        <link rel="stylesheet" href="/css/pages/home.css" />
+    </head>
 
-  </head>
-  <body>
-
-    <main id="container">
-
-      <section id="fundo">
-        <div class="gradient">
-            <div class="gradient2">
-
-             <header id="cabecalho" >
-                <nav id="navegacao" >
-                    <p>O que fazer</p>
-                    <p>Roteiros</p>
-                    <p>Eventos</p>
-                    <p>Dicas locais</p>
+    <body>
+        <main id="container">
+            <header id="cabecalho">
+                <nav id="navegacao">
+                    <a href="#">O que fazer</a>
+                    <a href="#" class="active">Roteiros</a>
+                    <a href="#">Eventos</a>
+                    <a href="#">Dicas locais</a>
                 </nav>
-             </header>
+            </header>
 
-             <div class="fundo1">
-                <p class="p1" >SEU GUIA DEFINITIVO</p>
-                <h1 class="respire" >RESPIRE <span> SÃO PAULO </span></h1>
-                <p class="p2" >Descubra a energia, a cultura e<br> os sabores da maior<br>
-                metrópole da América Latina.</p>         
-                
-                <input type="text" placeholder="    Buscar destinos, restaurantes, experiências...">
-             </div>
+            <div class="gradient">
+                <div class="gradient2">
+                    <section id="back">
+                        <div class="fundo1">
+                            <p class="p1">SEU GUIA DEFINITIVO</p>
 
-        </div>
-        </div>
+                            <h1 class="respire">
+                                RESPIRE <span>SÃO PAULO</span>
+                            </h1>
 
-      </section>
+                            <p class="p2">
+                                Descubra a energia, a cultura e os sabores da
+                                maior metrópole da América Latina.
+                            </p>
 
-      <section id="fundo2">
-        
-      </section>
+                            <input
+                                type="text"
+                                placeholder="Buscar destinos, restaurantes, experiências..."
+                            />
+                        </div>
+                    </section>
 
+                    <section id="back2">
+                        <div>
+                            <h1 class="cidade">
+                                Uma cidade que não <br />cabe em
+                                <span>Palavras</span>
+                            </h1>
 
-    </main>
+                            <p class="sp">
+                                São Paulo é a metrópole que desafia definições.
+                                É<br />
+                                berço da cultura brasileira moderna, capital<br />
+                                gastronômica do país, palco de arte de rua
+                                que<br />
+                                rivaliza com Nova York e Berlim — e ao mesmo<br />
+                                tempo, tem botecos de esquina com a alma<br />
+                                mais acolhedora do Brasil.
+                            </p>
+                            <p class="sp1">
+                                Cada bairro é um universo. Cada rua, uma
+                                surpresa<br />
+                                Cada visita, uma nova descoberta. É por isso
+                                que<br />
+                                quem chega uma vez, sempre volta.
+                            </p>
+                        </div>
+                    </section>
 
+                    <section id="back3" >
+                        <div class="fundo2">
+                        <div class="cards"></div>
+                        <div class="cards"></div>
+                        <div class="cards"></div>
+                        <div class="cards"></div>
+                        </div>
+                    </section>
 
-
-  </body>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>

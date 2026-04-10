@@ -1,106 +1,191 @@
 * {
-  border: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#container{
-    width: 100%;
-    height: 2048px;
-    background-color: #0E1115 ;
-    margin: auto;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-#fundo{
-    position: relative;
-    background-image: url(/assets/imgs/São\ Paulo\ ao\ pôr\ do\ sol\ \(1\).png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 2048px;
-    display: flex;
-    flex-direction: center;
-    flex-direction: column;
+#container {
+  width: 100%;
+  min-height: 200vh;
+  background-color: #0E1115;
+  color: white;
+  background-image: url("/assets/imgs/São Paulo ao pôr do sol (1).png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Isso mantém a imagem parada ao rolar */
 }
+
+#back {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#back2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back2 div{
+    display: flex;
+    width: 100%;
+   justify-content: center;
+}
+
+#back3{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #0E1115;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GRADIENTES */
+.gradient,
+.gradient2 {
+  width: 100%;
+  height:200vh;
+  position: absolute;
+}
+
 .gradient {
-  	width: 100%;
-  	height: 1024px;
-  	position: relative;
-  	background: linear-gradient(90deg, rgba(14, 17, 21, 0.6), rgba(14, 17, 21, 0) 50%, rgba(14, 17, 21, 0));
+  background: linear-gradient(90deg, rgba(14, 17, 21, 0.37), transparent 60%);
 }
 
 .gradient2 {
-  	width: 100%;
-  	height: 1024px;
-  	position: relative;
-  	background: linear-gradient(180deg, rgba(14, 17, 21, 0.7), rgba(14, 17, 21, 0.4) 50%, #0e1115);
+  background: linear-gradient(180deg, rgba(14, 17, 21, 0.445), #0e1115);
 }
 
-#cabecalho{
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    background-color: #21242c4f;
+/* HEADER */
+#cabecalho {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  backdrop-filter: blur(10px); /* EFEITO PREMIUM */
+  background-color: rgba(33,36,44,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#navegacao{
-    display: flex;
-    align-items: center; 
-    flex-direction: row; 
-    justify-content: center;
-    gap: 100px;
-    margin-top: 40px;
-    font-size: 20px;
+/* NAV */
+#navegacao {
+  display: flex;
+  gap: 20px; 
 }
 
-.fundo1{
-    width: 100%;
-    height: 1024px;
-    background-color: rgba(0, 179, 24, 0);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+/* LINKS */
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 10px 18px;
+  font-size: 20px;
+  border-radius: 30px;
+  transition: 0.3s ease-out;
 }
 
-.p1{
-    color: #FFA31A;
-    font-weight: 500;
-    font-size: 25px;
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+/* HOVER */
+nav a:hover {
+  background-color: #ff550060;
+  font-size: 22px;
+  transition: 0.3 ease-out;
+  transform: translateY(-2px);
+}
 
+/* CONTEÚDO CENTRAL */
+.fundo1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
 }
-.respire{
-    font-size: 98px;
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 800;
+
+/* TEXTOS */
+.p1 {
+  color: #FFA31A;
+  font-weight: 500;
+  font-size: 23px;
 }
-.respire span{
-    font-size: 100px;
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 800px;
+
+.respire {
+  font-size: 96px; /* REDUZI PRA RESPONSIVO */
+  font-weight: 800;
+}
+
+.respire span {
+  color: #FF5500;
+}
+
+.p2 {
+  font-size: 22px;
+  color: rgba(255,255,255,0.7);
+  max-width: 500px;
+}
+
+.cidade{
+    text-align: center;
+    font-size: 80px;
+}
+
+.cidade span{
+    font-size: 85px;
     color: #FF5500;
 }
-.p2{
-    font-size: 25px;
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+.sp{
+    font-size: 36px;
+    font-weight: lighter;
+    margin-top: 30px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.637);
+}
+.sp1{
+    font-size: 36px;
+    font-weight: lighter;
+    margin-top: 30px;
+        text-align: center;
+
 }
 
-input{
-    width: 600px;
-    height: 80px;
-    margin-top: 60px;
-    background-color: #272c35be;
-    border-radius: 20px;
-    font-size: 20px;
-    color: white;
+/* INPUT */
+input {
+  width: 500px;
+  height: 60px;
+  margin-top: 20px;
+  background-color: rgba(39,44,53,0.7);
+  border-radius: 15px;
+  font-size: 16px;
+  color: white;
+  padding: 0 20px;
+  border: none;
+  outline: none;
 }
 
+/*cards back3 */
+.fundo2{
+     display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  gap: 50px; /* espaço entre eles */
+  padding: 30px;
+}
+
+.cards {
+    height: 300px;
+    width: 700px;
+    border-radius: 40px;
+    background-image: url(/assets/imgs/Cards2.png);
+}
