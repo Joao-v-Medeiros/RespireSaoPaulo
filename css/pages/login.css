@@ -1,297 +1,216 @@
-.desktop-2 {
-  	width: 100%;
-  	height: 1024px;
-  	position: relative;
-  	background-color: #21242c;
-  	overflow: hidden;
-  	text-align: left;
-  	font-size: 22px;
-  	color: #fff;
-  	font-family: Montserrat;
-}
-.seja-bem-vindoa {
-  	position: absolute;
-  	top: 129px;
-  	left: 201px;
-  	font-size: 40px;
-  	letter-spacing: -0.88px;
-  	line-height: 108px;
-  	font-weight: 600;
-  	font-family: Poppins;
-  	color: #e87511;
-  	text-align: center;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	width: 398px;
-  	height: 35px;
-  	flex-shrink: 0;
-}
-.respire-sp {
-  	position: absolute;
-  	top: 61px;
-  	left: 337px;
-  	font-size: 30px;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	font-family: 'Patua One';
-  	display: flex;
-  	align-items: center;
-  	width: 132px;
-  	height: 43px;
-  	flex-shrink: 0;
-}
-.seja-bem-vindoa-de {
-  	position: absolute;
-  	top: 189px;
-  	left: 47px;
-  	font-size: 24px;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	flex-shrink: 0;
-}
-.insira-sua-senha-parent {
-  	position: absolute;
-  	top: 382px;
-  	left: 107px;
-  	border-radius: 20px;
-  	background-color: rgba(255, 255, 255, 0.82);
-  	border: 1px solid #000;
-  	box-sizing: border-box;
-  	width: 630px;
-  	height: 59px;
-  	display: flex;
-  	align-items: center;
-  	padding: 8px 26px;
-  	gap: 10px;
-  	flex-shrink: 0;
-  	color: #000;
-}
-.insira-sua-senha {
-  	width: 530px;
-  	position: relative;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	flex-shrink: 0;
-}
-.weuieyes-off-filled-icon {
-  	width: 35px;
-  	position: relative;
-  	max-height: 100%;
-  	flex-shrink: 0;
-}
-.esqueceu-sua-senha {
-  	position: absolute;
-  	top: 471px;
-  	left: 525px;
-  	font-size: 20px;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	width: 212px;
-  	height: 27px;
-  	flex-shrink: 0;
-}
-.entrar-com-outros {
-  	position: absolute;
-  	top: 628px;
-  	left: 333px;
-  	font-size: 20px;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	width: 178px;
-  	height: 26px;
-  	flex-shrink: 0;
-}
-.insira-seu-e-mail-parent {
-  	position: absolute;
-  	top: 293px;
-  	left: 107px;
-  	border-radius: 20px;
-  	background-color: rgba(255, 255, 255, 0.82);
-  	border: 1px solid #000;
-  	box-sizing: border-box;
-  	width: 630px;
-  	height: 59px;
-  	display: flex;
-  	align-items: center;
-  	padding: 8px 26px;
-  	gap: 10px;
-  	flex-shrink: 0;
-  	color: #000;
-}
-.insira-seu-e-mail {
-  	width: 528px;
-  	position: relative;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	flex-shrink: 0;
-}
-.devicongoogle-parent {
-  	position: absolute;
-  	top: 701px;
-  	left: 107px;
-  	border-radius: 20px;
-  	background-color: rgba(255, 255, 255, 0.82);
-  	border: 1px solid #000;
-  	box-sizing: border-box;
-  	width: 630px;
-  	height: 59px;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 8px 30px;
-  	gap: 8px;
-  	flex-shrink: 0;
-  	color: #000;
-}
-.devicongoogle {
-  	width: 30px;
-  	position: relative;
-  	max-height: 100%;
-  	flex-shrink: 0;
-}
-.continue-com-google {
-  	width: 226px;
-  	position: relative;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	flex-shrink: 0;
-}
-.riapple-fill-parent {
-  	position: absolute;
-  	top: 785px;
-  	left: 107px;
-  	border-radius: 20px;
-  	background-color: rgba(255, 255, 255, 0.82);
-  	border: 1px solid #000;
-  	box-sizing: border-box;
-  	width: 630px;
-  	height: 59px;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 8px 30px;
-  	gap: 8px;
-  	flex-shrink: 0;
-  	color: #000;
-}
-.continue-com-apple {
-  	width: 213px;
-  	position: relative;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	flex-shrink: 0;
-}
-.logosfacebook-parent {
-  	position: absolute;
-  	top: 869px;
-  	left: 107px;
-  	border-radius: 20px;
-  	background-color: rgba(255, 255, 255, 0.82);
-  	border: 1px solid #000;
-  	box-sizing: border-box;
-  	width: 630px;
-  	height: 59px;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 8px 30px;
-  	gap: 8px;
-  	flex-shrink: 0;
-  	color: #000;
-}
-.continue-com-facebook {
-  	width: 256px;
-  	position: relative;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	flex-shrink: 0;
-}
-.entrar-wrapper {
-  	position: absolute;
-  	top: 528px;
-  	left: 107px;
-  	border-radius: 20px;
-  	background-color: #1877f2;
-  	border: 1px solid #000;
-  	box-sizing: border-box;
-  	width: 630px;
-  	height: 56px;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 5px;
-  	flex-shrink: 0;
-  	font-size: 26px;
-}
-.entrar {
-  	position: relative;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	font-weight: 500;
-  	flex-shrink: 0;
-}
-.desktop-2-child {
-  	position: absolute;
-  	top: 640.5px;
-  	left: 106.5px;
-  	border-top: 1px solid #fff;
-  	box-sizing: border-box;
-  	width: 194px;
-  	height: 1px;
-  	flex-shrink: 0;
-}
-.desktop-2-item {
-  	position: absolute;
-  	top: 640.5px;
-  	left: 536.5px;
-  	border-top: 1px solid #fff;
-  	box-sizing: border-box;
-  	width: 201px;
-  	height: 1px;
-  	flex-shrink: 0;
-}
-.desktop-2-inner {
-  	position: absolute;
-  	top: 0px;
-  	left: 789px;
-  	border-radius: 10px;
-  	width: 681px;
-  	height: 1021px;
-  	object-fit: cover;
-  	flex-shrink: 0;
-}
-.no-tem-conta-container {
-  	position: absolute;
-  	top: 961px;
-  	left: 286px;
-  	font-size: 20px;
-  	letter-spacing: -0.88px;
-  	line-height: 50.6px;
-  	display: flex;
-  	align-items: center;
-  	width: 351px;
-  	height: 27px;
-  	flex-shrink: 0;
-}
-.no-tem-conta-container2 {
-  	width: 100%;
-}
-.faa-seu-cadastro {
-  	color: #e87511;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    background-color: #21242c;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desktop-2 {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2b2e38;
+}
+
+/* Formulário */
+.form-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 80px;
+    gap: 12px;
+}
+
+.respire-sp {
+    font-family: 'Patua One', serif;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: -4px;
+}
+
+.seja-bem-vindoa {
+    font-family: 'Poppins', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #e87511;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.seja-bem-vindoa-de {
+    font-size: 15px;
+    color: #ccc;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Campos */
+.insira-seu-e-mail-parent,
+.insira-sua-senha-parent {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #999;
+    border-radius: 25px;
+    padding: 0 16px;
+    height: 48px;
+    gap: 10px;
+}
+
+.insira-seu-e-mail-parent input,
+.insira-sua-senha-parent input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    color: #111;
+}
+
+.insira-seu-e-mail-parent input::placeholder,
+.insira-sua-senha-parent input::placeholder {
+    color: #666;
+}
+
+.insira-seu-e-mail-parent:hover,
+.insira-sua-senha-parent:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: #e87511;
+}
+
+.weuieyes-off-filled-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.esqueceu-sua-senha {
+    font-size: 14px;
+    color: #ccc;
+    text-align: right;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.esqueceu-sua-senha:hover {
+    color: #e87511;
+}
+
+/* Botão entrar */
+.entrar-wrapper {
+    background: #1877f2;
+    border-radius: 25px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.entrar-wrapper:hover {
+    background: #1464cc;
+}
+
+.entrar-wrapper:active {
+    transform: scale(0.98);
+}
+
+.entrar {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Divisor */
+.divisor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.desktop-2-child,
+.desktop-2-item {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.entrar-com-outros {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Botões sociais */
+.devicongoogle-parent,
+.riapple-fill-parent,
+.logosfacebook-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #999;
+    border-radius: 25px;
+    height: 46px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #111;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.devicongoogle-parent:hover,
+.riapple-fill-parent:hover,
+.logosfacebook-parent:hover {
+    background: #fff;
+    border-color: #e87511;
+}
+
+.devicongoogle-parent:active,
+.riapple-fill-parent:active,
+.logosfacebook-parent:active {
+    transform: scale(0.99);
+}
+
+.devicongoogle {
+    width: 26px;
+    height: 26px;
+}
+
+/* Rodapé */
+.no-tem-conta-container {
+    font-size: 15px;
+    color: #bbb;
+    text-align: center;
+    margin-top: 6px;
+}
+.faa-seu-cadastro,
+a {
+    color: #e87511;
+    cursor: pointer;
+    text-decoration: none;
+	
+}
+
+.faa-seu-cadastro:hover {
+    text-decoration: underline;
+}
+
+/* Imagem lateral */
+.desktop-2-inner {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
