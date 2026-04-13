@@ -1,63 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	
-  	<link rel="stylesheet"  href="/css/pages/cadastro.css" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patua One:wght@400&display=swap" />
-  	
-  	
-  	
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro – RespireSP</title>
+ 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@400;500&family=Patua+One&display=swap">
+  <link rel="stylesheet" href="../css/pages/cadastro.css">
 </head>
 <body>
-  	
-  	<div class="desktop-12">
-    		<div class="cadastre-sua-conta">Cadastre sua conta</div>
-    		<div class="crie-sua-conta">Crie sua conta no  RespireSP - E  comece sua jornada</div>
-    		<div class="insira-sua-senha-parent">
-      			<div class="insira-sua-senha">Insira sua senha</div>
-      			<img class="weuieyes-off-filled-icon" alt="">
-      			
-    		</div>
-    		<div class="confirme-sua-senha-parent">
-      			<div class="insira-sua-senha">Confirme sua senha</div>
-      			<img class="weuieyes-off-filled-icon" alt="">
-      			
-    		</div>
-    		<div class="epuser-filled-parent">
-      			<img class="weuieyes-off-filled-icon" alt="">
-      			
-      			<div class="insira-seu-nome">Insira seu nome</div>
-    		</div>
-    		<div class="epuser-filled-group">
-      			<img class="weuieyes-off-filled-icon" alt="">
-      			
-      			<div class="insira-seu-sobrenome">Insira seu sobrenome</div>
-    		</div>
-    		<div class="cadastrar-wrapper">
-      			<div class="cadastrar">Cadastrar</div>
-    		</div>
-    		<div class="insira-seu-e-mail-parent">
-      			<div class="insira-seu-e-mail">Insira seu e-mail</div>
-      			<img class="weuieyes-off-filled-icon" alt="">
-      			
-    		</div>
-    		<img class="desktop-12-child" alt="">
-    		
-    		<div class="j-tem-conta-container">
-      			<span class="j-tem-conta-container2">
-        				<span>Já tem conta? </span>
-        				<span class="faa-login">Faça login</span>
-      			</span>
-    		</div>
-    		<div class="respire-sp">Respire sp</div>
-  	</div>
-  	
-  	
-  	
-  	
+ 
+  <div class="page">
+    <div class="card">
+ 
+      <!-- Coluna esquerda: formulário -->
+      <div class="col-form">
+        <p class="logo">Respire sp</p>
+        <h1 class="titulo">Cadastre sua conta</h1>
+        <p class="subtitulo">Crie sua conta no RespireSP - E comece sua jornada</p>
+ 
+        <div class="row-names">
+          <div class="input-group">
+            <img src="../assets/imgs/Users.png" alt="" class="icon">
+            <input type="text" placeholder="Insira seu nome">
+          </div>
+          <div class="input-group">
+            <img src="../assets/imgs/Users.png" alt="" class="icon">
+            <input type="text" placeholder="Insira seu sobrenome">
+          </div>
+        </div>
+ 
+        <div class="input-group">
+          <input type="email" placeholder="Insira seu e-mail">
+          <img src="../assets/imgs/email.png" alt="" class="icon">
+        </div>
+ 
+        <div class="input-group">
+          <input type="password" placeholder="Insira sua senha">
+          <img src="../assets/imgs/Olho.png" alt="" class="icon">
+        </div>
+ 
+        <div class="input-group">
+          <input type="password" placeholder="Confirme sua senha">
+          <img src="../assets/imgs/Olho.png" alt="" class="icon">
+        </div>
+ 
+        <button class="btn-cadastrar">Cadastrar</button>
+ 
+        <p class="link-login">
+          Já tem conta? <a href="/pages/login.html">Faça login</a>
+        </p>
+      </div>
+ 
+      <!-- Coluna direita: imagem -->
+      <div class="col-img">
+        <img src="../assets/imgs/imgCadastro.png" alt="Imagem de cadastro">
+      </div>
+ 
+    </div>
+  </div>
+ 
 </body>
 </html>
