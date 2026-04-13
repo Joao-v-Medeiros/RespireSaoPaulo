@@ -131,7 +131,7 @@ nav a {
 
 /* HOVER */
 nav a:hover {
-    background-color: #ff550060;
+    background-color: #ff550073;
     font-size: 22px;
     transition: 0.3 ease-out;
     transform: translateY(-2px);
@@ -208,78 +208,87 @@ input {
     outline: none;
 }
 
+
+
 /*cards back3 */
+#back3 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0E1115;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 40px; /* Aumentei o respiro lateral */
+  position: relative;
+  z-index: 5;
+}
+
 .fundo2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    gap: 50px; /* espaço entre eles */
-    padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  /* AJUSTE DO ESPAÇAMENTO: 60px deixa os cards bem separados e elegantes */
+  gap: 50px; 
+  width: 100%;
+  max-width: 1500px;
 }
 
-.cards1 {
-    height: 300px;
-    width: 700px;
-    border-radius: 40px;
-    background-image: url(/assets/imgs/PinDown.io_@jmazurfilho_1775518757.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.cards2 {
-    height: 300px;
-    width: 700px;
-    border-radius: 40px;
-    background-image: url(/assets/imgs/PinDown.io_@natancoelho_1775515253.jpg);
-}
-.cards3 {
-    height: 300px;
-    width: 700px;
-    border-radius: 40px;
-    background-image: url(/assets/imgs/PinDown.io_@gabrielaperucioo_1775515620.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.cards4 {
-    height: 300px;
-    width: 700px;
-    border-radius: 40px;
-    background-image: url(/assets/imgs/PinDown.io_@tasteofbrazil_1775828516.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.gradient3 {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.548);
-    border-radius: 40px;
-}
-.gradient4 {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.479);
-    border-radius: 40px;
-}
-.gradient5 {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.534);
-    border-radius: 40px;
-}
-.gradient6 {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.562);
-    border-radius: 40px;
+.card-estatistica {
+  position: relative;
+  height: 380px; /* Aumentei um pouco a altura para a "janela" respirar */
+  border-radius: 40px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.h1 {
-    color: #ff5500;
-    font-size: 80px;
-    margin-left: 50px;
+.card-estatistica:hover {
+  transform: scale(1.03) translateY(-10px);
 }
-.p {
-    font-size: 30px;
-    margin-left: 50px;
+
+/* IMAGENS ESPECÍFICAS */
+.cards1 { background-image: url("/assets/imgs/PinDown.io_@jmazurfilho_1775518757.jpg"); }
+.cards2 { background-image: url("/assets/imgs/PinDown.io_@natancoelho_1775515253.jpg"); }
+.cards3 { background-image: url("/assets/imgs/PinDown.io_@gabrielaperucioo_1775515620.jpg"); }
+.cards4 { background-image: url("/assets/imgs/PinDown.io_@tasteofbrazil_1775828516.jpg"); }
+
+/* GRADIENTE AJUSTADO: Escurecemos a base para leitura e suavizamos o topo */
+.gradient-card {
+  width: 100%;
+  height: 100%;
+  /* Usei um preto com 75% de opacidade na base para o texto pular do fundo */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background 0.4s ease;
 }
+
+/* No hover, o fundo escurece levemente mais para dar foco ao texto */
+.card-estatistica:hover .gradient-card {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.h1-card {
+  color: #FF5500;
+  font-size: 80px; /* Números bem grandes para impacto */
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Sombra no texto para legibilidade */
+}
+
+.p-card {
+  font-size: 22px;
+  color: #FFFFFF;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 
 /* back4 */
 .paragrafo {
@@ -308,7 +317,13 @@ input {
     border-radius: 30px;
     margin-bottom: 110px;
     margin-left: 200px;
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
+
+.cards5:hover {
+  transform: scale(1.07) translateY(-10px);
+}
+
 .cards6 {
     width: 430px;
     height: 650px;
@@ -316,6 +331,10 @@ input {
     border-radius: 30px;
     margin-bottom: 110px;
     margin-left: 80px;
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.cards6:hover {
+  transform: scale(1.07) translateY(-10px);
 }
 .cards7 {
     width: 430px;
@@ -324,6 +343,10 @@ input {
     border-radius: 30px;
     margin-bottom: 110px;
     margin-left: 80px;
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.cards7:hover {
+  transform: scale(1.07) translateY(-10px);
 }
 
 .masp {
@@ -383,13 +406,6 @@ input {
     font-size: 30px;
     margin-left: 20px;
 }
-
-
-
-
-
-
-
 
 /*tela back5*/
 
