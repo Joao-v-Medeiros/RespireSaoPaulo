@@ -409,43 +409,57 @@ input {
 
 /*tela back5*/
 
+#back5 {
+    width: 100%;
+    /* Mudamos de height para min-height para o fundo acompanhar o conteúdo */
+    min-height: 100vh; 
+    background-color: #1b1d24;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o título e o grid horizontalmente */
+    padding-bottom: 50px; /* Garante que o fundo não acabe colado na última imagem */
+}
+
+.razoes {
+    margin-top: 100px;
+    margin-bottom: 40px; /* Espaço entre o título e as fotos */
+    font-size: 90px;
+    text-align: center;
+}
+
+.razoes span {
+    color: #ff5500;
+}
+
 .cards-grid {
     display: grid;
     gap: 20px;
-
+    /* Usamos 90% da largura para não encostar nas bordas da tela */
+    width: 90%;
+    max-width: 1900px; 
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 250px 250px;
+    /* Definimos alturas para as linhas para as fotos aparecerem */
+    grid-template-rows: 350px 350px; 
+    height: 1000px;
 
     grid-template-areas:
         "card1 card2 card3"
         "card1 card4 card4";
 }
+
 .card1 {
     grid-area: card1;
-    background-color: #ff5500;
-} /* grande esquerda */
-.card2 {
-    grid-area: card2;
-    background-color: #ffffff;
-} /* topo meio */
-.card3 {
-    grid-area: card3;
-    background-color: aqua;
-} /* topo direita */
-.card4 {
-    grid-area: card4;
-    background-color: yellow;
-} /* grande embaixo */
+    /* REMOVIDO: width e height fixos em px que causavam o buraco branco */
+}
 
-.razoes {
-    font-size: 90px;
-}
-.razoes span {
-    color: #ff5500;
-}
-.section-porque .subtitle {
-  color: #FF5500;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+.card2 { grid-area: card2; }
+.card3 { grid-area: card3; }
+.card4 { grid-area: card4; }
+
+.card img {
+    width: 100%;      
+    height: 100%;   
+    border-radius: 30px;
+    object-fit: cover; 
+    display: block;  
 }
