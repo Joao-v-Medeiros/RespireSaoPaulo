@@ -3,119 +3,68 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-
+        <script src="/js/services/login.js"></script>
         <link rel="stylesheet" href="../css/pages/login.css" />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Patua+One&family=Montserrat:wght@400;500&display=swap"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Patua+One&family=Montserrat:wght@400;500&display=swap" />
+        <title>RespireSP - Login</title>
     </head>
     <body>
         <div class="desktop-2">
-            <!-- ── Lado esquerdo: formulário ── -->
             <div class="form-side">
                 <div class="respire-sp">Respire sp</div>
                 <div class="seja-bem-vindoa">Seja bem-vindo(a)</div>
-                <div class="seja-bem-vindoa-de">
-                    Seja bem-vindo(a) de volta no RespireSP - Continue sua
-                    jornada
-                </div>
+                <div class="seja-bem-vindoa-de">Seja bem-vindo(a) de volta!</div>
 
-                <!-- Campo e-mail -->
                 <div class="insira-seu-e-mail-parent">
-                    <input type="email" placeholder="Insira seu e-mail" />
-                    <img
-                        src="../assets/imgs/Users.png"
-                        class="weuieyes-off-filled-icon"
-                        alt="ícone usuário"
-                    />
+                    <input type="email" id="emailInput" placeholder="Insira seu e-mail" />
+                    <img src="../assets/imgs/Users.png" class="weuieyes-off-filled-icon" alt="user" />
                 </div>
 
-                <!-- Campo senha -->
                 <div class="insira-sua-senha-parent">
-                    <input
-                        type="password"
-                        id="senhaInput"
-                        placeholder="Insira sua senha"
-                    />
-                    <img
-                        id="olhoIcon"
-                        src="../assets/imgs/Olho.png"
-                        class="weuieyes-off-filled-icon"
-                        alt="mostrar senha"
-                        onclick="toggleSenha()"
-                    />
+                    <input type="password" id="senhaInput" placeholder="Insira sua senha" />
+                    <img id="olhoIcon" src="../assets/imgs/Olho.png" class="weuieyes-off-filled-icon" onclick="toggleSenha()" />
                 </div>
 
                 <div class="esqueceu-sua-senha">Esqueceu sua senha?</div>
 
-                <!-- Botão entrar -->
-                <div class="entrar-wrapper">
+                <div class="entrar-wrapper" id="btnEntrar">
                     <span class="entrar">Entrar</span>
                 </div>
 
-                <!-- Divisor -->
-                <div class="divisor">
-                    <div class="desktop-2-child"></div>
-                    <span class="entrar-com-outros">Entrar com outros</span>
-                    <div class="desktop-2-item"></div>
-                </div>
-
-                <!-- Botões sociais -->
-                <div class="devicongoogle-parent">
-                    <img
-                        src="../assets/imgs/devicon_google.png"
-                        class="devicongoogle"
-                        alt="Google"
-                    />
-                    <span>Continue com Google</span>
-                </div>
-
-                <div class="riapple-fill-parent">
-                    <img
-                        src="../assets/imgs/ri_apple-fill.png"
-                        class="devicongoogle"
-                        alt="Apple"
-                    />
-                    <span>Continue com Apple</span>
-                </div>
-
-                <div class="logosfacebook-parent">
-                    <img
-                        src="../assets/imgs/logos_facebook.png"
-                        class="devicongoogle"
-                        alt="Facebook"
-                    />
-                    <span>Continue com Facebook</span>
-                </div>
-
-                <!-- Rodapé -->
                 <div class="no-tem-conta-container">
                     <span>Não tem conta? </span>
-                    <a href="http://127.0.0.1:5500/pages/cadastro.html"><span class="faa-seu-cadastro" >Faça seu cadastro</span></a>
+                    <a href="cadastro.html"><span class="faa-seu-cadastro">Faça seu cadastro</span></a>
                 </div>
             </div>
 
-            <!-- ── Lado direito: imagem ── -->
-            <img
-                class="desktop-2-inner"
-                src="../assets/imgs/imgLogin.png"
-                alt="cidade"
-            />
+            <img class="desktop-2-inner" src="../assets/imgs/imgLogin.png" alt="cidade" />
         </div>
 
+        <script src="js/auth.js"></script>
         <script>
+            // 1. Alternar visibilidade da senha
             function toggleSenha() {
                 const campo = document.getElementById("senhaInput");
                 const olho = document.getElementById("olhoIcon");
-                if (campo.type === "password") {
-                    campo.type = "text";
-                    olho.src = "../assets/imgs/OlhoAberto.png";
-                } else {
-                    campo.type = "password";
-                    olho.src = "../assets/imgs/Olho.png";
-                }
+                campo.type = campo.type === "password" ? "text" : "password";
             }
+
+            // 2. Lógica de clique no botão Entrar
+            document.getElementById('btnEntrar').addEventListener('click', () => {
+                const email = document.getElementById('emailInput').value;
+                const senha = document.getElementById('senhaInput').value;
+
+                if (!email || !senha) {
+                    alert("Por favor, preencha todos os campos.");
+                    return;
+                }
+
+                if (AuthService.login(email, senha)) {
+                    window.location.href = 'home.html'; // Redireciona para sua Home
+                } else {
+                    alert("Usuário ou senha inválidos!");
+                }
+            });
         </script>
     </body>
 </html>
