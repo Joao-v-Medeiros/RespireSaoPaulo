@@ -51,3 +51,13 @@ document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
     }, 2000);
   });
 });
+
+
+const themeBtn = document.getElementById('theme-toggle');
+let dark = true;
+
+themeBtn.addEventListener('click', () => {
+  dark = !dark;
+  document.body.classList.toggle('tema-claro', !dark);
+  themeBtn.textContent = dark ? '🌙' : '☀️';
+});
