@@ -11,7 +11,7 @@
     --fundo: #0a0a0a;
     --fundo-escuro: #111111;
     --card: #181818;
-    --laranja: #F57200;
+    --laranja: #f57200;
     --branco: #f5f0ea;
     --cinza: #888;
     --borda: rgba(255, 255, 255, 0.07);
@@ -38,7 +38,9 @@ body {
     background: var(--fundo);
     color: var(--branco);
     overflow-x: hidden;
-    transition: background 0.3s, color 0.3s;
+    transition:
+        background 0.3s,
+        color 0.3s;
 }
 
 /* ========================
@@ -130,7 +132,9 @@ body.tema-claro nav {
     color: var(--branco);
     cursor: pointer;
     font-size: 15px;
-    transition: background 0.2s, border-color 0.2s;
+    transition:
+        background 0.2s,
+        border-color 0.2s;
 }
 
 #theme-toggle:hover {
@@ -150,7 +154,9 @@ body.tema-claro nav {
     font-size: 0.82rem;
     cursor: pointer;
     font-family: "DM Sans", sans-serif;
-    transition: border-color 0.2s, color 0.2s;
+    transition:
+        border-color 0.2s,
+        color 0.2s;
 }
 
 .btn-entrar:hover {
@@ -211,7 +217,11 @@ body.tema-claro .hero-bg {
     transform: translateX(-50%);
     width: 700px;
     height: 400px;
-    background: radial-gradient(ellipse, rgba(245, 166, 35, 0.12) 0%, transparent 70%);
+    background: radial-gradient(
+        ellipse,
+        rgba(245, 166, 35, 0.12) 0%,
+        transparent 70%
+    );
     pointer-events: none;
 }
 
@@ -413,7 +423,9 @@ body.tema-claro .hero-bg {
     text-align: left;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
+    transition:
+        border-color 0.3s,
+        transform 0.3s;
 }
 
 .mission-card:hover {
@@ -489,7 +501,9 @@ body.tema-claro .team {
     border: 1px solid var(--borda);
     border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s, border-color 0.3s;
+    transition:
+        transform 0.3s,
+        border-color 0.3s;
 }
 
 .team-card:hover {
@@ -562,11 +576,21 @@ body.tema-claro .team {
 .cta-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #1a1000 0%, var(--fundo) 50%, #1a1000 100%);
+    background: linear-gradient(
+        135deg,
+        #1a1000 0%,
+        var(--fundo) 50%,
+        #1a1000 100%
+    );
 }
 
 body.tema-claro .cta-bg {
-    background: linear-gradient(135deg, #f0e8d0 0%, var(--fundo) 50%, #f0e8d0 100%);
+    background: linear-gradient(
+        135deg,
+        #f0e8d0 0%,
+        var(--fundo) 50%,
+        #f0e8d0 100%
+    );
 }
 
 .cta-glow {
@@ -576,7 +600,11 @@ body.tema-claro .cta-bg {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(245, 166, 35, 0.15) 0%, transparent 70%);
+    background: radial-gradient(
+        ellipse,
+        rgba(245, 166, 35, 0.15) 0%,
+        transparent 70%
+    );
 }
 
 .cta-inner {
@@ -617,13 +645,16 @@ body.tema-claro .cta-bg {
     background: var(--laranja);
     color: white;
     border: none;
+    text-decoration: none;
     border-radius: 8px;
     padding: 14px 32px;
     font-weight: 700;
     font-size: 0.9rem;
     cursor: pointer;
     font-family: "DM Sans", sans-serif;
-    transition: background 0.2s, transform 0.2s;
+    transition:
+        background 0.2s,
+        transform 0.2s;
 }
 
 .btn-primary:hover {
@@ -633,6 +664,7 @@ body.tema-claro .cta-bg {
 
 .btn-outline {
     background: transparent;
+    text-decoration: none;
     color: var(--branco);
     border: 1px solid rgba(245, 240, 234, 0.25);
     border-radius: 8px;
@@ -641,7 +673,10 @@ body.tema-claro .cta-bg {
     font-size: 0.9rem;
     cursor: pointer;
     font-family: "DM Sans", sans-serif;
-    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    transition:
+        border-color 0.2s,
+        color 0.2s,
+        transform 0.2s;
 }
 
 body.tema-claro .btn-outline {
@@ -672,12 +707,12 @@ footer {
     margin-bottom: 48px;
 }
 
- .footer-logo, .footer-brand img {
-     width: 10%;
+.footer-logo,
+.footer-brand img {
+    width: 10%;
     height: 90px;
     object-fit: contain;
 }
-
 
 .footer-logo {
     font-family: "Playfair Display", serif;
@@ -734,19 +769,32 @@ footer {
    ANIMAÇÕES
    ======================== */
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50%       { transform: translateX(-50%) translateY(8px); }
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
 }
 
 .fade-up {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
 .fade-up.visible {

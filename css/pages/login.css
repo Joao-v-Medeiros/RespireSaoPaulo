@@ -42,6 +42,9 @@ body {
     text-align: center;
     margin-bottom: -4px;
 }
+.respire-sp span{
+    color: #e87511;
+}
 
 .seja-bem-vindoa {
     font-family: "Poppins", sans-serif;
@@ -103,7 +106,7 @@ body {
 
 .esqueceu-sua-senha {
     font-size: 14px;
-    color: #ccc;
+    color: white;
     text-align: right;
     cursor: pointer;
     transition: color 0.2s;
@@ -201,7 +204,7 @@ body {
 /* Rodapé */
 .no-tem-conta-container {
     font-size: 15px;
-    color: #bbb;
+    color: white;
     text-align: center;
     margin-top: 6px;
 }
