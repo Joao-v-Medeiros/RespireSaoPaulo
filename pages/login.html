@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <script src="/js/services/login.js"></script>
         <link rel="stylesheet" href="../css/pages/login.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Patua+One&family=Montserrat:wght@400;500&display=swap" />
         <title>RespireSP - Login</title>
@@ -22,7 +21,12 @@
 
                 <div class="insira-sua-senha-parent">
                     <input type="password" id="senhaInput" placeholder="Insira sua senha" />
-                    <img id="olhoIcon" src="../assets/imgs/Olho.png" class="weuieyes-off-filled-icon" onclick="toggleSenha()" />
+                    <img id="olhoIcon" 
+                         src="../assets/imgs/Olho.png" 
+                         class="weuieyes-off-filled-icon" 
+                         onclick="toggleSenha()" 
+                         style="cursor: pointer;" 
+                         alt="Mostrar senha" />
                 </div>
 
                 <div class="esqueceu-sua-senha">Esqueceu sua senha?</div>
@@ -40,16 +44,25 @@
             <img class="desktop-2-inner" src="../assets/imgs/imgLogin.png" alt="cidade" />
         </div>
 
-        <script src="js/auth.js"></script>
+        <script src="../js/auth.js"></script>
         <script>
-            // 1. Alternar visibilidade da senha
+            // FUNÇÃO DO OLHO (MOSTRAR SENHA)
             function toggleSenha() {
                 const campo = document.getElementById("senhaInput");
                 const olho = document.getElementById("olhoIcon");
-                campo.type = campo.type === "password" ? "text" : "password";
+
+                if (campo.type === "password") {
+                    campo.type = "text";
+                    // Troca para a imagem do olho aberto
+                    olho.src = "../assets/imgs/OlhoAberto.png"; 
+                } else {
+                    campo.type = "password";
+                    // Troca para a imagem do olho fechado
+                    olho.src = "../assets/imgs/Olho.png";
+                }
             }
 
-            // 2. Lógica de clique no botão Entrar
+            // LÓGICA DE LOGIN
             document.getElementById('btnEntrar').addEventListener('click', () => {
                 const email = document.getElementById('emailInput').value;
                 const senha = document.getElementById('senhaInput').value;
@@ -59,8 +72,9 @@
                     return;
                 }
 
+                // Chama o AuthService que está no seu arquivo js externo
                 if (AuthService.login(email, senha)) {
-                    window.location.href = 'home.html'; // Redireciona para sua Home
+                    window.location.href = '../index.html'; 
                 } else {
                     alert("Usuário ou senha inválidos!");
                 }

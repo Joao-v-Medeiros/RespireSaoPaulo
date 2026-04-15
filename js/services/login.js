@@ -4,6 +4,8 @@
  * Utiliza sessionStorage para controlar quem está logado no momento
  */
 const AuthService = {
+
+    
     
     // Busca a lista de usuários cadastrados no navegador
     _getUsers() {
