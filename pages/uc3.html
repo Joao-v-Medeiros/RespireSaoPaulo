@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Respire SP — Dicas Locais</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;700;800;900&family=Poppins:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="/css/pages/uc3.css" />
+  </head>
+  <body>
+
+    <!-- ========== BARRA DE NAVEGAÇÃO ========== -->
+    <header class="navegacao">
+      <div class="navegacao__container">
+        <nav class="navegacao__menu">
+          <a href="#" class="navegacao__logo">Respire SP</a>
+          <a href="#" class="navegacao__item">O que Fazer</a>
+          <a href="#" class="navegacao__item">Onde Comer</a>
+          <a href="#" class="navegacao__item">Roteiros</a>
+          <a href="#" class="navegacao__item">Eventos</a>
+          <a href="#" class="navegacao__item">Dicas Locais</a>
+        </nav>
+        <div class="navegacao__acoes">
+          <a href="#" class="botao botao--fantasma">Entrar</a>
+          <a href="#" class="botao botao--primario">Cadastre Grátis</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="destaque">
+      <div class="destaque__container">
+        <span class="destaque__etiqueta">Exploração Urbana</span>
+        <h1 class="destaque__titulo">Dicas locais para curtir São Paulo de verdade</h1>
+        <p class="destaque__descricao">Tudo o que você precisa saber para se locomover, se proteger e comer bem pela cidade.</p>
+        <div class="destaque__acoes">
+          <a href="#transporte" class="botao botao--primario">Explorar dicas</a>
+          <a href="#" class="botao botao--contorno">Conhecer SP</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FILTROS ========== -->
+    <div class="filtros">
+      <div class="filtros__container">
+        <span class="filtros__titulo">Filtrar por:</span>
+        <div class="filtros__lista">
+          <button class="filtros__botao filtros__botao--ativo" data-tema="todos">Todos</button>
+          <button class="filtros__botao" data-tema="transporte">Transporte</button>
+          <button class="filtros__botao" data-tema="seguranca">Segurança</button>
+          <button class="filtros__botao" data-tema="alimentacao">Alimentação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+    <main class="conteudo">
+      <div class="conteudo__container">
+
+        <!-- TRANSPORTE -->
+        <section class="tema" id="transporte" data-tema="transporte">
+          <header class="tema__cabecalho">
+            <div class="tema__etiqueta">
+              <span class="tema__icone">&#9651;</span>
+              <span class="tema__categoria">Transporte</span>
+            </div>
+            <h2 class="tema__titulo">Transporte</h2>
+            <p class="tema__subtitulo">Como se locomover pela cidade</p>
+          </header>
+
+          <div class="grade-cartoes">
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--metro">
+                <span class="cartao__selo">Essencial</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Metrô &amp; CPTM</h3>
+                <p class="cartao__subtitulo">A espinha dorsal da cidade</p>
+                <p class="cartao__texto">A rede integrada cobre a maior parte da Grande SP. Funciona das 4h40 às 0h, com intervalos de 2–4 min nos horários de pico.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Econômico</span>
+                  <span class="cartao__etiqueta">Rápido</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--bike">
+                <span class="cartao__selo">Dica</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Ciclovias</h3>
+                <p class="cartao__subtitulo">SP também é de bike</p>
+                <p class="cartao__texto">A cidade tem mais de 600 km de ciclovias. Aos domingos a Avenida Paulista fecha para carros — ótima oportunidade para explorar o centro expandido pedalando com segurança e sem trânsito.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Gratuito</span>
+                  <span class="cartao__etiqueta">Domingo</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--apps">
+                <span class="cartao__selo">Prático</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Apps de Mobilidade</h3>
+                <p class="cartao__subtitulo">Para uma locomoção mais confortável</p>
+                <p class="cartao__texto">99, Uber e iFood Delivery funcionam bem pela cidade. Táxis regulados pela prefeitura são opção segura à noite.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Noturno</span>
+                  <span class="cartao__etiqueta">Seguro</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- SEGURANÇA -->
+        <section class="tema" id="seguranca" data-tema="seguranca">
+          <header class="tema__cabecalho">
+            <div class="tema__etiqueta">
+              <span class="tema__icone">&#9651;</span>
+              <span class="tema__categoria">Segurança</span>
+            </div>
+            <h2 class="tema__titulo">Segurança</h2>
+            <p class="tema__subtitulo">Ande com tranquilidade</p>
+          </header>
+
+          <div class="grade-cartoes">
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--bairros">
+                <span class="cartao__selo">Atenção</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Bairros Centrais</h3>
+                <p class="cartao__subtitulo">Atenção redobrada</p>
+                <p class="cartao__texto">Sé, República e Brás exigem mais cuidado — principalmente à noite. Prefira as áreas movimentadas e bem iluminadas.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Noturno</span>
+                  <span class="cartao__etiqueta">Centro</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--celular">
+                <span class="cartao__selo">Dica</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Celular</h3>
+                <p class="cartao__subtitulo">Guarde sempre que puder</p>
+                <p class="cartao__texto">Use fones com fio para não precisar segurar o aparelho na rua. Em caso de furto, acione o "modo perdido" imediatamente.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Prevenção</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--emergencia">
+                <span class="cartao__selo">Importante</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Emergências</h3>
+                <p class="cartao__subtitulo">Números essenciais</p>
+                <p class="cartao__texto">Polícia Militar: 190 — SAMU: 192 — Bombeiros: 193. Salve antes de precisar.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">190</span>
+                  <span class="cartao__etiqueta">192</span>
+                  <span class="cartao__etiqueta">193</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ALIMENTAÇÃO -->
+        <section class="tema" id="alimentacao" data-tema="alimentacao">
+          <header class="tema__cabecalho">
+            <div class="tema__etiqueta">
+              <span class="tema__icone">&#9651;</span>
+              <span class="tema__categoria">Gastronomia</span>
+            </div>
+            <h2 class="tema__titulo">Alimentação</h2>
+            <p class="tema__subtitulo">Do popular ao refinado</p>
+          </header>
+
+          <div class="grade-cartoes">
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--tradicao">
+                <span class="cartao__selo">Tradição</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Tradição Paulistana</h3>
+                <p class="cartao__subtitulo">Clássicos que você não pode perder</p>
+                <p class="cartao__texto">O pastel de feira com caldo de cana é um ritual paulistano — fácil de achar em qualquer bairro. Aos domingos, a Feira da Liberdade reúne culinária japonesa e nikkei de altíssima qualidade.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Acessível</span>
+                  <span class="cartao__etiqueta">Domingo</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--alta">
+                <span class="cartao__selo">Destaque</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Alta Gastronomia</h3>
+                <p class="cartao__subtitulo">SP no mapa mundial da culinária</p>
+                <p class="cartao__texto">A Casa do Porco e o Maní estão entre os melhores restaurantes do mundo e ficam em SP. Reserve com semanas de antecedência — especialmente nos fins de semana.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Reserva</span>
+                  <span class="cartao__etiqueta">Top 50</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="cartao">
+              <div class="cartao__imagem cartao__imagem--vilas">
+                <span class="cartao__selo">Explorar</span>
+              </div>
+              <div class="cartao__corpo">
+                <h3 class="cartao__titulo">Vilas &amp; Bairros Gastronômicos</h3>
+                <p class="cartao__subtitulo">Onde a cena acontece</p>
+                <p class="cartao__texto">Vila Madalena e Pinheiros concentram restaurantes para todos os bolsos, do boteco ao fine dining. A Rua dos Pinheiros e a Rua Wisard têm dezenas de opções lado a lado.</p>
+                <div class="cartao__rodape">
+                  <span class="cartao__etiqueta">Vila Madalena</span>
+                  <span class="cartao__etiqueta">Pinheiros</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- ========== RODAPÉ ========== -->
+    <footer class="rodape">
+      <div class="rodape__container">
+        <div class="rodape__marca">
+          <span class="rodape__logo">Respire <span class="rodape__logo--destaque">São Paulo</span></span>
+          <p class="rodape__descricao">O guia definitivo para quem quer conhecer São Paulo de verdade — com os olhos, o paladar e a alma de quem vive e respira a cidade.</p>
+        </div>
+
+        <div class="rodape__separador"></div>
+
+        <nav class="rodape__menu">
+          <a href="#" class="rodape__link">O que fazer</a>
+          <a href="#" class="rodape__link">Onde Comer</a>
+          <a href="#" class="rodape__link">Roteiros</a>
+          <a href="#" class="rodape__link">Eventos</a>
+          <a href="#" class="rodape__link">Dicas locais</a>
+        </nav>
+
+        <nav class="rodape__menu">
+          <a href="#" class="rodape__link">Quem somos</a>
+          <a href="#" class="rodape__link">Contato</a>
+        </nav>
+      </div>
+      <div class="rodape__base">
+        <p class="rodape__creditos">© 2025 Respire SP. Feito com amor por SP.</p>
+      </div>
+    </footer>
+
+    <script src="/js/pages/uc3.js"></script>
+  </body>
+</html>
