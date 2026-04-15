@@ -7,14 +7,14 @@
  
 /* ── Variáveis ── */
 :root {
-  --bg-page:    #21242c;
-  --bg-card:    #2b2f3a;
-  --bg-input:   #363b4a;
+  --bg-page:    #030303;
+  --bg-card:    #070707;
+  --bg-input:   #000000;
   --border:     rgba(255,255,255,0.12);
   --orange:     #f57200;
   --blue:       #1877f2;
   --text-white: #ffffff;
-  --text-muted: #9aa0b0;
+  --text-muted: #48494a;
   --font-main:  'Montserrat', sans-serif;
   --font-title: 'Poppins', sans-serif;
   --font-logo:  'Patua One', serif;
@@ -24,23 +24,23 @@
 body {
   background-color: var(--bg-page);
   font-family: var(--font-main);
+
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
 }
+
+.page{
+ background: radial-gradient(ellipse, rgba(245, 165, 35, 0.207) 20%, transparent 70%);
+}
  
 /* ── Card ── */
 .card {
-  background-color: var(--bg-card);
-  border-radius: 20px;
   width: 100%;
-  max-width: 780px;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
 }
  
 /* ── Coluna formulário ── */
@@ -76,7 +76,7 @@ body {
 /* ── Subtítulo ── */
 .subtitulo {
   font-size: 13px;
-  color: var(--text-muted);
+  color: white;
   text-align: center;
   line-height: 1.5;
   margin-bottom: 4px;
@@ -96,8 +96,8 @@ body {
 .input-group {
   display: flex;
   align-items: center;
-  background-color: var(--bg-input);
-  border: 1px solid var(--border);
+  background-color:  rgba(255, 255, 255, 0.88);
+  border: 1.8px solid var(--border);
   border-radius: 12px;
   padding: 0 14px;
   height: 48px;
@@ -116,7 +116,7 @@ body {
   outline: none;
   font-family: var(--font-main);
   font-size: 14px;
-  color: var(--text-white);
+  color: black;
   letter-spacing: -0.2px;
 }
  
@@ -135,7 +135,7 @@ body {
 .btn-cadastrar {
   width: 100%;
   height: 50px;
-  background-color: var(--blue);
+  background-color: #f57200;
   color: var(--text-white);
   font-family: var(--font-main);
   font-size: 17px;
@@ -148,7 +148,7 @@ body {
   margin-top: 4px;
 }
  
-.btn-cadastrar:hover  { background-color: #1464d0; }
+.btn-cadastrar:hover  { background-color:#f98826; }
 .btn-cadastrar:active { transform: scale(0.98); }
  
 /* ── Link login ── */
@@ -170,7 +170,8 @@ body {
  
 /* ── Coluna imagem ── */
 .col-img {
-  width: 300px;
+  width: 50%;
+  height: 600px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -182,12 +183,7 @@ body {
   display: block;
 }
  
-/* ── Responsivo: esconde imagem em telas pequenas ── */
-@media (max-width: 640px) {
-  .col-img { display: none; }
-  .col-form { padding: 36px 28px; }
-  .titulo { font-size: 24px; }
-}
+
  
  
 
