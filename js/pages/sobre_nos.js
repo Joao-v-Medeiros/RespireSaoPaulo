@@ -50,4 +50,17 @@ document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
       btn.style.background = '';
     }, 2000);
   });
+<<<<<<< HEAD
+=======
+});
+
+
+const themeBtn = document.getElementById('theme-toggle');
+let dark = true;
+
+themeBtn.addEventListener('click', () => {
+  dark = !dark;
+  document.body.classList.toggle('tema-claro', !dark);
+  themeBtn.textContent = dark ? '🌙' : '☀️';
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 });

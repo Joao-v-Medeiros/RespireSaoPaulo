@@ -2,11 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
     font-family: 'Montserrat', sans-serif;
 }
 
 body {
     background-color: #21242c;
+=======
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #111111;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
     height: 100vh;
     display: flex;
     align-items: center;
@@ -17,7 +25,16 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
+<<<<<<< HEAD
     background-color: #2b2e38;
+=======
+    background-color: #111111;
+    background: radial-gradient(
+        ellipse,
+        rgba(245, 166, 35, 0.12) 10%,
+        transparent 70%
+    );
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 }
 
 /* Formulário */
@@ -31,15 +48,28 @@ body {
 }
 
 .respire-sp {
+<<<<<<< HEAD
     font-family: 'Patua One', serif;
+=======
+    font-family: "Patua One", serif;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
     font-size: 22px;
     color: #fff;
     text-align: center;
     margin-bottom: -4px;
 }
+<<<<<<< HEAD
 
 .seja-bem-vindoa {
     font-family: 'Poppins', sans-serif;
+=======
+.respire-sp span{
+    color: #e87511;
+}
+
+.seja-bem-vindoa {
+    font-family: "Poppins", sans-serif;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
     font-size: 34px;
     font-weight: 600;
     color: #e87511;
@@ -61,7 +91,11 @@ body {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.88);
+<<<<<<< HEAD
     border: 1px solid #999;
+=======
+    border: 1.8px solid #999;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
     border-radius: 25px;
     padding: 0 16px;
     height: 48px;
@@ -86,7 +120,11 @@ body {
 .insira-seu-e-mail-parent:hover,
 .insira-sua-senha-parent:hover {
     background: rgba(255, 255, 255, 1);
+<<<<<<< HEAD
     border-color: #e87511;
+=======
+    border-color:  #e87511;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 }
 
 .weuieyes-off-filled-icon {
@@ -98,7 +136,11 @@ body {
 
 .esqueceu-sua-senha {
     font-size: 14px;
+<<<<<<< HEAD
     color: #ccc;
+=======
+    color: white;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
     text-align: right;
     cursor: pointer;
     transition: color 0.2s;
@@ -110,18 +152,32 @@ body {
 
 /* Botão entrar */
 .entrar-wrapper {
+<<<<<<< HEAD
     background: #1877f2;
+=======
+    background: #f57200;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
     border-radius: 25px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+<<<<<<< HEAD
     transition: background 0.2s, transform 0.1s;
 }
 
 .entrar-wrapper:hover {
     background: #1464cc;
+=======
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+.entrar-wrapper:hover {
+    background: #f98826;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 }
 
 .entrar-wrapper:active {
@@ -168,7 +224,13 @@ body {
     cursor: pointer;
     font-size: 15px;
     color: #111;
+<<<<<<< HEAD
     transition: background 0.2s, transform 0.1s;
+=======
+    transition:
+        background 0.2s,
+        transform 0.1s;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 }
 
 .devicongoogle-parent:hover,
@@ -192,7 +254,11 @@ body {
 /* Rodapé */
 .no-tem-conta-container {
     font-size: 15px;
+<<<<<<< HEAD
     color: #bbb;
+=======
+    color: white;
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
     text-align: center;
     margin-top: 6px;
 }
@@ -201,7 +267,10 @@ a {
     color: #e87511;
     cursor: pointer;
     text-decoration: none;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 }
 
 .faa-seu-cadastro:hover {
@@ -213,4 +282,8 @@ a {
     width: 50%;
     height: 100%;
     object-fit: cover;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
