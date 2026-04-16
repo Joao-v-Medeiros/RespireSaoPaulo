@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="/css/pages/header.css">
+    <script src="/js/services/header.js"></script>
+    <link rel="stylesheet" href="/css/pages/eventos.css" </head>
+
+<body>
+
+    <body>
+
+        <!-- HERO -->
+        <section class="hero">
+            <p class="subtitle">EXPLORE A CIDADE</p>
+
+            <p class="desc">
+                Descubra os melhores eventos de São Paulo, do agito cultural à vibrante cena gastronômica da metrópole.
+            </p>
+
+
+        </section>
+
+        <!-- EVENTOS -->
+
+        <div class="filtros">
+            <button class="filtro-btn" data-filtro="musica">Música</button>
+            <button class="filtro-btn" data-filtro="arte">Arte</button>
+            <button class="filtro-btn" data-filtro="gastro">Gastronomia</button>
+            <button class="filtro-btn" data-filtro="teatro">Teatro</button>
+        </div>
+        <section class="grid-eventos">
+
+            <!-- CARD -->
+            <div class="card">
+                <div class="top musica">
+                </div>
+
+                <div class="content">
+                    <span class="tag musica-tag">MÚSICA</span>
+                    <h3>Festival Noturno na Vila</h3>
+                    <ul>
+                        <li>Shows ao vivo na Madalena</li>
+                        <li>Palcos independentes</li>
+                        <li>Food trucks e cervejas</li>
+                        <li>Após show no Clash Club</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+                <div class="top arte">
+                    <span class="time"></span><br>
+                    <span class="rating"></span>
+
+                </div>
+
+                <div class="content">
+                    <span class="tag arte-tag">ARTE & CULTURA</span>
+                    <h3>SP Arte 2026</h3>
+                    <ul>
+                        <li>Galerias no Ibirapuera</li>
+                        <li>Instalações interativas</li>
+                        <li>Talks com artistas</li>
+                        <li>Feira de arte contemporânea</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+                <div class="top gastro">
+                    <span class="time"> </span><br>
+                    <span class="rating"> </span>
+
+                </div>
+
+                <div class="content">
+                    <span class="tag gastro-tag">GASTRONOMIA</span>
+                    <h3>Mercado das Artes Gastro</h3>
+                    <ul>
+                        <li>Chefs estrelados ao vivo</li>
+                        <li>Degustação de vinhos</li>
+                        <li>Aulas de culinária</li>
+                        <li>Jantar no rooftop</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+                <div class="top teatro">
+                    <span class="time"> </span><br>
+                    <span class="rating"></span>
+
+                </div>
+
+                <div class="content">
+                    <span class="tag teatro-tag">TEATRO</span>
+                    <h3>Theatro Municipal — Gala</h3>
+                    <ul>
+                        <li>Ópera italiana clássica</li>
+                        <li>Orquestra Sinfônica SP</li>
+                        <li>Coquetel de abertura</li>
+                        <li>Visita ao palco histórico</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card" data-categoria="musica"></div>
+            <div class="card" data-categoria="arte"></div>
+            <div class="card" data-categoria="gastro"></div>
+            <div class="card" data-categoria="teatro"></div>
+        </section>
+        <script src="script.js"></script>
+
+        <main-header></main-header>
+
+    </body>
+
+</html>
