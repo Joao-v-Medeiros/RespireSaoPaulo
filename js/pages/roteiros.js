@@ -32,7 +32,7 @@ const roteiros = [
         tag: "ARTE & HISTÓRIA",
         tempo: "2 Dias",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1590076214531-92578508752d?q=80&w=800",
+        img: "/assets/imgs/masp.jpg",
         itens: ["Pinacoteca", "Farol Santander", "Theatro Municipal", "Noite de Jazz"]
     },
     {

@@ -22,7 +22,7 @@
    ======================== */
 body.tema-claro {
     --fundo: white;
-    --fundo-escuro: #faf8f5;
+    --fundo-escuro: #ffffff;
     --card: #ffffff;
     --branco: #1a1a1a;
     --cinza: #555555;
@@ -64,7 +64,7 @@ body {
 }
 
 body.tema-claro .hero-bg {
-    background: linear-gradient(135deg, #f7f4ef 0%, #f0e8d0 50%, #f7f4ef 100%);
+    background: linear-gradient(135deg, #f0efed 0%, #f7f6f5 50%, #ffffff 100%);
 }
 
 .hero-glow {
