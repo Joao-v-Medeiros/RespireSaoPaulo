@@ -3,14 +3,14 @@
 :root {
   --cor-laranja:        #ff5500;
   --cor-laranja-claro:  #ff7948;
-  --cor-preto:          #0b0e12;
+  --cor-preto:          #ffffff;
   --cor-texto:          #2c2f33;
   --cor-texto-suave:    #595c60;
-  --cor-fundo:          #ffffff;
+  --cor-fundo:          #14171C;
   --cor-fundo-card:     #ffffff;
   --cor-fundo-claro:    #f8f7f5;
 
-  --fonte-titulo:  'Epilogue', sans-serif;
+  --fonte-titulo:  'Poppins', sans-serif;
   --fonte-corpo:   'Poppins', sans-serif;
 
   --raio:           16px;
@@ -34,6 +34,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
   font-family: var(--fonte-corpo);
@@ -186,7 +187,7 @@ a {
   align-items: center;
   justify-content: flex-end;
   padding-bottom: 5rem;
-  background: url(/assets/imgs/predios-sp.png) no-repeat center / cover;
+  background: url(/assets/imgs/prédios-sp.png) no-repeat center / cover;
   overflow: hidden;
 }
 
@@ -251,7 +252,7 @@ a {
 .filtros {
   padding: 1.25rem var(--espacamento);
   background: var(--cor-fundo-claro);
-  border-bottom: 1px solid #e8e6e1;
+  border-bottom: 1px solid #e8e1e6;
   position: sticky;
   top: 72px;
   z-index: 90;
@@ -288,7 +289,7 @@ a {
   font-weight: 600;
   color: var(--cor-texto-suave);
   background: #ffffff;
-  border: 1.5px solid #e0deda;
+  border: 1.5px solid #e0dada;
   border-radius: var(--raio-pill);
   cursor: pointer;
   transition: all var(--transicao);
@@ -337,25 +338,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-}
-
-.tema__etiqueta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tema__icone {
-  font-size: 12px;
-  color: var(--cor-laranja);
-}
-
-.tema__categoria {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--cor-laranja);
 }
 
 .tema__titulo {
@@ -419,15 +401,15 @@ a {
 }
 
 /* Imagens por cartão */
-.cartao__imagem--metro      { background-image: url(/img/metrô.png); }
-.cartao__imagem--bike       { background-image: url(/img/ciclovia.png); background-position: center 75%; }
-.cartao__imagem--apps       { background-image: url(/img/App-de-mibilidade.png); }
-.cartao__imagem--bairros    { background-image: url(/img/centro.png); }
-.cartao__imagem--celular    { background-image: url(/img/celular.png); background-position: center 20%; }
-.cartao__imagem--emergencia { background-image: url(/img/emergência.png); }
-.cartao__imagem--tradicao   { background-image: url(/img/pastel.png); }
-.cartao__imagem--alta       { background-image: url(/img/prato.png); background-position: center 50%; }
-.cartao__imagem--vilas      { background-image: url(/img/lanche.png); background-position: center 75%; }
+.cartao__imagem--metro      { background-image: url(/assets/imgs/metrô.png); }
+.cartao__imagem--bike       { background-image: url(/assets/imgs/ciclovia.png); background-position: center 75%; }
+.cartao__imagem--apps       { background-image: url(/assets/imgs/App-de-mibilidade.png); }
+.cartao__imagem--bairros    { background-image: url(/assets/imgs/centro.png); }
+.cartao__imagem--celular    { background-image: url(/assets/imgs/celular.png); background-position: center 20%; }
+.cartao__imagem--emergencia { background-image: url(/assets/imgs/emergência.png); }
+.cartao__imagem--tradicao   { background-image: url(/assets/imgs/pastel.png); }
+.cartao__imagem--alta       { background-image: url(/assets/imgs/prato.png); background-position: center 50%; }
+.cartao__imagem--vilas      { background-image: url(/assets/imgs/lanche.png); background-position: center 75%; }
 
 .cartao__selo {
   position: absolute;
