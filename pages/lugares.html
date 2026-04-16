@@ -4,34 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Respire SP</title>
-    <link rel="stylesheet" href="/RespireSaoPaulo/css/pages/style.css">
-     <script src="/RespireSaoPaulo/js/pages/script.js">
+    
+    <link rel="stylesheet" href="/css/pages/lugares.css">
 
-     </script>
+     <script src="/js/pages/lugares.js"></script>
 
+     <link rel="stylesheet" href="/css/pages/header.css">
+
+     <script src="/js/services/header.js"></script>
+      
 </head>
 <body>
 
    
-    <nav class="navbar">
-        <div class="logo" onclick="voltarInicio()">🗺️ Respire <span>SP</span></div>
-     <p>isaa</p>
-        <ul class="nav-links">
-            <li><a onclick="mostrarCategoria('todos')" class="nav-item ativo" id="nav-todos">O que Fazer</a></li>
-            <li><a onclick="irParaSecao('onde-comer')" class="nav-item" id="nav-comer">Onde Comer</a></li>
-            <li><a onclick="irParaSecao('roteiros')" class="nav-item" id="nav-roteiro">Roteiros</a></li>
-            <li><a onclick="irParaSecao('eventos')" class="nav-item" id="nav-eventos">Eventos</a></li>
-            <li><a onclick="irParaSecao('Dicas')" class="nav-item" id="nav-dicas">Dicas Locais</a></li>
-            
-        </ul>
-
-        <div class="nav-direita">
-           
-            <button id="btnTema" onclick="trocarTema()">🌙</button>
-            <button class="btn-entrar">Entrar</button>
-            <button class="btn-cadastro">Cadastre Grátis</button>
-        </div>
-    </nav>
+    <main-header></main-header>
 
     
     <div id="paginaPrincipal">
@@ -66,21 +52,20 @@
                 </div>
                 <div class="grid-cards">
 
-                    <div class="card" onclick="abrirDetalhe('miroku')">
+                    <div class="card" onclick="abrirDetalhe('paranapiacaba')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/miroku.jpg" alt="Paranapiacaba">
+                            <img src="/RespireSaoPaulo/assets/imgs/paranapiacaba.jpg" alt="Paranapiacaba">
                             <span class="badge historico">HISTÓRICO</span>
                         </div>
                         <div class="card-info">
-                            <h3>Torre de Miroku</h3>
-                            <p> Torre de Miroku é uma obra inspirada no pagode de cinco andares do Templo Horyu, no Japão, que
-                             simboliza a união entre a Terra e o Céu. No interior da Torre, fica uma relíquia sagrada de Meishu.</p>
+                            <h3>Paranapiacaba</h3>
+                            <p>  Paranapiacaba é uma charmosa vila de arquitetura inglesa que já se candidatou a Patrimônio Mundial da Humanidade e foi testemunha de uma importante fase de expansão da tecnologia ferroviária no Brasil na segunda metade do século XIX..</p>
                         </div>
                     </div>
 
                     <div class="card" onclick="abrirDetalhe('pedragrande')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/camp.png" alt="Pedra Grande">
+                            <img src="/RespireSaoPaulo/assets/imgs/cantareira.webp" alt="Pedra Grande">
                             <span class="badge natureza">NATUREZA</span>
                         </div>
                         <div class="card-info">
@@ -115,7 +100,7 @@
 
                     <div class="card" onclick="abrirDetalhe('masp')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/casa.jpeg" alt="MASP">
+                            <img src="/RespireSaoPaulo/assets/imgs/casabrasileira.jpg" alt="MASP">
                         </div>
                         <div class="card-info">
                             <h3>Museu da Casa Brasileira</h3>
@@ -125,7 +110,7 @@
 
                     <div class="card" onclick="abrirDetalhe('pinacoteca')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/galeria.jpg" alt="Pinacoteca">
+                            <img src="/RespireSaoPaulo/assets/imgs/teatro.jpg" alt="Pinacoteca">
                         </div>
                         <div class="card-info">
                             <h3>Galeria Olido</h3>
@@ -160,7 +145,7 @@ São Bento.</p>
 
                     <div class="card" onclick="abrirDetalhe('pedragrande')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/pedra.png" alt="Pedra Grande">
+                            <img src="/RespireSaoPaulo/assets/imgs/pedra.jpg" alt="Pedra Grande">
                         </div>
                         <div class="card-info">
                             <h3>Pedra Grande</h3>
@@ -170,7 +155,7 @@ São Bento.</p>
 
                     <div class="card" onclick="abrirDetalhe('horto')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/horto.png" alt="Horto Florestal">
+                            <img src="/RespireSaoPaulo/assets/imgs/mato.jpg" alt="Horto Florestal">
                         </div>
                         <div class="card-info">
                             <h3>Horto Florestal</h3>
@@ -180,7 +165,7 @@ São Bento.</p>
 
                     <div class="card" onclick="abrirDetalhe('petar')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/petar.png" alt="PETAR">
+                            <img src="/RespireSaoPaulo/assets/imgs/petar.jpg" alt="PETAR">
                         </div>
                         <div class="card-info">
                             <h3>PETAR</h3>

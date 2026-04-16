@@ -1,3 +1,25 @@
+:root {
+    --laranja: #ff5500;
+    --branco: #f5f0ea;
+    --cinza: #888;
+    --borda: rgba(255, 255, 255, 0.07);
+    --fundo: #0e1115;
+    --fundo2: #1b1d24;
+    --card: #272C35;
+    --texto: #ffffff;
+}
+
+body.tema-claro {
+    --laranja: #ff5500;
+    --branco: #1a1a1a;
+    --cinza: #555555;
+    --borda: rgba(0, 0, 0, 0.1);
+    --fundo: #f7f4ef;
+    --fundo2: #e8e4dd;
+    --card: #ffffff;
+    --texto: #1a1a1a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +28,24 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    transition: background 0.3s, color 0.3s;
 }
 
 #container {
     width: 100%;
     min-height: 300vh;
-    background-color: #0e1115;
-    color: white;
+    background-color: var(--fundo);
+    color: var(--branco);
     background-image: url("/assets/imgs/São Paulo ao pôr do sol (1).png");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Isso mantém a imagem parada ao rolar */
+    background-attachment: fixed;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.tema-claro #container {
+    background-image: none;
+    background-color: var(--fundo);
 }
 
 .back {
@@ -35,47 +64,50 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Fica atrás */
-    background-color: transparent; /* Permite ver o fundo do container se necessário */
+    z-index: 1;
+    background-color: transparent;
 }
 
 .back3 {
-    position: relative; /* Ele segue o fluxo mas sobrepõe o anterior */
-    z-index: 2; /* Maior que o back2 */
+    position: relative;
+    z-index: 2;
     width: 100%;
     height: 100vh;
     display: flex;
-    background-color: #0e1115; /* Cor sólida para o efeito de empurrão */
+    background-color: var(--fundo);
     justify-content: center;
     align-items: center;
-    box-shadow: 0 -60px 50px rgba(0, 0, 0, 0.486); /* Sombra para dar profundidade */
+    box-shadow: 0 -60px 50px rgba(0, 0, 0, 0.486);
+    transition: background-color 0.3s;
+}
+
+body.tema-claro .back3 {
+    box-shadow: 0 -60px 50px rgba(0, 0, 0, 0.08);
 }
 
 .back4 {
     width: 100%;
     height: 10vh;
-    background-color: #0e1115;
+    background-color: var(--fundo);
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: background-color 0.3s;
 }
+
 .destaque {
-    background-color: #0e1115;
+    background-color: var(--fundo);
+    transition: background-color 0.3s;
 }
 
 .back4-1 {
     width: 100%;
     height: 90vh;
-    background-color: #0e1115;
+    background-color: var(--fundo);
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-#back5 {
-    width: 100%;
-    height: 100vh;
-    background-color: #1b1d24;
+    transition: background-color 0.3s;
 }
 
 /* GRADIENTES */
@@ -94,8 +126,13 @@ body {
     background: linear-gradient(180deg, rgba(14, 17, 21, 0.445), #0e1115);
 }
 
+body.tema-claro .gradient {
+    background: linear-gradient(90deg, rgba(247, 244, 239, 0.6), transparent 60%);
+}
 
-
+body.tema-claro .gradient2 {
+    background: linear-gradient(180deg, rgba(247, 244, 239, 0.5), var(--fundo));
+}
 
 /* CONTEÚDO CENTRAL */
 .fundo1 {
@@ -116,12 +153,13 @@ body {
 }
 
 .respire {
-    font-size: 96px; /* REDUZI PRA RESPONSIVO */
+    font-size: 96px;
     font-weight: 800;
+    color: var(--branco);
 }
 
 .respire span {
-    color: #ff5500;
+    color: var(--laranja);
 }
 
 .p2 {
@@ -130,15 +168,20 @@ body {
     max-width: 500px;
 }
 
+body.tema-claro .p2 {
+    color: rgba(0, 0, 0, 0.6);
+}
+
 .cidade {
     text-align: center;
     font-size: 80px;
     line-height: 1;
+    color: var(--branco);
 }
 
 .cidade span {
     font-size: 85px;
-    color: #ff5500;
+    color: var(--laranja);
 }
 
 .sp {
@@ -146,12 +189,15 @@ body {
     font-weight: lighter;
     margin-top: 30px;
     text-align: center;
+    color: var(--branco);
 }
+
 .sp1 {
     font-size: 36px;
     font-weight: lighter;
     margin-top: 30px;
     text-align: center;
+    color: var(--branco);
 }
 
 /* INPUT */
@@ -166,241 +212,272 @@ input {
     padding: 0 20px;
     border: none;
     outline: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+body.tema-claro input {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #1a1a1a;
+}
 
-
-/*cards back3 */
+/* CARDS BACK3 */
 #back3 {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #0E1115;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 40px; /* Aumentei o respiro lateral */
-  position: relative;
-  z-index: 5;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px;
+    position: relative;
+    z-index: 5;
 }
 
 .fundo2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  /* AJUSTE DO ESPAÇAMENTO: 60px deixa os cards bem separados e elegantes */
-  gap: 50px; 
-  width: 100%;
-  max-width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    width: 100%;
+    max-width: 1500px;
 }
 
 .card-estatistica {
-  position: relative;
-  height: 380px; /* Aumentei um pouco a altura para a "janela" respirar */
-  border-radius: 40px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    height: 380px;
+    border-radius: 40px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.tema-claro .card-estatistica {
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .card-estatistica:hover {
-  transform: scale(1.03) translateY(-10px);
+    transform: scale(1.03) translateY(-10px);
 }
 
-/* IMAGENS ESPECÍFICAS */
 .cards1 { background-image: url("/assets/imgs/PinDown.io_@jmazurfilho_1775518757.jpg"); }
 .cards2 { background-image: url("/assets/imgs/PinDown.io_@natancoelho_1775515253.jpg"); }
 .cards3 { background-image: url("/assets/imgs/PinDown.io_@gabrielaperucioo_1775515620.jpg"); }
 .cards4 { background-image: url("/assets/imgs/PinDown.io_@tasteofbrazil_1775828516.jpg"); }
 
-/* GRADIENTE AJUSTADO: Escurecemos a base para leitura e suavizamos o topo */
 .gradient-card {
-  width: 100%;
-  height: 100%;
-  /* Usei um preto com 75% de opacidade na base para o texto pular do fundo */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: background 0.4s ease;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background 0.4s ease;
 }
 
-/* No hover, o fundo escurece levemente mais para dar foco ao texto */
 .card-estatistica:hover .gradient-card {
-  background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .h1-card {
-  color: #FF5500;
-  font-size: 80px; /* Números bem grandes para impacto */
-  font-weight: 800;
-  margin: 0;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Sombra no texto para legibilidade */
+    color: #FF5500;
+    font-size: 80px;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .p-card {
-  font-size: 22px;
-  color: #FFFFFF;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    font-size: 22px;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-
-/* back4 */
+/* BACK4 */
 .paragrafo {
     font-size: 30px;
-    color: #FF5500;
-    background-color: #0e1115;
-    margin-left: 30px;   
+    color: var(--laranja);
+    background-color: var(--fundo);
+    margin-left: 30px;
 }
+
 .pontos {
     margin-left: 30px;
     font-size: 90px;
+    color: var(--branco);
 }
+
 .pontos span {
-    color: #FF5500;
+    color: var(--laranja);
 }
+
 .saiba-mais {
     font-size: 30px;
     margin-left: 650px;
-    color: #FF5500;
+    color: var(--laranja);
 }
 
 .cards5 {
     width: 430px;
     height: 650px;
-    background-color: #272C35;
+    background-color: var(--card);
     border-radius: 30px;
     margin-bottom: 110px;
     margin-left: 200px;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s;
 }
 
 .cards5:hover {
-  transform: scale(1.07) translateY(-10px);
+    transform: scale(1.07) translateY(-10px);
 }
 
 .cards6 {
     width: 430px;
     height: 650px;
-    background-color: #272C35;
+    background-color: var(--card);
     border-radius: 30px;
     margin-bottom: 110px;
     margin-left: 80px;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s;
 }
+
 .cards6:hover {
-  transform: scale(1.07) translateY(-10px);
+    transform: scale(1.07) translateY(-10px);
 }
+
 .cards7 {
     width: 430px;
     height: 650px;
-    background-color: #272C35;
+    background-color: var(--card);
     border-radius: 30px;
     margin-bottom: 110px;
     margin-left: 80px;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s;
 }
+
 .cards7:hover {
-  transform: scale(1.07) translateY(-10px);
+    transform: scale(1.07) translateY(-10px);
 }
 
 .masp {
     width: 430px;
     height: 300px;
-    border-radius: 30px 30px 0px 0px;
-}
-.masp img{
-    width: 100%;
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 30px 30px 0 0;
 }
 
-.text-masp{
-    font-size: 60px;
-    margin-left: 20px;
+.masp img {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
 }
-.museu {
-    font-size: 30px;
+
+.text-masp {
+    font-size: 50px;
     margin-left: 20px;
+    color: var(--branco);
+}
+
+body.tema-claro .text-masp {
+    color: #1a1a1a;
+}
+
+.museu {
+    font-size: 25px;
+    margin-left: 20px;
+    color: var(--cinza);
 }
 
 .ibira {
-     width: 430px;
+    width: 430px;
     height: 300px;
-    border-radius: 30px 30px 0px 0px;
-}
-.ibira img{
-    width: 100%;
-    border-radius: 30px 30px 0px 0px;
-}
-.text-ibira{
-    font-size: 60px;
-    margin-left: 20px;
-    line-height: 1;
-}
-.parque {
-    font-size: 30px;
-    margin-left: 20px;
+    border-radius: 30px 30px 0 0;
 }
 
+.ibira img {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+}
+
+.text-ibira {
+    font-size: 50px;
+    margin-left: 20px;
+    line-height: 1;
+    color: var(--branco);
+}
+
+body.tema-claro .text-ibira {
+    color: #1a1a1a;
+}
+
+.parque {
+    font-size: 25px;
+    margin-left: 20px;
+    color: var(--cinza);
+}
 
 .vila {
-     width: 430px;
+    width: 430px;
     height: 300px;
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 30px 30px 0 0;
 }
-.vila img{
+
+.vila img {
     width: 100%;
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 30px 30px 0 0;
 }
-.text-vila{
-    font-size: 60px;
+
+.text-vila {
+    font-size: 50px;
     margin-left: 20px;
     line-height: 1;
+    color: var(--branco);
 }
+
+body.tema-claro .text-vila {
+    color: #1a1a1a;
+}
+
 .madalena {
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 20px;
+    color: var(--cinza);
 }
 
-/*tela back5*/
-
+/* BACK5 */
 .back5 {
     width: 100%;
-    /* Mudamos de height para min-height para o fundo acompanhar o conteúdo */
-    min-height: 100vh; 
-    background-color: #1b1d24;
+    min-height: 100vh;
+    background-color: var(--fundo2);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o título e o grid horizontalmente */
-    padding-bottom: 50px; /* Garante que o fundo não acabe colado na última imagem */
+    align-items: center;
+    padding-bottom: 50px;
+    transition: background-color 0.3s;
 }
 
 .razoes {
     margin-top: 100px;
     margin-right: 500px;
     font-size: 90px;
+    color: var(--branco);
 }
 
 .razoes span {
-    color: #ff5500;
+    color: var(--laranja);
 }
 
 .cards-grid {
     display: grid;
     gap: 20px;
-    /* Usamos 90% da largura para não encostar nas bordas da tela */
     width: 90%;
-    max-width: 1900px; 
+    max-width: 1900px;
     grid-template-columns: 2fr 1fr 1fr;
-    /* Definimos alturas para as linhas para as fotos aparecerem */
-    grid-template-rows: 350px 350px; 
+    grid-template-rows: 350px 350px;
     height: 1000px;
-
     grid-template-areas:
         "card1 card2 card3"
         "card1 card4 card4";
@@ -409,44 +486,34 @@ input {
 .card1 {
     grid-area: card1;
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-    /* REMOVIDO: width e height fixos em px que causavam o buraco branco */
 }
 
 .card2 {
     grid-area: card2;
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
-.card3 { 
+
+.card3 {
     grid-area: card3;
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
+
 .card4 {
-    grid-area: card4; 
+    grid-area: card4;
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.card1:hover{
-     transform: scale(1.05) translateY(-10px);
-}
-
-.card2:hover{
-     transform: scale(1.07) translateY(-10px);
-}
-
-.card3:hover{
-     transform: scale(1.07) translateY(-10px);
-}
-
-.card4:hover{
-     transform: scale(1.05) translateY(-10px);
-}
+.card1:hover { transform: scale(1.05) translateY(-10px); }
+.card2:hover { transform: scale(1.07) translateY(-10px); }
+.card3:hover { transform: scale(1.07) translateY(-10px); }
+.card4:hover { transform: scale(1.05) translateY(-10px); }
 
 .card img {
-    width: 100%;      
-    height: 100%;   
+    width: 100%;
+    height: 100%;
     border-radius: 30px;
-    object-fit: cover; 
-    display: block;  
+    object-fit: cover;
+    display: block;
 }
 
 .gradient3,
@@ -463,6 +530,7 @@ input {
 .gradient4 {
     background: linear-gradient(180deg, rgba(14, 17, 21, 0.445), #0e1115);
 }
+
 .card {
     position: relative;
     overflow: hidden;
@@ -514,39 +582,40 @@ input {
     opacity: 0.9;
 }
 
-/* Back6 */ 
-
+/* BACK6 */
 .back6 {
     width: 100%;
     height: 100vh;
-    background-color: #0E1115;
+    background-color: var(--fundo);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.3s;
+}
+
+.text-roteiros {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.text-roteiros{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.roteiros{
+.roteiros {
     margin-top: 60px;
     font-size: 30px;
-    color: #FF5500;
+    color: var(--laranja);
 }
 
-.sua-aventura{
+.sua-aventura {
     font-size: 80px;
+    color: var(--branco);
 }
 
-.sua-aventura span{
+.sua-aventura span {
     font-size: 80px;
-    color: #FF5500;
+    color: var(--laranja);
 }
 
-.fundo-card{
+.fundo-card {
     width: 1600px;
     height: 700px;
     display: flex;
@@ -555,17 +624,22 @@ input {
     justify-content: space-between;
 }
 
-.roteiro-cards{
+.roteiro-cards {
     width: 450px;
     height: 600px;
-    background-color: #1b1d24;
+    background-color: var(--fundo2);
     border-radius: 30px;
+    transition: background-color 0.3s;
 }
 
-.express{
+body.tema-claro .roteiro-cards {
+    border: 1px solid var(--borda);
+}
+
+.express {
     width: 100%;
     height: 80px;
-    color: #FF5500;
+    color: var(--laranja);
     font-size: 25px;
     display: flex;
     align-items: center;
@@ -573,7 +647,7 @@ input {
     justify-content: space-around;
 }
 
-.dia1{
+.dia1 {
     width: 100%;
     height: 100px;
     display: flex;
@@ -581,17 +655,18 @@ input {
     text-align: start;
     font-size: 30px;
     margin-left: 60px;
+    color: var(--branco);
 }
 
-.local{
-    color: rgba(255, 255, 255, 0.781);
+.local {
+    color: var(--cinza);
     font-size: 30px;
     margin-left: 50px;
     margin-top: 40px;
 }
 
-.paradas{
-    color: rgba(255, 255, 255, 0.473);
+.paradas {
+    color: var(--cinza);
     width: 300px;
     height: 100px;
     margin-top: 30px;
@@ -603,8 +678,8 @@ input {
     margin-left: 60px;
 }
 
-.paradas1{
-    color: rgba(255, 255, 255, 0.473);
+.paradas1 {
+    color: var(--cinza);
     width: 300px;
     height: 100px;
     margin-top: 70px;
@@ -615,7 +690,3 @@ input {
     gap: 10px;
     margin-left: 60px;
 }
-
-
-/* footer */
-
