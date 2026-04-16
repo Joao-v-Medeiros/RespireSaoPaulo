@@ -1,4 +1,4 @@
-const API_URL = 'respiresaopaulo-production.up.railway.app';
+const API_URL = 'http://localhost:3001/gerar-roteiro';
 
 // Seleciona o orçamento via botões visuais
 function selecionarOrcamento(btn) {
