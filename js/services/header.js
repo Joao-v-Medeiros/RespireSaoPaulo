@@ -45,12 +45,12 @@ class MyHeader extends HTMLElement {
                 </a>
 
                 <ul class="nav-links">
+                    <li><a href="/index.html">home</a></li>
                     <li><a href="/pages/o_que_fazer.html">O Que Fazer</a></li>
-                    <li><a href="#">Onde Comer</a></li>
                     <li><a href="#">Roteiros</a></li>
                     <li><a href="#">Eventos</a></li>
                     <li><a href="/pages/sobre_nos.html">Sobre nós</a></li>
-                    <li><a href="#">Dicas Locais</a></li>
+                    <li><a href="/pages/dicas.html">Dicas Locais</a></li>
                 </ul>
 
                 <div class="nav-botoes">
