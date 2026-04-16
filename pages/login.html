@@ -10,6 +10,79 @@
     <body>
         <div class="desktop-2">
             <div class="form-side">
+<<<<<<< HEAD
+                <div class="respire-sp">Respire sp</div>
+                <div class="seja-bem-vindoa">Seja bem-vindo(a)</div>
+                <div class="seja-bem-vindoa-de">Seja bem-vindo(a) de volta!</div>
+
+                <div class="insira-seu-e-mail-parent">
+                    <input type="email" id="emailInput" placeholder="Insira seu e-mail" />
+                    <img src="../assets/imgs/Users.png" class="weuieyes-off-filled-icon" alt="user" />
+                </div>
+
+                <div class="insira-sua-senha-parent">
+                    <input type="password" id="senhaInput" placeholder="Insira sua senha" />
+                    <img id="olhoIcon" 
+                         src="../assets/imgs/Olho.png" 
+                         class="weuieyes-off-filled-icon" 
+                         onclick="toggleSenha()" 
+                         style="cursor: pointer;" 
+                         alt="Mostrar senha" />
+                </div>
+
+                <div class="esqueceu-sua-senha">Esqueceu sua senha?</div>
+
+                <div class="entrar-wrapper" id="btnEntrar">
+                    <span class="entrar">Entrar</span>
+                </div>
+
+                <div class="no-tem-conta-container">
+                    <span>Não tem conta? </span>
+                    <a href="cadastro.html"><span class="faa-seu-cadastro">Faça seu cadastro</span></a>
+                </div>
+            </div>
+
+            <img class="desktop-2-inner" src="../assets/imgs/imgLogin.png" alt="cidade" />
+        </div>
+
+        <script src="../js/auth.js"></script>
+        <script>
+            // FUNÇÃO DO OLHO (MOSTRAR SENHA)
+            function toggleSenha() {
+                const campo = document.getElementById("senhaInput");
+                const olho = document.getElementById("olhoIcon");
+
+                if (campo.type === "password") {
+                    campo.type = "text";
+                    // Troca para a imagem do olho aberto
+                    olho.src = "../assets/imgs/OlhoAberto.png"; 
+                } else {
+                    campo.type = "password";
+                    // Troca para a imagem do olho fechado
+                    olho.src = "../assets/imgs/Olho.png";
+                }
+            }
+
+            // LÓGICA DE LOGIN
+            document.getElementById('btnEntrar').addEventListener('click', () => {
+                const email = document.getElementById('emailInput').value;
+                const senha = document.getElementById('senhaInput').value;
+
+                if (!email || !senha) {
+                    alert("Por favor, preencha todos os campos.");
+                    return;
+                }
+
+                // Chama o AuthService que está no seu arquivo js externo
+                if (AuthService.login(email, senha)) {
+                    window.location.href = '../index.html'; 
+                } else {
+                    alert("Usuário ou senha inválidos!");
+                }
+            });
+        </script>
+    </body>
+=======
                 <div class="respire-sp">Respire <span>SP</span></div>
                 <div class="seja-bem-vindoa">Seja bem-vindo(a)</div>
                 <div class="seja-bem-vindoa-de">Seja bem-vindo(a) de volta!</div>
@@ -66,4 +139,5 @@
         });
     </script>
 </body>
+>>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 </html>

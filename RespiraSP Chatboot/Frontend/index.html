@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respira São Paulo — Monte seu Roteiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="chatbot-container">
+
+    <!-- Header -->
+    <div id="chatbot-header">
+      <div class="header-icon">🗺️</div>
+      <div class="header-text">
+        <div class="header-title">Monte seu roteiro</div>
+        <div class="header-sub">Passeios em São Paulo</div>
+      </div>
+      <div class="header-badge">IA</div>
+    </div>
+
+    <!-- Body -->
+    <div id="chatbot-body">
+
+      <p class="bot-msg">
+        Olá! Preencha as informações abaixo e vou criar um <strong>roteiro personalizado</strong> para você explorar São Paulo. 🌆
+      </p>
+
+      <!-- Formulário -->
+      <div id="formulario">
+
+        <div class="form-section-title">Informações da viagem</div>
+
+        <div class="form-row">
+          <label>
+            Dias de passeio <span class="required">*</span>
+            <input type="number" id="dias" min="1" max="30" placeholder="Ex: 3" />
+          </label>
+          <label>
+            Número de pessoas <span class="required">*</span>
+            <input type="number" id="pessoas" min="1" placeholder="Ex: 2" />
+          </label>
+        </div>
+
+        <label>
+          Orçamento da viagem <span class="required">*</span>
+          <div class="orcamento-group">
+            <div class="orc-btn" data-valor="baixo" onclick="selecionarOrcamento(this)">
+              <span class="orc-icon">💚</span>Baixo
+            </div>
+            <div class="orc-btn" data-valor="médio" onclick="selecionarOrcamento(this)">
+              <span class="orc-icon">💛</span>Médio
+            </div>
+            <div class="orc-btn" data-valor="alto" onclick="selecionarOrcamento(this)">
+              <span class="orc-icon">🔴</span>Alto
+            </div>
+          </div>
+          <input type="hidden" id="orcamento" />
+        </label>
+
+        <label>
+          Preferência de local
+          <input type="text" id="preferencia" placeholder="Ex: museus, parques, gastronomia, vida noturna…" />
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="acessibilidade" />
+          Necessito de acessibilidade para cadeirantes
+        </label>
+
+        <button id="btn-gerar" onclick="gerarRoteiro()">
+          ✦ Gerar meu roteiro em SP
+        </button>
+
+      </div>
+
+      <!-- Loading -->
+      <div id="loading" style="display:none">
+        <div class="spinner-ring"></div>
+        <div class="loading-text">Montando seu roteiro…</div>
+      </div>
+
+      <!-- Resultado -->
+      <div id="resultado" style="display:none">
+        <div class="roteiro-header">
+          <div class="roteiro-tag">✦ Roteiro gerado</div>
+        </div>
+        <div id="texto-roteiro"></div>
+        <button class="btn-secondary" onclick="reiniciar()">↺ Criar novo roteiro</button>
+      </div>
+
+      <!-- Erro -->
+      <div id="erro-msg" class="erro" style="display:none"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="chatbot-footer">
+      <div class="footer-brand">Respira <strong>São Paulo</strong></div>
+      <div class="footer-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>

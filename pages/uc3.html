@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Respire SP — Dicas Locais</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;700;800;900&family=Poppins:wght@400;600;700&display=swap" />
-    <link rel="stylesheet" href="/css/pages/dicas.css" />
-
-    <link rel="stylesheet" href="/css/pages/header.css">
-    <script src="/js/services/header.js"></script>
-
+    <link rel="stylesheet" href="/css/pages/uc3.css" />
   </head>
   <body>
 
     <!-- ========== BARRA DE NAVEGAÇÃO ========== -->
-    <main-header></main-header>
-      
+    <header class="navegacao">
+      <div class="navegacao__container">
+        <nav class="navegacao__menu">
+          <a href="#" class="navegacao__logo">Respire SP</a>
+          <a href="#" class="navegacao__item">O que Fazer</a>
+          <a href="#" class="navegacao__item">Onde Comer</a>
+          <a href="#" class="navegacao__item">Roteiros</a>
+          <a href="#" class="navegacao__item">Eventos</a>
+          <a href="#" class="navegacao__item">Dicas Locais</a>
+        </nav>
+        <div class="navegacao__acoes">
+          <a href="#" class="botao botao--fantasma">Entrar</a>
+          <a href="#" class="botao botao--primario">Cadastre Grátis</a>
+        </div>
+      </div>
+    </header>
 
     <!-- ========== HERO ========== -->
     <section class="destaque">
       <div class="destaque__container">
         <span class="destaque__etiqueta">Exploração Urbana</span>
         <h1 class="destaque__titulo">Dicas locais para curtir São Paulo de verdade</h1>
-        <p class="destaque__descricao">Tudo o que você precisa saber para aproveitar a cidade.</p>
+        <p class="destaque__descricao">Tudo o que você precisa saber para se locomover, se proteger e comer bem pela cidade.</p>
         <div class="destaque__acoes">
           <a href="#transporte" class="botao botao--primario">Explorar dicas</a>
           <a href="#" class="botao botao--contorno">Conhecer SP</a>
@@ -50,6 +60,10 @@
         <!-- TRANSPORTE -->
         <section class="tema" id="transporte" data-tema="transporte">
           <header class="tema__cabecalho">
+            <div class="tema__etiqueta">
+              <span class="tema__icone">&#9651;</span>
+              <span class="tema__categoria">Transporte</span>
+            </div>
             <h2 class="tema__titulo">Transporte</h2>
             <p class="tema__subtitulo">Como se locomover pela cidade</p>
           </header>
@@ -105,6 +119,10 @@
         <!-- SEGURANÇA -->
         <section class="tema" id="seguranca" data-tema="seguranca">
           <header class="tema__cabecalho">
+            <div class="tema__etiqueta">
+              <span class="tema__icone">&#9651;</span>
+              <span class="tema__categoria">Segurança</span>
+            </div>
             <h2 class="tema__titulo">Segurança</h2>
             <p class="tema__subtitulo">Ande com tranquilidade</p>
           </header>
@@ -160,6 +178,10 @@
         <!-- ALIMENTAÇÃO -->
         <section class="tema" id="alimentacao" data-tema="alimentacao">
           <header class="tema__cabecalho">
+            <div class="tema__etiqueta">
+              <span class="tema__icone">&#9651;</span>
+              <span class="tema__categoria">Gastronomia</span>
+            </div>
             <h2 class="tema__titulo">Alimentação</h2>
             <p class="tema__subtitulo">Do popular ao refinado</p>
           </header>
@@ -243,6 +265,6 @@
       </div>
     </footer>
 
-    <script src="/js/pages/dicas.js"></script>
+    <script src="/js/pages/uc3.js"></script>
   </body>
 </html>
