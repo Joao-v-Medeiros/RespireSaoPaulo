@@ -1,91 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<<<<<<< HEAD
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cadastro – RespireSP</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@400;500&family=Patua+One&display=swap">
-  <link rel="stylesheet" href="../css/pages/cadastro.css">
-  <script  src="/js/services/cadastro.js"></script>
-</head>
-<body>
-  <div class="page">
-    <div class="card">
-      <div class="col-form">
-        <p class="logo">Respire sp</p>
-        <h1 class="titulo">Cadastre sua conta</h1>
-        <p class="subtitulo">Crie sua conta no RespireSP - E comece sua jornada</p>
- 
-        <div class="row-names">
-          <div class="input-group">
-            <img src="../assets/imgs/Users.png" class="icon">
-            <input type="text" id="nomeInput" placeholder="Insira seu nome">
-          </div>
-          <div class="input-group">
-            <img src="../assets/imgs/Users.png" class="icon">
-            <input type="text" id="sobrenomeInput" placeholder="Insira seu sobrenome">
-          </div>
-        </div>
- 
-        <div class="input-group">
-          <input type="email" id="emailInput" placeholder="Insira seu e-mail">
-          <img src="../assets/imgs/email.png" class="icon">
-        </div>
- 
-        <div class="input-group">
-          <input type="password" id="senhaInput" placeholder="Insira sua senha">
-          <img src="../assets/imgs/Olho.png" class="icon" style="cursor:pointer" onclick="toggleSenha('senhaInput')">
-        </div>
- 
-        <div class="input-group">
-          <input type="password" id="confirmaSenhaInput" placeholder="Confirme sua senha">
-          <img src="../assets/imgs/Olho.png" class="icon" style="cursor:pointer" onclick="toggleSenha('confirmaSenhaInput')">
-        </div>
- 
-        <button class="btn-cadastrar" id="btnCadastrar">Cadastrar</button>
- 
-        <p class="link-login">
-          Já tem conta? <a href="login.html">Faça login</a>
-        </p>
-      </div>
-      <div class="col-img">
-        <img src="../assets/imgs/imgCadastro.png" alt="Imagem de cadastro">
-      </div>
-    </div>
-  </div>
-
-  <script src="../js/auth.js"></script>
-  <script>
-    function toggleSenha(id) {
-        const input = document.getElementById(id);
-        input.type = input.type === "password" ? "text" : "password";
-    }
-
-    document.getElementById('btnCadastrar').addEventListener('click', () => {
-        const nome = document.getElementById('nomeInput').value;
-        const email = document.getElementById('emailInput').value;
-        const senha = document.getElementById('senhaInput').value;
-        const confirmaSenha = document.getElementById('confirmaSenhaInput').value;
-
-        if (!nome || !email || !senha) {
-            alert("Preencha os campos obrigatórios!");
-            return;
-        }
-
-        if (senha !== confirmaSenha) {
-            alert("As senhas não conferem!");
-            return;
-        }
-
-        // Salva no banco de dados fake (LocalStorage)
-        if (AuthService.register(nome, email, senha)) {
-            alert("Cadastro realizado! Você será redirecionado para o login.");
-            window.location.href = "login.html";
-        }
-    });
-  </script>
-=======
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastro – RespireSP</title>
@@ -167,6 +82,5 @@
             }
         });
     </script>
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 </body>
 </html>
