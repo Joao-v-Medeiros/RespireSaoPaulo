@@ -1,17 +1,18 @@
 class MyHeader extends HTMLElement {
     connectedCallback() {
+        this.temaSalvo = localStorage.getItem('tema');
+
+        if (this.temaSalvo === 'claro') {
+            document.body.classList.add('tema-claro');
+        } else {
+            document.body.classList.remove('tema-claro');
+        }
+
         this.render();
         this.initTheme();
     }
 
     render() {
-
-        // Aplica o tema salvo ao carregar
-const temaSalvo = localStorage.getItem('tema');
-if (temaSalvo === 'claro') {
-    document.body.classList.add('tema-claro');
-}
-
         const sessao = sessionStorage.getItem('sessao_ativa');
         const authButtons = sessao 
             ? `<button onclick="AuthService.logout()" class="btn-entrar">Sair</button>`
@@ -34,7 +35,7 @@ if (temaSalvo === 'claro') {
                     <li><a href="/pages/dicas.html">Dicas Locais</a></li>
                 </ul>
                 <div class="nav-botoes">
-                    <button id="theme-toggle" class="theme-btn" style="cursor:pointer; font-size: 20px; background:none; border:none;">🌙</button>
+                    <button id="theme-toggle" class="theme-btn" style="cursor:pointer; font-size: 20px; background:none; border:none;">${this.temaSalvo === 'claro' ? '☀️' : '🌙'}</button>
                     ${authButtons}
                 </div>
             </nav>
@@ -46,24 +47,15 @@ if (temaSalvo === 'claro') {
         const btn = this.querySelector('#theme-toggle');
         const body = document.body;
 
-        // 1. Verifica se já existe uma preferência salva
-        const temaSalvo = localStorage.getItem('tema');
-        if (temaSalvo === 'claro') {
-            body.classList.add('tema-claro');
-            btn.textContent = '☀️';
-        }
-
-        // 2. Evento de clique para alternar
         btn.addEventListener('click', () => {
             body.classList.toggle('tema-claro');
-            
+
             if (body.classList.contains('tema-claro')) {
                 localStorage.setItem('tema', 'claro');
                 btn.textContent = '☀️';
             } else {
                 localStorage.setItem('tema', 'escuro');
                 btn.textContent = '🌙';
-                
             }
         });
     }

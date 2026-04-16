@@ -1,13 +1,29 @@
 /* ============================
-   VARIÁVEIS DE COR
-   (aqui eu defino as cores do tema claro)
+   VARIÁVEIS – TEMA ESCURO (padrão)
    ============================ */
 :root {
+    --cor-fundo: #121212;
+    --cor-fundo2: #1e1e1e;
+    --cor-texto: #f0f0f0;
+    --cor-texto2: #aaaaaa;
+    --cor-laranja: #e05a1c;
+    --cor-borda: #333333;
+    --cor-card: #1e1e1e;
+    --cor-nav: #1a1a1a;
+    --cor-footer: #0f0f0f;
+    --cor-footer-texto: #cccccc;
+    --cor-tag: #2a2a2a;
+    --cor-tag-texto: #cccccc;
+}
+
+/* ============================
+   TEMA CLARO
+   ============================ */
+body.tema-claro {
     --cor-fundo: #ffffff;
     --cor-fundo2: #f5f5f5;
     --cor-texto: #111111;
     --cor-texto2: #555555;
-    --cor-laranja: #e05a1c;
     --cor-borda: #e0e0e0;
     --cor-card: #ffffff;
     --cor-nav: #ffffff;
@@ -17,20 +33,6 @@
     --cor-tag-texto: #333333;
 }
 
-/* tema escuro - quando o body tiver a classe "dark" */
-body.dark {
-    --cor-fundo: #121212;
-    --cor-fundo2: #1e1e1e;
-    --cor-texto: #f0f0f0;
-    --cor-texto2: #aaaaaa;
-    --cor-borda: #333333;
-    --cor-card: #1e1e1e;
-    --cor-nav: #1a1a1a;
-    --cor-tag: #2a2a2a;
-    --cor-tag-texto: #cccccc;
-}
-
-/* reset básico pra não ter margem estranha */
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +43,7 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    transition: background-color 0.3s, color 0.3s; /* animação suave ao trocar tema */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* ============================
@@ -55,10 +57,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky; /* fica grudado no topo ao rolar */
+    position: sticky;
     top: 0;
     z-index: 999;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .logo {
@@ -68,7 +70,6 @@ body {
     cursor: pointer;
 }
 
-/* a palavra SP fica na cor normal do texto */
 .logo span {
     color: var(--cor-texto);
 }
@@ -92,7 +93,6 @@ body {
     color: var(--cor-laranja);
 }
 
-/* link ativo fica laranja com sublinhado */
 .nav-item.ativo {
     color: var(--cor-laranja);
     border-bottom: 2px solid var(--cor-laranja);
@@ -104,7 +104,6 @@ body {
     gap: 10px;
 }
 
-/* botão de trocar tema */
 #btnTema {
     background: none;
     border: 1px solid var(--cor-borda);
@@ -113,7 +112,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     color: var(--cor-texto);
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, color 0.3s;
 }
 
 #btnTema:hover {
@@ -145,7 +144,7 @@ body {
 }
 
 /* ============================
-   HERO (banner do topo)
+   HERO
    ============================ */
 .hero {
     background:
@@ -173,7 +172,6 @@ body {
     margin-bottom: 22px;
 }
 
-/* barra de busca dentro do hero */
 .barra-busca {
     display: flex;
     background: white;
@@ -229,7 +227,6 @@ body {
     border-color: var(--cor-laranja);
 }
 
-/* tag selecionada fica laranja */
 .tag.ativo {
     background-color: var(--cor-laranja);
     color: white;
@@ -243,7 +240,6 @@ body {
     margin-bottom: 50px;
 }
 
-/* cabeçalho de cada seção (título + "ver todos") */
 .secao-topo {
     display: flex;
     justify-content: space-between;
@@ -282,26 +278,24 @@ body {
    ============================ */
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* cada card */
 .card {
     background-color: var(--cor-card);
     border: 1px solid var(--cor-borda);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, border-color 0.3s;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* caixa da imagem dentro do card */
 .card-img-box {
     position: relative;
 }
@@ -313,7 +307,6 @@ body {
     display: block;
 }
 
-/* badge colorido no canto da imagem */
 .badge {
     position: absolute;
     top: 10px;
@@ -326,13 +319,11 @@ body {
     color: white;
 }
 
-/* cores diferentes pra cada tipo de badge */
-.badge.historico { background-color: #7c5a2e; }
-.badge.natureza  { background-color: #2e7c4f; }
-.badge.cidades   { background-color: #2e507c; }
+.badge.historico   { background-color: #7c5a2e; }
+.badge.natureza    { background-color: #2e7c4f; }
+.badge.cidades     { background-color: #2e507c; }
 .badge.sofisticado { background-color: #7c2e5a; }
 
-/* texto dentro do card */
 .card-info {
     padding: 14px;
 }
@@ -353,8 +344,6 @@ body {
 /* ============================
    PÁGINA DE DETALHE
    ============================ */
-
-/* hero do detalhe (imagem de fundo dinâmica via JS) */
 .detalhe-hero {
     background-position: center;
     background-size: cover;
@@ -381,14 +370,12 @@ body {
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
-/* corpo da página de detalhe */
 .detalhe-corpo {
     max-width: 900px;
     margin: 0 auto;
     padding: 32px 24px;
 }
 
-/* botão de voltar */
 .btn-voltar {
     background: none;
     border: none;
@@ -405,14 +392,12 @@ body {
     text-decoration: underline;
 }
 
-/* layout de 2 colunas no detalhe */
 .detalhe-layout {
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 32px;
 }
 
-/* título da seção de detalhe */
 .detalhe-titulo-sec {
     font-size: 20px;
     font-weight: 700;
@@ -427,7 +412,6 @@ body {
     margin-bottom: 18px;
 }
 
-/* caixa do mapa */
 .mapa-box {
     width: 100%;
     height: 220px;
@@ -435,6 +419,7 @@ body {
     border: 1px solid var(--cor-borda);
     overflow: hidden;
     margin-bottom: 18px;
+    transition: border-color 0.3s;
 }
 
 .mapa-box iframe {
@@ -443,15 +428,14 @@ body {
     border: none;
 }
 
-/* card de informações práticas */
 .info-card {
     background-color: var(--cor-card);
     border: 1px solid var(--cor-borda);
     border-radius: 10px;
     padding: 18px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* cada linha de info (ícone + texto) */
 .info-item {
     display: flex;
     gap: 12px;
@@ -502,7 +486,6 @@ footer {
     margin: 0 auto 32px;
 }
 
-/* logo do footer em itálico */
 .footer-logo {
     font-size: 22px;
     font-weight: 700;
@@ -542,7 +525,6 @@ footer {
     color: white;
 }
 
-/* linha de baixo do footer */
 .footer-bottom {
     max-width: 1100px;
     margin: 0 auto;
@@ -556,28 +538,12 @@ footer {
 }
 
 /* ============================
-   RESPONSIVIDADE BÁSICA
-   (pra funcionar no celular)
+   RESPONSIVIDADE
    ============================ */
 @media (max-width: 700px) {
-    .grid-cards {
-        grid-template-columns: 1fr; /* 1 coluna no celular */
-    }
-
-    .detalhe-layout {
-        grid-template-columns: 1fr; /* também 1 coluna */
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .nav-links {
-        display: none; /* esconde os links no celular */
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
+    .grid-cards { grid-template-columns: 1fr; }
+    .detalhe-layout { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 30px; }
 }

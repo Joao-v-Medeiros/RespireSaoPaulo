@@ -1,20 +1,16 @@
-
-/* ── VARIÁVEIS ── */
+/* ── VARIÁVEIS – TEMA CLARO (padrão desta página) ── */
 :root {
-  /* Cores de Ação */
   --cor-laranja: #ff5500;
   --cor-laranja-claro: #ff7948;
 
-  /* Cores de Interface */
   --cor-fundo: #f8f7f5;
   --cor-fundo-card: #ffffff;
   --cor-fundo-claro: #f0ede8;
   --cor-texto: #2c2f33;
   --cor-texto-suave: #595c60;
   --cor-borda: #e8e1e6;
-  --cor-rodape: #0c0b12; /* Rodapé quase sempre escuro */
+  --cor-rodape: #0c0b12;
 
-  /* Fontes e Raios */
   --fonte-titulo: 'Poppins', sans-serif;
   --fonte-corpo: 'Poppins', sans-serif;
   --raio: 16px;
@@ -27,15 +23,27 @@
   --transicao: 0.3s ease;
 }
 
-/* ── MODO ESCURO ── */
-body.dark-mode {
+/* ── TEMA ESCURO (via toggle) ── */
+body.tema-claro {
+  --cor-fundo: #f8f7f5;
+  --cor-fundo-claro: #f0ede8;
+  --cor-fundo-card: #ffffff;
+  --cor-texto: #2c2f33;
+  --cor-texto-suave: #595c60;
+  --cor-borda: #e8e1e6;
+}
+
+/* Como esta página é clara por padrão, o escuro fica no :root acima.
+   Ao adicionar tema-claro o body já está claro — nada muda.
+   Para forçar escuro sem a classe, usamos os valores do :root.
+   Se quiser inverter (página escura por padrão), troque os valores abaixo: */
+body:not(.tema-claro) {
   --cor-fundo: #0c0b12;
   --cor-fundo-claro: #14171c;
   --cor-fundo-card: #1c1f26;
   --cor-texto: #f5f3f0;
   --cor-texto-suave: #a0a4a8;
   --cor-borda: #25282f;
-  --cor-rodape: #000000;
 }
 
 /* ── RESET & BASE ── */
@@ -45,30 +53,16 @@ body.dark-mode {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--fonte-corpo);
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
   transition: background-color var(--transicao), color var(--transicao);
   -webkit-font-smoothing: antialiased;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.filtros {
-  background: var(--cor-fundo-claro);
-  border-bottom: 1px solid var(--cor-borda);
-}
-
-.cartao__rodape {
-  border-top: 1px solid var(--cor-borda);
-}
-
-.navegacao {
-  background: var(--cor-fundo-claro); /* Ou use a lógica de transparência com variáveis */
-  backdrop-filter: blur(10px);
 }
 
 img {
@@ -112,7 +106,7 @@ a {
 }
 
 .botao--fantasma {
-  color: #ffffff;
+  color: var(--cor-texto);
   background: transparent;
 }
 
@@ -131,70 +125,66 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(12, 11, 18, 0.9);
+  background: var(--cor-fundo-claro);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--cor-borda);
+  transition: background var(--transicao), border-color var(--transicao);
 }
 
 .navegacao__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Isso empurra a logo pra esquerda, botões pra direita e menu pro meio */
-    padding: 0 5%;                /* Dá um respiro nas laterais para não grudar na tela */
-    height: 80px;                 /* Altura da barra */
-    background-color: #0d0d0d;    /* Cor escura do fundo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 80px;
+  background-color: var(--cor-fundo-claro);
+  transition: background-color var(--transicao);
 }
 
 .navegacao__menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;       /* Cria o espaço exato entre cada palavra do menu */
-    margin: 0;
-    padding: 0;
-}
-
-.navegacao__item {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 0.8;    /* Deixa o texto suave como na imagem */
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .navegacao__logo {
   font-family: var(--fonte-titulo);
   font-size: 22px;
   font-weight: 900;
-  color: #ffffff;
+  color: var(--cor-texto);
   margin-right: 2rem;
   letter-spacing: -0.5px;
   transition: color var(--transicao);
-}
-
-.navegacao__botoes {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.botao-cadastro {
-    background-color: #ff7a00; /* Laranja da imagem */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .navegacao__logo:hover {
   color: var(--cor-laranja-claro);
 }
 
+.navegacao__botoes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.botao-cadastro {
+  background-color: var(--cor-laranja);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background var(--transicao);
+}
+
 .navegacao__item {
   font-family: var(--fonte-titulo);
   font-size: 15px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--cor-texto-suave);
   padding: 0.5rem 1rem;
   letter-spacing: -0.3px;
   transition: color var(--transicao);
@@ -214,13 +204,12 @@ a {
 }
 
 .navegacao__item:hover {
-  color: #ffffff;
+  color: var(--cor-texto);
 }
 
 .navegacao__item:hover::after {
   transform: scaleX(1);
 }
-
 
 .navegacao__acoes {
   display: flex;
@@ -298,12 +287,12 @@ a {
   justify-content: center;
 }
 
-
 /* ── FILTROS ── */
 .filtros {
   padding: 1.25rem var(--espacamento);
   background: var(--cor-fundo-claro);
-  border-bottom: 1px solid #e8e1e6;
+  border-bottom: 1px solid var(--cor-borda);
+  transition: background var(--transicao), border-color var(--transicao);
 }
 
 .filtros__container {
@@ -336,8 +325,8 @@ a {
   font-size: 14px;
   font-weight: 600;
   color: var(--cor-texto-suave);
-  background: #ffffff;
-  border: 1.5px solid #e0dada;
+  background: var(--cor-fundo-card);
+  border: 1.5px solid var(--cor-borda);
   border-radius: var(--raio-pill);
   cursor: pointer;
   transition: all var(--transicao);
@@ -358,6 +347,8 @@ a {
 /* ── CONTEÚDO PRINCIPAL ── */
 .conteudo {
   padding: 4rem 0 6rem;
+  background: var(--cor-fundo);
+  transition: background var(--transicao);
 }
 
 .conteudo__container {
@@ -392,7 +383,7 @@ a {
   font-family: var(--fonte-titulo);
   font-size: 32px;
   font-weight: 800;
-  color: var(--cor-preto);
+  color: var(--cor-texto);
   line-height: 1.2;
 }
 
@@ -414,11 +405,12 @@ a {
 .cartao {
   background: var(--cor-fundo-card);
   border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
   box-shadow: var(--sombra-cartao);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform var(--transicao), box-shadow var(--transicao);
+  transition: transform var(--transicao), box-shadow var(--transicao), background var(--transicao), border-color var(--transicao);
   cursor: pointer;
 }
 
@@ -429,7 +421,7 @@ a {
 
 .cartao__imagem {
   height: 180px;
-  background: #d0d0d0 no-repeat center / cover;
+  background: var(--cor-borda) no-repeat center / cover;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
@@ -448,7 +440,6 @@ a {
   opacity: 1;
 }
 
-/* Imagens por cartão */
 .cartao__imagem--metro      { background-image: url(/assets/imgs/metrô.png); }
 .cartao__imagem--bike       { background-image: url(/assets/imgs/ciclovia.png); background-position: center 75%; }
 .cartao__imagem--apps       { background-image: url(/assets/imgs/App-de-mibilidade.png); }
@@ -485,7 +476,6 @@ a {
   font-size: 20px;
   font-weight: 700;
   color: var(--cor-texto);
-  line-height: 1.3;
 }
 
 .cartao__subtitulo {
@@ -508,21 +498,22 @@ a {
   gap: 0.4rem;
   margin-top: 0.75rem;
   padding-top: 0.75rem;
-  border-top: 1px solid #f0ede8;
+  border-top: 1px solid var(--cor-borda);
+  transition: border-color var(--transicao);
 }
 
 .cartao__etiqueta {
   font-size: 11px;
   font-weight: 600;
   color: var(--cor-laranja);
-  background: #fff2ec;
+  background: rgba(255, 85, 0, 0.1);
   padding: 3px 10px;
   border-radius: var(--raio-pill);
 }
 
 /* ── RODAPÉ ── */
 .rodape {
-  background: var(--cor-preto);
+  background: var(--cor-rodape);
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -597,65 +588,22 @@ a {
 
 /* ── ANIMAÇÕES ── */
 @keyframes surgir {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulsar {
-  0%, 100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
-  50%       { opacity: 1;   transform: translateX(-50%) translateY(6px); }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── RESPONSIVIDADE ── */
 @media (max-width: 768px) {
-  .navegacao__menu {
-    display: none;
-  }
-
-  .destaque {
-    min-height: 420px;
-    padding-bottom: 3.5rem;
-  }
-
-  .filtros {
-    top: 72px;
-  }
-
-  .filtros__titulo {
-    display: none;
-  }
-
-  .grade-cartoes {
-    grid-template-columns: 1fr;
-  }
-
-  .rodape__separador {
-    display: none;
-  }
-
-  .rodape__container {
-    flex-direction: column;
-    gap: 2rem;
-  }
+  .navegacao__menu { display: none; }
+  .destaque { min-height: 420px; padding-bottom: 3.5rem; }
+  .filtros__titulo { display: none; }
+  .grade-cartoes { grid-template-columns: 1fr; }
+  .rodape__separador { display: none; }
+  .rodape__container { flex-direction: column; gap: 2rem; }
 }
 
 @media (max-width: 480px) {
-  .navegacao__acoes .botao--fantasma {
-    display: none;
-  }
-
-  .tema__titulo {
-    font-size: 26px;
-  }
-
-  .destaque__acoes {
-    flex-direction: column;
-    align-items: center;
-  }
+  .navegacao__acoes .botao--fantasma { display: none; }
+  .tema__titulo { font-size: 26px; }
+  .destaque__acoes { flex-direction: column; align-items: center; }
 }
