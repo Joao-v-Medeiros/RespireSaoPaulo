@@ -19,6 +19,7 @@ body {
 
 .subtitle {
     color: #ff5a00;
+
     letter-spacing: 3px;
     font-size: 50px;
     display: flex;
@@ -62,6 +63,21 @@ body {
 }
 
 /* CARD */
+
+.card .content {
+    text-align: center;
+    list-style-position: inside;
+    padding: 0;
+    font-size: 29px;
+    font-weight: bold;
+}
+.card .content img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 .card {
     background: #0a1a22;
     border-radius: 15px;
@@ -104,18 +120,6 @@ body {
 }
 
 /* CORES */
-.musica {
-    background: #2a1408;
-}
-.arte {
-    background: #0d1b2a;
-}
-.gastro {
-    background: #06221a;
-}
-.teatro {
-    background: #2a1505;
-}
 
 .content {
     padding: 20px;
@@ -131,6 +135,7 @@ body {
 
 .musica-tag {
     background: #1f3a5f;
+    align-items: center;
 }
 .arte-tag {
     background: #3a2f6b;
