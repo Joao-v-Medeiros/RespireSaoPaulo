@@ -52,3 +52,44 @@ cartoes.forEach(cartao => {
   cartao.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease';
   observador.observe(cartao);
 });
+
+// ── LÓGICA DO MODO ESCURO ──
+
+const gerenciarTema = () => {
+  const corpoPagina = document.body;
+
+  // Função para aplicar o modo escuro
+  const alternarTema = (e) => {
+    if (e) e.preventDefault();
+    corpoPagina.classList.toggle('dark-mode');
+    
+    const estaEscuro = corpoPagina.classList.contains('dark-mode');
+    localStorage.setItem('tema', estaEscuro ? 'escuro' : 'claro');
+  };
+
+  // 1. Tenta encontrar o botão pelo atributo data-luna (que está no seu HTML)
+  const botaoLua = document.querySelector('[data-luna]');
+
+  if (botaoLua) {
+    botaoLua.addEventListener('click', alternarTema);
+  }
+
+  // 2. Caso o ícone esteja dentro do Web Component <main-header>
+  const headerComponent = document.querySelector('main-header');
+  if (headerComponent && headerComponent.shadowRoot) {
+    // Procura por um botão ou classe .lua dentro do shadowRoot
+    const iconeShadow = headerComponent.shadowRoot.querySelector('button') || 
+                        headerComponent.shadowRoot.querySelector('.lua');
+    if (iconeShadow) {
+      iconeShadow.addEventListener('click', alternarTema);
+    }
+  }
+};
+
+// Aplica o tema salvo imediatamente para evitar o flash branco
+if (localStorage.getItem('tema') === 'escuro') {
+  document.body.classList.add('dark-mode');
+}
+
+// Inicia a lógica após o carregamento
+window.addEventListener('DOMContentLoaded', gerenciarTema);
