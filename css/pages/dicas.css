@@ -1,46 +1,74 @@
 
 /* ── VARIÁVEIS ── */
 :root {
-  --cor-laranja:        #ff5500;
-  --cor-laranja-claro:  #ff7948;
-  --cor-preto:          #ffffff;
-  --cor-texto:          #2c2f33;
-  --cor-texto-suave:    #595c60;
-  --cor-fundo:          #14171C;
-  --cor-fundo-card:     #ffffff;
-  --cor-fundo-claro:    #f8f7f5;
+  /* Cores de Ação */
+  --cor-laranja: #ff5500;
+  --cor-laranja-claro: #ff7948;
 
-  --fonte-titulo:  'Poppins', sans-serif;
-  --fonte-corpo:   'Poppins', sans-serif;
+  /* Cores de Interface */
+  --cor-fundo: #f8f7f5;
+  --cor-fundo-card: #ffffff;
+  --cor-fundo-claro: #f0ede8;
+  --cor-texto: #2c2f33;
+  --cor-texto-suave: #595c60;
+  --cor-borda: #e8e1e6;
+  --cor-rodape: #0c0b12; /* Rodapé quase sempre escuro */
 
-  --raio:           16px;
-  --raio-pill:      9999px;
-  --sombra-cartao:  0 4px 20px rgba(11, 14, 18, 0.08);
-  --sombra-hover:   0 12px 40px rgba(11, 14, 18, 0.15);
+  /* Fontes e Raios */
+  --fonte-titulo: 'Poppins', sans-serif;
+  --fonte-corpo: 'Poppins', sans-serif;
+  --raio: 16px;
+  --raio-pill: 9999px;
+  --sombra-cartao: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --sombra-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
 
-  --largura-max:  1280px;
-  --espacamento:  clamp(1.5rem, 5vw, 7.5rem);
-
-  --transicao: 0.25s ease;
+  --largura-max: 1280px;
+  --espacamento: clamp(1.5rem, 5vw, 7.5rem);
+  --transicao: 0.3s ease;
 }
 
-/* ── RESET ── */
+/* ── MODO ESCURO ── */
+body.dark-mode {
+  --cor-fundo: #0c0b12;
+  --cor-fundo-claro: #14171c;
+  --cor-fundo-card: #1c1f26;
+  --cor-texto: #f5f3f0;
+  --cor-texto-suave: #a0a4a8;
+  --cor-borda: #25282f;
+  --cor-rodape: #000000;
+}
+
+/* ── RESET & BASE ── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  transition: background-color var(--transicao), color var(--transicao);
+  -webkit-font-smoothing: antialiased;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+.filtros {
+  background: var(--cor-fundo-claro);
+  border-bottom: 1px solid var(--cor-borda);
+}
 
-body {
-  font-family: var(--fonte-corpo);
-  color: var(--cor-texto);
-  background: var(--cor-fundo);
-  -webkit-font-smoothing: antialiased;
+.cartao__rodape {
+  border-top: 1px solid var(--cor-borda);
+}
+
+.navegacao {
+  background: var(--cor-fundo-claro); /* Ou use a lógica de transparência com variáveis */
+  backdrop-filter: blur(10px);
 }
 
 img {
@@ -110,19 +138,27 @@ a {
 }
 
 .navegacao__container {
-  max-width: var(--largura-max);
-  margin: 0 auto;
-  padding: 0 var(--espacamento);
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Isso empurra a logo pra esquerda, botões pra direita e menu pro meio */
+    padding: 0 5%;                /* Dá um respiro nas laterais para não grudar na tela */
+    height: 80px;                 /* Altura da barra */
+    background-color: #0d0d0d;    /* Cor escura do fundo */
 }
 
 .navegacao__menu {
-  display: flex;
-  align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 20px;       /* Cria o espaço exato entre cada palavra do menu */
+    margin: 0;
+    padding: 0;
+}
+
+.navegacao__item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;    /* Deixa o texto suave como na imagem */
 }
 
 .navegacao__logo {
@@ -133,6 +169,21 @@ a {
   margin-right: 2rem;
   letter-spacing: -0.5px;
   transition: color var(--transicao);
+}
+
+.navegacao__botoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.botao-cadastro {
+    background-color: #ff7a00; /* Laranja da imagem */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .navegacao__logo:hover {
@@ -253,9 +304,6 @@ a {
   padding: 1.25rem var(--espacamento);
   background: var(--cor-fundo-claro);
   border-bottom: 1px solid #e8e1e6;
-  position: sticky;
-  top: 72px;
-  z-index: 90;
 }
 
 .filtros__container {

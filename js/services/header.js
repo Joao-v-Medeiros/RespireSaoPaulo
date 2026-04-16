@@ -26,10 +26,10 @@ if (temaSalvo === 'claro') {
                     <span class="nav-nome">Respire<span>SP</span></span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/index.html">home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li><a href="/pages/lugares.html">O Que Fazer</a></li>
                     <li><a href="/pages/roteiros.html">Roteiros</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a href="/pages/eventos.html">Eventos</a></li>
                     <li><a href="/pages/sobre_nos.html">Sobre nós</a></li>
                     <li><a href="/pages/dicas.html">Dicas Locais</a></li>
                 </ul>
