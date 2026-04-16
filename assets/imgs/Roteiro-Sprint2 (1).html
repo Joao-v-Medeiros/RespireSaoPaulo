@@ -1,0 +1,2732 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVERRISE — Roteiro de Pitch | Demoday 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;900&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --aqua: #93e9be;
+        --blue: #185fa5;
+        --graphite: #2c2c2a;
+        --beige: #f5f5dc;
+        --alabaster: #dbdbdb;
+        --orange: #ff8200;
+        --dark-bg: #0e1620;
+        --card-bg: #131f2e;
+        --border: rgba(147, 233, 190, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        background: var(--dark-bg);
+        color: #e8f4f0;
+        min-height: 100vh;
+      }
+
+      /* ─── HEADER ─── */
+      header {
+        background: linear-gradient(
+          135deg,
+          #0a1520 0%,
+          #112035 50%,
+          #0d1a2a 100%
+        );
+        border-bottom: 1px solid var(--border);
+        padding: 28px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(12px);
+      }
+
+      .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .logo-badge {
+        background: linear-gradient(135deg, var(--aqua), #5dd4a0);
+        color: var(--graphite);
+        font-family: "Raleway", sans-serif;
+        font-weight: 900;
+        font-size: 13px;
+        letter-spacing: 2px;
+        padding: 6px 14px;
+        border-radius: 4px;
+      }
+
+      .header-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        color: rgba(147, 233, 190, 0.7);
+        letter-spacing: 1px;
+      }
+
+      .timer-display {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .timer-box {
+        font-family: "Raleway", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--aqua);
+        letter-spacing: 3px;
+        background: rgba(147, 233, 190, 0.08);
+        border: 1px solid var(--border);
+        padding: 8px 20px;
+        border-radius: 8px;
+        min-width: 110px;
+        text-align: center;
+        transition: color 0.3s;
+      }
+
+      .timer-box.warning {
+        color: var(--orange);
+        border-color: rgba(255, 130, 0, 0.3);
+      }
+      .timer-box.danger {
+        color: #ff4444;
+        border-color: rgba(255, 68, 68, 0.3);
+      }
+
+      .timer-controls {
+        display: flex;
+        gap: 8px;
+      }
+
+      .btn {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .btn-primary {
+        background: var(--aqua);
+        color: var(--graphite);
+      }
+      .btn-primary:hover {
+        background: #7de0b0;
+        transform: translateY(-1px);
+      }
+      .btn-secondary {
+        background: rgba(147, 233, 190, 0.1);
+        color: var(--aqua);
+        border: 1px solid var(--border);
+      }
+      .btn-secondary:hover {
+        background: rgba(147, 233, 190, 0.18);
+      }
+      .btn-danger {
+        background: rgba(255, 68, 68, 0.15);
+        color: #ff6666;
+        border: 1px solid rgba(255, 68, 68, 0.3);
+      }
+      .btn-danger:hover {
+        background: rgba(255, 68, 68, 0.25);
+      }
+
+      /* ─── PROGRESS BAR ─── */
+      .progress-wrap {
+        background: var(--dark-bg);
+        padding: 0 40px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .progress-bar-track {
+        height: 3px;
+        background: rgba(147, 233, 190, 0.1);
+        position: relative;
+      }
+
+      .progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--aqua), #5dd4a0);
+        transition: width 1s linear;
+        border-radius: 2px;
+      }
+
+      .progress-labels {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0 6px;
+      }
+
+      .prog-label {
+        font-family: "Raleway", sans-serif;
+        font-size: 9px;
+        letter-spacing: 0.8px;
+        font-weight: 600;
+        color: rgba(147, 233, 190, 0.4);
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .prog-label:hover,
+      .prog-label.active {
+        color: var(--aqua);
+      }
+
+      /* ─── MAIN LAYOUT ─── */
+      .main-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr 300px;
+        gap: 0;
+        height: calc(100vh - 130px);
+        overflow: hidden;
+      }
+
+      /* ─── SIDEBAR NAV ─── */
+      .sidebar {
+        background: #0b1520;
+        border-right: 1px solid var(--border);
+        overflow-y: auto;
+        padding: 16px 0;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+      }
+
+      .sidebar-section-label {
+        font-family: "Raleway", sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: rgba(147, 233, 190, 0.35);
+        text-transform: uppercase;
+        padding: 12px 20px 6px;
+      }
+
+      .nav-item {
+        padding: 11px 20px;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-item:hover {
+        background: rgba(147, 233, 190, 0.05);
+        border-left-color: rgba(147, 233, 190, 0.3);
+      }
+      .nav-item.active {
+        background: rgba(147, 233, 190, 0.1);
+        border-left-color: var(--aqua);
+      }
+
+      .nav-item .nav-speaker {
+        font-family: "Raleway", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--aqua);
+        min-width: 32px;
+      }
+
+      .nav-item .nav-desc {
+        font-size: 11px;
+        color: rgba(232, 244, 240, 0.6);
+        line-height: 1.3;
+      }
+
+      .nav-item .nav-time {
+        margin-left: auto;
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        color: rgba(147, 233, 190, 0.5);
+        white-space: nowrap;
+      }
+
+      .jogral-nav {
+        background: rgba(255, 130, 0, 0.08);
+        border-left-color: rgba(255, 130, 0, 0.4) !important;
+      }
+      .jogral-nav .nav-speaker {
+        color: var(--orange);
+      }
+
+      /* ─── CENTER CONTENT ─── */
+      .content-area {
+        overflow-y: auto;
+        padding: 32px 40px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+      }
+
+      .block {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        transition: border-color 0.3s;
+      }
+      .block.active-block {
+        border-color: var(--aqua);
+        box-shadow: 0 0 24px rgba(147, 233, 190, 0.08);
+      }
+      .block.jogral-block {
+        border-color: rgba(255, 130, 0, 0.3);
+        background: rgba(255, 130, 0, 0.04);
+      }
+      .block.jogral-block.active-block {
+        border-color: var(--orange);
+        box-shadow: 0 0 24px rgba(255, 130, 0, 0.1);
+      }
+
+      .block-header {
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-bottom: 1px solid var(--border);
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .block-tag {
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+      }
+
+      .tag-rafa {
+        background: rgba(147, 233, 190, 0.15);
+        color: var(--aqua);
+      }
+      .tag-anderson {
+        background: rgba(24, 95, 165, 0.3);
+        color: #6ba8e0;
+      }
+      .tag-joao {
+        background: rgba(90, 180, 140, 0.2);
+        color: #7dd4b0;
+      }
+      .tag-duda {
+        background: rgba(200, 100, 180, 0.2);
+        color: #e8a0d8;
+      }
+      .tag-nalbert {
+        background: rgba(100, 150, 220, 0.2);
+        color: #90b8f0;
+      }
+      .tag-teko {
+        background: rgba(160, 130, 80, 0.2);
+        color: #d4b870;
+      }
+      .tag-kaue {
+        background: rgba(220, 100, 80, 0.2);
+        color: #f0a090;
+      }
+      .tag-leticia {
+        background: rgba(140, 180, 100, 0.2);
+        color: #b0d890;
+      }
+      .tag-jogral {
+        background: rgba(255, 130, 0, 0.2);
+        color: var(--orange);
+      }
+
+      .block-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(232, 244, 240, 0.8);
+        flex: 1;
+      }
+
+      .block-meta {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .slide-ref {
+        font-size: 10px;
+        color: rgba(147, 233, 190, 0.4);
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .duration-badge {
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 10px;
+        background: rgba(147, 233, 190, 0.1);
+        color: var(--aqua);
+      }
+
+      .collapse-arrow {
+        color: rgba(147, 233, 190, 0.4);
+        font-size: 12px;
+        transition: transform 0.3s;
+      }
+      .block.collapsed .collapse-arrow {
+        transform: rotate(-90deg);
+      }
+
+      .block-body {
+        padding: 24px;
+        transition: all 0.3s;
+      }
+      .block.collapsed .block-body {
+        display: none;
+      }
+
+      /* ─── FALA TEXT ─── */
+      .fala-text {
+        font-size: 15px;
+        line-height: 1.9;
+        color: rgba(232, 244, 240, 0.85);
+        font-weight: 300;
+      }
+
+      .fala-text .pause {
+        display: inline-block;
+        background: rgba(147, 233, 190, 0.12);
+        color: var(--aqua);
+        font-size: 10px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin: 0 4px;
+        vertical-align: middle;
+      }
+
+      .fala-text .enfase {
+        color: var(--aqua);
+        font-weight: 700;
+      }
+
+      .fala-text .emocional {
+        color: #f0c878;
+        font-style: italic;
+      }
+
+      .fala-text .dado {
+        color: var(--orange);
+        font-weight: 700;
+      }
+
+      .fala-text .chamada {
+        display: block;
+        margin: 10px 0;
+        padding: 10px 16px;
+        border-left: 3px solid var(--aqua);
+        background: rgba(147, 233, 190, 0.06);
+        border-radius: 0 8px 8px 0;
+        font-style: italic;
+        color: rgba(232, 244, 240, 0.7);
+        font-size: 14px;
+      }
+
+      /* ─── DIREÇÃO DE CENA ─── */
+      .stage-direction {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        background: rgba(24, 95, 165, 0.12);
+        border: 1px solid rgba(24, 95, 165, 0.25);
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 14px 0;
+      }
+
+      .stage-icon {
+        font-size: 16px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .stage-text {
+        font-size: 12px;
+        color: rgba(147, 190, 230, 0.8);
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+      }
+
+      /* ─── JOGRAL BLOCK ─── */
+      .jogral-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .jogral-line {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: rgba(255, 130, 0, 0.05);
+        border: 1px solid rgba(255, 130, 0, 0.12);
+      }
+
+      .jogral-speaker-name {
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--orange);
+        min-width: 70px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .jogral-line-text {
+        font-size: 14px;
+        color: rgba(232, 244, 240, 0.85);
+        line-height: 1.6;
+      }
+
+      .jogral-together {
+        background: rgba(255, 130, 0, 0.12);
+        border-color: rgba(255, 130, 0, 0.3);
+        padding: 12px 16px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 6px;
+      }
+
+      .jogral-together .jogral-speaker-name {
+        display: block;
+        text-align: center;
+        margin-bottom: 6px;
+        color: var(--orange);
+      }
+
+      .jogral-together .jogral-line-text {
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: #f0c878;
+      }
+
+      /* ─── INSTRUÇÕES JOGRAL ─── */
+      .jogral-instructions {
+        background: rgba(255, 130, 0, 0.06);
+        border: 1px solid rgba(255, 130, 0, 0.2);
+        border-radius: 8px;
+        padding: 14px 16px;
+        margin-bottom: 16px;
+      }
+
+      .jogral-instructions-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        color: var(--orange);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .jogral-instructions p {
+        font-size: 12px;
+        color: rgba(232, 244, 240, 0.6);
+        line-height: 1.6;
+      }
+
+      /* ─── RIGHT PANEL ─── */
+      .right-panel {
+        background: #0b1520;
+        border-left: 1px solid var(--border);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+      }
+
+      .panel-section {
+        padding: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .panel-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: rgba(147, 233, 190, 0.5);
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      /* ─── SLIDE REPORT ─── */
+      .slide-card {
+        background: rgba(147, 233, 190, 0.04);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .slide-card:hover {
+        background: rgba(147, 233, 190, 0.08);
+        border-color: rgba(147, 233, 190, 0.3);
+      }
+
+      .slide-num {
+        font-family: "Raleway", sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--aqua);
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+      }
+
+      .slide-name {
+        font-family: "Raleway", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(232, 244, 240, 0.85);
+        margin-bottom: 8px;
+      }
+
+      .slide-content-tag {
+        display: inline-block;
+        font-size: 9px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        padding: 2px 7px;
+        border-radius: 10px;
+        background: rgba(24, 95, 165, 0.25);
+        color: #6ba8e0;
+        margin: 2px 2px 2px 0;
+      }
+
+      .slide-desc {
+        font-size: 11px;
+        color: rgba(232, 244, 240, 0.5);
+        line-height: 1.5;
+        margin-top: 8px;
+      }
+
+      /* ─── STATS GRID ─── */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .stat-card {
+        background: rgba(147, 233, 190, 0.06);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .stat-value {
+        font-family: "Raleway", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--aqua);
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 10px;
+        color: rgba(232, 244, 240, 0.4);
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-top: 4px;
+      }
+
+      /* ─── MEMBERS LEGEND ─── */
+      .member-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .member-chip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 10px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: rgba(147, 233, 190, 0.04);
+        font-size: 10px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        color: rgba(232, 244, 240, 0.6);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .member-chip:hover {
+        background: rgba(147, 233, 190, 0.1);
+        color: var(--aqua);
+      }
+      .member-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+      }
+
+      /* ─── SECTION DIVIDER ─── */
+      .section-divider {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 8px 0 20px;
+      }
+
+      .divider-label {
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        padding: 4px 14px;
+        border-radius: 20px;
+      }
+
+      .divider-line {
+        flex: 1;
+        height: 1px;
+      }
+
+      .div-abertura .divider-label {
+        background: rgba(147, 233, 190, 0.12);
+        color: var(--aqua);
+      }
+      .div-abertura .divider-line {
+        background: linear-gradient(
+          90deg,
+          rgba(147, 233, 190, 0.3),
+          transparent
+        );
+      }
+
+      .div-problema .divider-label {
+        background: rgba(255, 68, 68, 0.1);
+        color: #ff8888;
+      }
+      .div-problema .divider-line {
+        background: linear-gradient(90deg, rgba(255, 68, 68, 0.3), transparent);
+      }
+
+      .div-solucao .divider-label {
+        background: rgba(24, 95, 165, 0.2);
+        color: #6ba8e0;
+      }
+      .div-solucao .divider-line {
+        background: linear-gradient(90deg, rgba(24, 95, 165, 0.4), transparent);
+      }
+
+      .div-produto .divider-label {
+        background: rgba(90, 180, 140, 0.15);
+        color: #7dd4b0;
+      }
+      .div-produto .divider-line {
+        background: linear-gradient(
+          90deg,
+          rgba(90, 180, 140, 0.3),
+          transparent
+        );
+      }
+
+      .div-negocio .divider-label {
+        background: rgba(200, 100, 180, 0.15);
+        color: #e8a0d8;
+      }
+      .div-negocio .divider-line {
+        background: linear-gradient(
+          90deg,
+          rgba(200, 100, 180, 0.3),
+          transparent
+        );
+      }
+
+      .div-encerramento .divider-label {
+        background: rgba(255, 200, 80, 0.15);
+        color: #f0c878;
+      }
+      .div-encerramento .divider-line {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 200, 80, 0.3),
+          transparent
+        );
+      }
+
+      /* ─── TOOLTIP ─── */
+      .tooltip-note {
+        display: flex;
+        gap: 10px;
+        background: rgba(147, 233, 190, 0.06);
+        border-radius: 8px;
+        padding: 12px 14px;
+        margin: 14px 0 0;
+      }
+      .tooltip-note .icon {
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+      .tooltip-note p {
+        font-size: 12px;
+        color: rgba(232, 244, 240, 0.55);
+        line-height: 1.5;
+      }
+
+      /* ─── SCROLL TO ACTIVE ─── */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 1100px) {
+        .main-layout {
+          grid-template-columns: 220px 1fr;
+        }
+        .right-panel {
+          display: none;
+        }
+      }
+      @media (max-width: 700px) {
+        .main-layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          display: none;
+        }
+        header {
+          padding: 16px 20px;
+        }
+        .content-area {
+          padding: 20px;
+        }
+      }
+
+      /* Scrollbars webkit */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 4px;
+      }
+
+      /* ─── SLIDE REPORT PANEL TABS ─── */
+      .tab-buttons {
+        display: flex;
+        gap: 0;
+        margin-bottom: 16px;
+      }
+      .tab-btn {
+        flex: 1;
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 8px 4px;
+        background: rgba(147, 233, 190, 0.04);
+        border: 1px solid var(--border);
+        color: rgba(147, 233, 190, 0.4);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .tab-btn:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+      .tab-btn:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+      .tab-btn.active {
+        background: rgba(147, 233, 190, 0.12);
+        color: var(--aqua);
+      }
+
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+
+      /* ─── CURRENT SLIDE HIGHLIGHT ─── */
+      .current-block-label {
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--aqua);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        background: rgba(147, 233, 190, 0.12);
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo-area">
+        <div class="logo-badge">EVERRISE</div>
+        <div class="header-title">Roteiro de Pitch — Demoday PROA 2026</div>
+      </div>
+      <div class="timer-display">
+        <div>
+          <div
+            style="
+              font-size: 9px;
+              font-family: &quot;Raleway&quot;, sans-serif;
+              color: rgba(147, 233, 190, 0.4);
+              letter-spacing: 1px;
+              text-align: center;
+              margin-bottom: 3px;
+            "
+          >
+            TEMPO TOTAL
+          </div>
+          <div class="timer-box" id="totalTimer">08:30</div>
+        </div>
+        <div>
+          <div
+            style="
+              font-size: 9px;
+              font-family: &quot;Raleway&quot;, sans-serif;
+              color: rgba(147, 233, 190, 0.4);
+              letter-spacing: 1px;
+              text-align: center;
+              margin-bottom: 3px;
+            "
+          >
+            BLOCO ATUAL
+          </div>
+          <div class="timer-box" id="blockTimer">00:00</div>
+        </div>
+        <div class="timer-controls">
+          <button class="btn btn-primary" onclick="startTimer()" id="startBtn">
+            ▶ INICIAR
+          </button>
+          <button
+            class="btn btn-secondary"
+            onclick="pauseTimer()"
+            id="pauseBtn"
+            style="display: none"
+          >
+            ⏸ PAUSAR
+          </button>
+          <button class="btn btn-danger" onclick="resetTimer()">↺ RESET</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-wrap">
+      <div class="progress-bar-track">
+        <div
+          class="progress-bar-fill"
+          id="progressFill"
+          style="width: 0%"
+        ></div>
+      </div>
+      <div class="progress-labels">
+        <span class="prog-label" onclick="jumpToBlock(0)">Abertura</span>
+        <span class="prog-label" onclick="jumpToBlock(2)">Problema</span>
+        <span class="prog-label" onclick="jumpToBlock(4)">Solução</span>
+        <span class="prog-label" onclick="jumpToBlock(6)">Produto</span>
+        <span class="prog-label" onclick="jumpToBlock(9)">IA</span>
+        <span class="prog-label" onclick="jumpToBlock(12)">Mercado</span>
+        <span class="prog-label" onclick="jumpToBlock(15)">Fechamento</span>
+      </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="main-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section-label">Ordem de Apresentação</div>
+
+        <div class="nav-item active" id="nav-0" onclick="jumpToBlock(0)">
+          <span class="nav-speaker">RAFA</span>
+          <div>
+            <div class="nav-desc">Abertura — História do Felipe</div>
+            <div class="nav-time">~1:20</div>
+          </div>
+        </div>
+
+        <div class="nav-item jogral-nav" id="nav-1" onclick="jumpToBlock(1)">
+          <span class="nav-speaker" style="color: var(--orange)">JOGRAL</span>
+          <div>
+            <div class="nav-desc">Abertura conjunta</div>
+            <div class="nav-time">~0:20</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-2" onclick="jumpToBlock(2)">
+          <span class="nav-speaker" style="color: #6ba8e0">ANDER</span>
+          <div>
+            <div class="nav-desc">O Problema — Dados</div>
+            <div class="nav-time">~0:55</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-3" onclick="jumpToBlock(3)">
+          <span class="nav-speaker" style="color: #6ba8e0">ANDER</span>
+          <div>
+            <div class="nav-desc">Pesquisa de Campo</div>
+            <div class="nav-time">~0:15</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-4" onclick="jumpToBlock(4)">
+          <span class="nav-speaker" style="color: #7dd4b0">JOÃO P</span>
+          <div>
+            <div class="nav-desc">A Solução — 3 Pilares</div>
+            <div class="nav-time">~1:00</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-5" onclick="jumpToBlock(5)">
+          <span class="nav-speaker" style="color: #e8a0d8">DUDA</span>
+          <div>
+            <div class="nav-desc">Identidade — MVV</div>
+            <div class="nav-time">~0:40</div>
+          </div>
+        </div>
+
+        <div class="nav-item jogral-nav" id="nav-6" onclick="jumpToBlock(6)">
+          <span class="nav-speaker" style="color: var(--orange)">JOGRAL</span>
+          <div>
+            <div class="nav-desc">Transição para Demo</div>
+            <div class="nav-time">~0:12</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-7" onclick="jumpToBlock(7)">
+          <span class="nav-speaker" style="color: #90b8f0">NALBERT</span>
+          <div>
+            <div class="nav-desc">Demo da Plataforma</div>
+            <div class="nav-time">~1:00</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-8" onclick="jumpToBlock(8)">
+          <span class="nav-speaker" style="color: #d4b870">TEKO</span>
+          <div>
+            <div class="nav-desc">Hardware</div>
+            <div class="nav-time">~0:25</div>
+          </div>
+        </div>
+
+        <div class="nav-item jogral-nav" id="nav-9" onclick="jumpToBlock(9)">
+          <span class="nav-speaker" style="color: var(--orange)">JOGRAL</span>
+          <div>
+            <div class="nav-desc">Transição IA</div>
+            <div class="nav-time">~0:12</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-10" onclick="jumpToBlock(10)">
+          <span class="nav-speaker" style="color: #f0a090">KAUE</span>
+          <div>
+            <div class="nav-desc">Módulos de IA</div>
+            <div class="nav-time">~0:45</div>
+          </div>
+        </div>
+
+        <div class="nav-item jogral-nav" id="nav-11" onclick="jumpToBlock(11)">
+          <span class="nav-speaker" style="color: var(--orange)">JOGRAL</span>
+          <div>
+            <div class="nav-desc">Tipos de IA</div>
+            <div class="nav-time">~0:15</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-12" onclick="jumpToBlock(12)">
+          <span class="nav-speaker" style="color: #b0d890">LETICIA</span>
+          <div>
+            <div class="nav-desc">Mercado + Diferenciais</div>
+            <div class="nav-time">~1:05</div>
+          </div>
+        </div>
+
+        <div class="nav-item jogral-nav" id="nav-13" onclick="jumpToBlock(13)">
+          <span class="nav-speaker" style="color: var(--orange)">JOGRAL</span>
+          <div>
+            <div class="nav-desc">ODS + Impacto</div>
+            <div class="nav-time">~0:20</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-14" onclick="jumpToBlock(14)">
+          <span class="nav-speaker" style="color: #7dd4b0">JOÃO P</span>
+          <div>
+            <div class="nav-desc">Roadmap Futuro</div>
+            <div class="nav-time">~0:20</div>
+          </div>
+        </div>
+
+        <div class="nav-item" id="nav-15" onclick="jumpToBlock(15)">
+          <span class="nav-speaker">RAFA</span>
+          <div>
+            <div class="nav-desc">Fechamento Emocional</div>
+            <div class="nav-time">~0:55</div>
+          </div>
+        </div>
+
+        <div class="nav-item jogral-nav" id="nav-16" onclick="jumpToBlock(16)">
+          <span class="nav-speaker" style="color: var(--orange)">JOGRAL</span>
+          <div>
+            <div class="nav-desc">Encerramento — TODOS</div>
+            <div class="nav-time">~0:12</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CENTER CONTENT -->
+      <main class="content-area" id="contentArea">
+        <!-- ─── ABERTURA ─── -->
+        <div class="section-divider div-abertura">
+          <div class="divider-label">① Abertura Emocional</div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- BLOCO 0 — RAFA abertura -->
+        <div class="block active-block" id="block-0">
+          <div class="block-header" onclick="toggleBlock(0)">
+            <span class="block-tag tag-rafa">Rafa</span>
+            <div class="block-title">
+              A história de Felipe — Abertura emocional
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 1–2</span>
+              <span class="duration-badge">~1min 20s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">🎭</span>
+              <div class="stage-text">
+                Rafa entra sozinha. Pausa de 2 segundos antes de falar. Voz
+                calma, íntima — como se contasse para um amigo próximo. Postura
+                aberta, sem gesto excessivo.
+              </div>
+            </div>
+
+            <div class="fala-text">
+              <p>
+                Olá. Eu me chamo Rafaella Cintra, sou desenvolvedora do projeto.
+                <span class="pause">PAUSA</span>
+              </p>
+              <br />
+              <p>
+                Quero começar te contando sobre
+                <span class="enfase">Felipe.</span>
+              </p>
+              <br />
+              <p>
+                Felipe tem 7 anos quando descobre que tem
+                <span class="emocional">distrofia muscular de Duchenne</span> —
+                uma doença rara, sem cura, que vai silenciosamente roubando os
+                movimentos dele. Músculo por músculo, membro por membro.
+              </p>
+              <br />
+              <p>
+                Com o tempo, ele
+                <span class="enfase">perde toda a mobilidade.</span> Precisa da
+                sua mãe para tudo. Para levantar da cama. Para sentar na
+                cadeira. Para existir no espaço.
+              </p>
+              <br />
+              <p>
+                Mas aí vem a ordem natural da vida:
+                <span class="emocional"
+                  >Felipe cresce. E sua mãe envelhece.</span
+                >
+                <span class="pause">PAUSA</span>
+              </p>
+              <br />
+              <p>
+                Chega um momento em que ela não consegue mais carregá-lo. E a
+                única saída é um equipamento frio, desconfortável, que as
+                pessoas chamam de
+                <span class="enfase">"guincho de transferência".</span>
+              </p>
+              <br />
+              <p>
+                Um aparelho que existe pra resolver um problema físico — mas que
+                não enxerga a
+                <span class="emocional"
+                  >pessoa que há dentro daquele corpo.</span
+                >
+                <span class="pause">PAUSA LONGA</span>
+              </p>
+              <br />
+              <p>A história de Felipe não é isolada.</p>
+              <br />
+              <span class="chamada">→ Chama o Anderson para continuar</span>
+            </div>
+
+            <div class="tooltip-note">
+              <span class="icon">💡</span>
+              <p>
+                <strong>Intenção:</strong> Gerar empatia profunda. A banca
+                precisa sentir o peso da rotina de Felipe — não entendê-la,
+                sentí-la. O tom é de confidência, não de apresentação formal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 1 — JOGRAL abertura -->
+        <div class="block jogral-block" id="block-1">
+          <div class="block-header" onclick="toggleBlock(1)">
+            <span class="block-tag tag-jogral">Jogral 01</span>
+            <div class="block-title">
+              Chamada coletiva — "Não é só o Felipe"
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 2 → 3</span>
+              <span class="duration-badge">~20s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="jogral-instructions">
+              <div class="jogral-instructions-title">📋 Instrução de Cena</div>
+              <p>
+                Anderson se posiciona ao lado de Rafa. Ambos de frente para a
+                banca. Sem pressa. Cada frase tem uma batida de pausa entre
+                elas. Efeito de eco: Anderson começa, Rafa completa.
+              </p>
+            </div>
+            <div class="jogral-lines">
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Anderson</span>
+                <span class="jogral-line-text"
+                  >No Brasil, <strong>14,4 milhões de pessoas</strong> vivem
+                  essa realidade segundo o IBGE...</span
+                >
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Rafa</span>
+                <span class="jogral-line-text"
+                  >...todo dia. Sem autonomia. Dependendo de alguém?!</span
+                >
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Anderson</span>
+                <span class="jogral-line-text"
+                  >E a tecnologia que existe pra ajudá-las?!</span
+                >
+              </div>
+              <div class="jogral-together">
+                <span class="jogral-speaker-name">RAFA + ANDERSON</span>
+                <span class="jogral-line-text"
+                  >Está fora do alcance de quem mais precisa.</span
+                >
+              </div>
+            </div>
+            <div class="tooltip-note">
+              <span class="icon">⚡</span>
+              <p>
+                <strong>Efeito desejado:</strong> Urgência. A banca vai de
+                emoção individual (Felipe) para escala de problema nacional.
+                Esse jogral cria o "gancho" perfeito para os dados de Anderson.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── PROBLEMA ─── -->
+        <div class="section-divider div-problema">
+          <div class="divider-label">② O Problema</div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- BLOCO 2 — ANDERSON -->
+        <div class="block" id="block-2">
+          <div class="block-header" onclick="toggleBlock(2)">
+            <span class="block-tag tag-anderson">Anderson</span>
+            <div class="block-title">
+              Dimensão do problema — 3 falhas do mercado atual
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 3–4</span>
+              <span class="duration-badge">~55s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">📊</span>
+              <div class="stage-text">
+                Anderson avança um passo à frente. Confiante, mas não frio. Usa
+                o slide como suporte visual — não lê o slide, conta o problema.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>
+                O caso de Felipe não é exceção. No Brasil,
+                <span class="dado">5.2 milhões de pessoas</span> vivem com
+                impossibilidade ou grande dificuldade de andar segundo o IBGE —
+                dependentes de cuidadores para os momentos mais básicos da vida.
+              </p>
+              <br />
+              <p>
+                E quando pesquisamos o que existe hoje para ajudá-las,
+                encontramos <span class="enfase">três falhas graves:</span>
+              </p>
+              <br />
+              <p>
+                <span class="enfase">Primeira: o custo.</span> Um guincho
+                hospitalar custa entre
+                <span class="dado">R$ 8 mil e R$ 45 mil</span>. É inacessível
+                para a maioria das famílias brasileiras.
+              </p>
+              <br />
+              <p>
+                <span class="enfase">Segunda: zero autonomia.</span> Os
+                equipamentos atuais dependem de um profissional presente em
+                todas as transferências. O paciente
+                <span class="emocional">nunca decide quando se move.</span>
+              </p>
+              <br />
+              <p>
+                <span class="enfase">Terceira: reabilitação abandonada.</span> O
+                guincho é o que leva o paciente até a fisioterapia, ou até
+                poderia ser usado no proprio tratamento. Sem ele —
+                <span class="emocional"
+                  >o tratamento simplesmente não acontece.</span
+                >
+              </p>
+              <br />
+              
+            </div>
+            <div class="tooltip-note">
+              <span class="icon">💡</span>
+              <p>
+                <strong>Tom:</strong> Assertivo, com dados. Cada problema é uma
+                "pancada" de realidade. Não precisa de dramatismo vocal — os
+                números falam por si. A pergunta final para João é o gancho de
+                transição.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 3 — ANDERSON pesquisa de campo -->
+        <div class="block" id="block-3">
+          <div class="block-header" onclick="toggleBlock(3)">
+            <span class="block-tag tag-anderson">Anderson</span>
+            <div class="block-title">Pesquisa de Campo — Confirmação</div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 4 (pesquisa)</span>
+              <span class="duration-badge">~15s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">📋</span>
+              <div class="stage-text">
+                Anderson mantém a condução e valida os dados da pesquisa com
+                fala objetiva, em ritmo firme.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>
+                Fomos a campo. Conversamos com famílias, cuidadores e uma ONG.
+              </p>
+              <br />
+              <p>
+                <strong>[X]% dos entrevistados</strong> relataram dificuldade
+                constante na transferência.
+              </p>
+              <br />
+              <p>
+                <strong>[Y]% nunca tiveram</strong> acesso a um guincho de
+                transferência.
+              </p>
+              <br />
+              <p>
+                O problema é real. É urgente. E ainda não tem solução adequada.
+              </p>
+            </div>
+            <span class="chamada"
+                >→ Passa a palavra para João Pedro com a pergunta: "João, como a
+                gente resolve isso?"</span
+              >
+            <div class="tooltip-note">
+              <span class="icon">⚠️</span>
+              <p>
+                <strong>Nota:</strong> Os valores [X]% e [Y]% devem ser
+                preenchidos com os dados reais da pesquisa de campo. Essa fala
+                funciona como "evidência forense" — transforma o dado
+                qualitativo de Anderson em prova concreta.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── SOLUÇÃO ─── -->
+        <div class="section-divider div-solucao">
+          <div class="divider-label">③ A Solução — EVERRISE</div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- BLOCO 4 — JOÃO PEDRO solução -->
+        <div class="block" id="block-4">
+          <div class="block-header" onclick="toggleBlock(4)">
+            <span class="block-tag tag-joao">João Pedro</span>
+            <div class="block-title">
+              Apresentação da EVERRISE — Nome + 3 Pilares
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 5–9</span>
+              <span class="duration-badge">~1min 00s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">🚀</span>
+              <div class="stage-text">
+                João entra com energia, mas sem gritar. O contraste com o clima
+                pesado anterior é intencional — é o momento de alívio e
+                esperança. Slide do logo aparece ao fundo enquanto fala o nome.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>
+                Por isso criamos a <span class="enfase">EVER RISE.</span>
+                <span class="pause">PAUSA</span>
+              </p>
+              <br />
+              <p>
+                O nome não foi por acaso.
+                <span class="emocional">Ever — sempre. Rise — ascensão.</span>
+                Porque acreditamos que toda pessoa, independente da sua
+                condição, merece
+                <span class="enfase">estar sempre em movimento.</span>
+              </p>
+              <br />
+              <p>
+                A EVERRISE é o
+                <span class="enfase"
+                  >primeiro guincho de transferência autônomo</span
+                >
+                com controle inteligente via plataforma web. E ela foi
+                construída sobre três pilares:
+              </p>
+              <br />
+              <p>
+                🔵 <span class="enfase">Acessibilidade.</span> Construída com
+                componentes acessíveis e recicláveis — nosso objetivo é que o
+                custo final seja uma fração dos R$ 8 a 40 mil que o mercado
+                cobra hoje.
+              </p>
+              <br />
+              <p>
+                🔵 <span class="enfase">Autonomia.</span> O paciente ou cuidador
+                controla o guincho de qualquer lugar — pelo celular, pelo
+                computador — sem precisar de um profissional presente em cada
+                momento.
+              </p>
+              <br />
+              <p>
+                🔵 <span class="enfase">Segurança.</span> Sensor de pressão,
+                trava mecânica e botão físico de emergência independente de
+                internet. A segurança do usuário é garantida
+                <span class="emocional">mesmo quando tudo o mais falha.</span>
+              </p>
+            </div>
+            <div class="tooltip-note">
+              <span class="icon">💡</span>
+              <p>
+                <strong>Intenção:</strong> Esse é o momento de esperança da
+                apresentação. A banca precisa sentir que a solução está à altura
+                do problema que Rafa e Anderson apresentaram. Cada pilar deve
+                "bater" como uma resposta direta a uma das 3 falhas citadas por
+                Anderson.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── PRODUTO ─── -->
+        <div class="section-divider div-produto">
+          <div class="divider-label">④ Identidade + Produto</div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- BLOCO 5 — DUDA MVV -->
+        <div class="block" id="block-5">
+          <div class="block-header" onclick="toggleBlock(5)">
+            <span class="block-tag tag-duda">Duda</span>
+            <div class="block-title">
+              Missão, Visão, Valores + Identidade Visual
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 10–11</span>
+              <span class="duration-badge">~40s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">🎨</span>
+              <div class="stage-text">
+                Duda fala naturalmente, sem anunciar "agora vou falar o MVV". As
+                informações fluem como descrição da personalidade da empresa —
+                não como leitura de slide.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>Olá, eu sou a Maria Eduarda, do time de Design e Marketing.</p>
+              <br />
+              <p>
+                A EVERRISE nasceu de uma dor real — e foi desenhada com o mesmo
+                cuidado. Nossa <span class="enfase">missão</span> é auxiliar
+                pessoas com baixa mobilidade, trazendo conforto e segurança
+                através da inovação.
+              </p>
+              <br />
+              <p>
+                Nossa <span class="enfase">visão</span> é ser a tecnologia que
+                devolve liberdade de movimento para quem perdeu.
+              </p>
+              <br />
+              <p>
+                E nossos <span class="enfase">valores</span> — Empatia,
+                Inclusão, Inovação e Sustentabilidade — não são palavras no
+                slide. São as quatro perguntas que fizemos antes de cada decisão
+                do projeto.
+              </p>
+              <br />
+              <p>
+                Até a nossa identidade visual carrega esse propósito: o
+                <span class="dado">aquamarine</span> fala de saúde e movimento.
+                O <span class="dado">azul báltico</span>, de tecnologia e
+                confiança. E o <span class="emocional">laranja</span> —
+                reservado só para emergências — porque segurança aqui é
+                prioridade absoluta.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 6 — JOGRAL transição demo -->
+        <div class="block jogral-block" id="block-6">
+          <div class="block-header" onclick="toggleBlock(6)">
+            <span class="block-tag tag-jogral">Jogral 03</span>
+            <div class="block-title">Transição para Demo — "Ver para crer"</div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 11 → 12</span>
+              <span class="duration-badge">~12s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="jogral-instructions">
+              <div class="jogral-instructions-title">📋 Instrução de Cena</div>
+              <p>
+                Nalbert já está posicionado. Duda e Nalbert falam em sequência
+                rápida, criando ritmo de passagem de bastão. Entusiasmo
+                crescente — o tom muda aqui para empolgação.
+              </p>
+            </div>
+            <div class="jogral-lines">
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Duda</span>
+                <span class="jogral-line-text"
+                  >Mas identidade é só o começo.</span
+                >
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Nalbert</span>
+                <span class="jogral-line-text"
+                  >Agora vou mostrar o produto funcionando.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 7 — NALBERT demo plataforma -->
+        <div class="block" id="block-7">
+          <div class="block-header" onclick="toggleBlock(7)">
+            <span class="block-tag tag-nalbert">Nalbert</span>
+            <div class="block-title">
+              Demo da Plataforma Web — Landing, Login, Dashboard, Controle
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 12–13</span>
+              <span class="duration-badge">~1min 00s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">💻</span>
+              <div class="stage-text">
+                Vídeo do Figma rodando ao fundo, mais lento. Nalbert aponta para
+                elementos específicos da tela. Não lê — descreve como se
+                estivesse mostrando algo pela primeira vez a alguém curioso.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>Aqui está a plataforma da EVERRISE.</p>
+              <br />
+              <p>
+                A <span class="enfase">landing page</span> é o primeiro contato
+                do cuidador ou familiar com o sistema — simples, direta, sem
+                barreiras.
+              </p>
+              <br />
+              <p>
+                Depois do login, o cuidador acessa o
+                <span class="enfase">Dashboard</span> — onde vê, em tempo real,
+                o nível de bateria, a qualidade da conexão, o estado do guincho
+                e os alertas da inteligência artificial.
+                <span class="emocional"
+                  >Tudo numa tela, de qualquer lugar do mundo.</span
+                >
+              </p>
+              <br />
+              <p>
+                E aqui está uma das funcionalidades mais importantes: o
+                <span class="enfase">controle remoto.</span> Via navegador, o
+                cuidador move o guincho — para frente, para trás, sobe, desce —
+                em tempo real, por Wi-Fi.
+              </p>
+              <br />
+              <p>
+                E se algo inesperado acontecer?
+                <span class="pause">PAUSA</span> Um único clique no
+                <span class="dado">botão de emergência</span> — e todo o sistema
+                para imediatamente.
+              </p>
+              <br />
+              <p>Porque autonomia sem segurança não é liberdade. É risco.</p>
+              <br />
+              <span class="chamada"
+                >→ "João Victor, como tudo isso funciona na prática?"</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 8 — TEKO hardware -->
+        <div class="block" id="block-8">
+          <div class="block-header" onclick="toggleBlock(8)">
+            <span class="block-tag tag-teko">João Victor (Teko)</span>
+            <div class="block-title">Arquitetura de Hardware</div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 14</span>
+              <span class="duration-badge">~25s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">⚙️</span>
+              <div class="stage-text">
+                Tom técnico mas acessível. Teko aponta para o diagrama no slide.
+                Fala como quem explica o motor de um carro — sem jargão
+                excessivo.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>Por baixo, o guincho tem duas camadas trabalhando juntas.</p>
+              <br />
+              <p>
+                O <span class="enfase">ESP32</span> cuida do controle em tempo
+                real — é o "músculo" que aciona os motores. O
+                <span class="enfase">Raspberry Pi</span> é o "cérebro" —
+                processa as informações, toma decisões inteligentes e faz a
+                ponte com a plataforma web.
+              </p>
+              <br />
+              <p>
+                Os <span class="enfase">sensores capturam</span>, o sistema
+                <span class="enfase">processa</span>, e a plataforma
+                <span class="enfase">monitora</span>. Tudo conectado, tudo em
+                tempo real.
+              </p>
+              <br />
+              <p>E a inteligência dentro disso — Kaue explica.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 9 — JOGRAL transição IA -->
+        <div class="block jogral-block" id="block-9">
+          <div class="block-header" onclick="toggleBlock(9)">
+            <span class="block-tag tag-jogral">Jogral 04</span>
+            <div class="block-title">
+              Transição para IA — "O que torna seguro"
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 14 → 15</span>
+              <span class="duration-badge">~12s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="jogral-instructions">
+              <div class="jogral-instructions-title">📋 Instrução de Cena</div>
+              <p>
+                Kaue e Teko falam em sequência. Kaue já está posicionado — esse
+                jogral é uma passagem de bastão limpa e rápida.
+              </p>
+            </div>
+            <div class="jogral-lines">
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Teko</span>
+                <span class="jogral-line-text"
+                  >O hardware dá o movimento...</span
+                >
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Kaue</span>
+                <span class="jogral-line-text"
+                  >...e a inteligência artificial dá a segurança.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 10 — KAUE IA -->
+        <div class="block" id="block-10">
+          <div class="block-header" onclick="toggleBlock(10)">
+            <span class="block-tag tag-kaue">Kaue</span>
+            <div class="block-title">
+              Módulos de IA — 3 camadas de segurança inteligente
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 15–16</span>
+              <span class="duration-badge">~45s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">🤖</span>
+              <div class="stage-text">
+                Tom direto, técnico e seguro. Kaue fala com autoridade — ele
+                domina esse módulo. Slides dinâmicos com ícones grandes e pouco
+                texto suportam cada módulo enquanto fala.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>
+                A EVERRISE tem
+                <span class="enfase"
+                  >inteligência artificial em três módulos</span
+                >
+                — todos rodando localmente, sem depender de nuvem ou internet
+                para as funções críticas. Para dar segurança máxima, mesmo
+                quando tudo o mais falha. Nos elaboramos 3 principais módulos de
+                IA, cada um com uma função específica para garantir a segurança
+                do usuário.
+              </p>
+              <br />
+              <p>
+                Toda decisão técnica desses módulos nasceu de uma só pergunta:
+                <span class="emocional"
+                  >"E se falhar? O que acontece com o paciente?"</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 11 — JOGRAL transição mercado -->
+        <div class="block jogral-block" id="block-11">
+          <div class="block-header" onclick="toggleBlock(11)">
+            <span class="block-tag tag-jogral">Jogral 05</span>
+            <div class="block-title">Jogral Tipos de IA dentro do projeto</div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 16 → 17</span>
+              <span class="duration-badge">~15s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="jogral-instructions">
+              <div class="jogral-instructions-title">📋 Instrução de Cena</div>
+              <p>
+                Kaue encerra explicação basica sobre IA. Leticia entra
+                perguntando quais são especificamente os modulos de IA do
+                projeto para Kaue.
+              </p>
+            </div>
+            <div class="jogral-lines">
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Leticia</span>
+                <span class="jogral-line-text"
+                  >Voce disse que são 3 modulos e quais são eles?</span
+                >
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Kaue</span>
+                <span class="jogral-line-text"
+                  >Os três módulos de IA da EVERRISE são: o primeiro para
+                  monitoramento preditivo de carga, o segundo para visão
+                  computacional com YOLOv5, e o terceiro para o chatbot
+                  inteligente.</span
+                >
+              </div>
+              <div class="jogral-together">
+                <span class="jogral-speaker-name">LETICIA</span>
+                <span class="jogral-line-text"
+                  >Qual é o funcionamento de cada um?</span
+                >
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Kaue</span>
+                <span class="jogral-line-text"
+                  >O <span class="enfase">primeiro</span>: monitoramento
+                  preditivo de carga. Um modelo de machine learning lê o sensor
+                  de pressão do paciente e detecta padrões anômalos em até
+                  <span class="dado">500 milissegundos</span> — antes que
+                  qualquer acidente ocorra. <br /><br />
+                  O <span class="enfase">segundo</span>: visão computacional com
+                  YOLOv5. A câmera do guincho identifica obstáculos no caminho e
+                  para o equipamento automaticamente em menos de
+                  <span class="dado">300 milissegundos</span>. <br /><br />
+                  O <span class="enfase">terceiro</span>: um chatbot
+                  inteligente, com base de conhecimento do produto. Dúvidas
+                  respondidas em segundos, em português, 24 horas por dia.
+                  <br /><br />
+                  Toda decisão técnica desses módulos nasceu de uma só pergunta:
+                  <span class="emocional"
+                    >"E se falhar? O que acontece com o paciente?"</span
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── NEGÓCIO ─── -->
+        <div class="section-divider div-negocio">
+          <div class="divider-label">⑤ Mercado + Modelo de Negócio</div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- BLOCO 12 — LETICIA mercado -->
+        <div class="block" id="block-12">
+          <div class="block-header" onclick="toggleBlock(12)">
+            <span class="block-tag tag-leticia">Leticia</span>
+            <div class="block-title">
+              Mercado, Diferenciais, Modelos de Acesso e ODS
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 17–23</span>
+              <span class="duration-badge">~1min 05s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">📈</span>
+              <div class="stage-text">
+                Leticia começa com frase de impacto — sem anunciar "vou falar
+                sobre mercado". Slides com dados de mercado, comparações e
+                ícones de ODS aparecem em sincronia com as falas.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>
+                Imagine precisar mover alguém que você ama — sem ter segurança
+                para isso. <span class="pause">PAUSA</span>
+              </p>
+              <br />
+              <p>
+                Para muitas famílias, isso não é exceção.
+                <span class="emocional">É rotina.</span>
+              </p>
+              <br />
+              <p>
+                A EVERRISE atua em <span class="enfase">dois mercados</span>:
+              </p>
+              <br />
+              <p>
+                🏠 <span class="enfase">Famílias</span> que adquirem o
+                equipamento e passam a usar a plataforma integrada no cuidado
+                diário em casa.
+              </p>
+              <br />
+              <p>
+                🏥 <span class="enfase">Clínicas e ONGs</span> que acessam a
+                solução por contrato, recebendo o equipamento com suporte
+                incluído — modelo ideal para quem serve múltiplos pacientes.
+              </p>
+              <br />
+              <p>
+                O que nos diferencia?
+                <span class="enfase">A integração.</span> Controle remoto +
+                plataforma web + inteligência artificial + sistema de segurança
+                ativo —
+                <span class="emocional">numa única experiência.</span> Isso não
+                existe hoje.
+              </p>
+              <br />
+              <p>
+                E mais do que um produto, a EVERRISE é uma resposta a objetivos
+                globais: <span class="enfase">saúde e bem-estar (Teko)</span>,
+                <span class="enfase">inovação (João P)</span>,
+                <span class="enfase">redução das desigualdades (Rafa)</span> e
+                <span class="enfase">indústria sustentável. (Nalbert)</span>
+              </p>
+              <br />
+              <p>
+                No final, o que entregamos não é só tecnologia. Ele é uma
+                solução que transforma vidas. Ele é...
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 13 — JOGRAL ODS -->
+        <div class="block jogral-block" id="block-13">
+          <div class="block-header" onclick="toggleBlock(13)">
+            <span class="block-tag tag-jogral">Jogral 06</span>
+            <div class="block-title">
+              ODS + Impacto — "O que realmente entregamos"
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 22</span>
+              <span class="duration-badge">~20s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="jogral-instructions">
+              <div class="jogral-instructions-title">📋 Instrução de Cena</div>
+              <p>
+                Leticia abre. Anderson e João Pedro completam. Kaue fecha junto
+                com Leticia. Ritmo crescente — cada frase mais forte que a
+                anterior. É a "virada emocional para o alto" da apresentação.
+              </p>
+            </div>
+            <div class="jogral-lines">
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Leticia</span>
+                <span class="jogral-line-text">...mais controle.</span>
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Anderson</span>
+                <span class="jogral-line-text">É mais segurança.</span>
+              </div>
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">João Pedro</span>
+                <span class="jogral-line-text">É mais qualidade de vida.</span>
+              </div>
+              <div class="jogral-together">
+                <span class="jogral-speaker-name">LETICIA + KAUE</span>
+                <span class="jogral-line-text"
+                  >É mais dignidade — para quem vive essa realidade todos os
+                  dias.</span
+                >
+              </div>
+            </div>
+            <div class="tooltip-note">
+              <span class="icon">⚡</span>
+              <p>
+                <strong>Efeito desejado:</strong> Pico de entusiasmo. A banca
+                sente que está diante de algo que importa. Esse é o momento mais
+                "alto" da apresentação — antes do roadmap e do fechamento
+                emocional da Rafa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 14 — JOÃO PEDRO roadmap -->
+        <div class="block" id="block-14">
+          <div class="block-header" onclick="toggleBlock(14)">
+            <span class="block-tag tag-joao">Anderson Reis</span>
+            <div class="block-title">
+              Roadmap Futuro + Planos + Escalabilidade
+            </div>
+            <div class="block-meta">
+              <span class="slide-ref">Slides 24–25</span>
+              <span class="duration-badge">~20s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">🗺️</span>
+              <div class="stage-text">
+                Tom de visão de futuro. Anderson fala com confiança calma — não
+                exagerada. O slide de roadmap e planos serve de âncora visual.
+                Fala rápido, mas com clareza.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>E a EVERRISE não para aqui.</p>
+              <br />
+              <p>
+                Nossos planos de acesso —
+                <span class="enfase">Básico, Premium e Institucional</span> —
+                permitem que o produto chegue a diferentes públicos, com suporte
+                e funcionalidades escaláveis.
+              </p>
+              <br />
+              <p>
+                No roadmap: aplicativo mobile, expansão de funcionalidades de
+                reabilitação guiada por IA, e parcerias com o SUS e ONGs
+                hospitalares.
+              </p>
+              <br />
+              <p>
+                Começamos com
+                <span class="emocional">Felipe em mente.</span> Mas construímos
+                para <span class="enfase">milhões.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── ENCERRAMENTO ─── -->
+        <div class="section-divider div-encerramento">
+          <div class="divider-label">⑥ Fechamento Emocional</div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- BLOCO 15 — RAFA fechamento -->
+        <div class="block" id="block-15">
+          <div class="block-header" onclick="toggleBlock(15)">
+            <span class="block-tag tag-rafa">Rafa</span>
+            <div class="block-title">A revelação — Felipe é meu irmão</div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 26 (fotos + vídeo)</span>
+              <span class="duration-badge">~55s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="stage-direction">
+              <span class="stage-icon">❤️</span>
+              <div class="stage-text">
+                Rafa entra em silêncio. A equipe recua um passo. Slide com fotos
+                do Felipe e compilado de imagens começa a aparecer. Ela fala
+                devagar — essa é a fala mais importante de toda a apresentação.
+                Não há pressa.
+              </div>
+            </div>
+            <div class="fala-text">
+              <p>
+                <span class="emocional"
+                  >Eu disse que ia contar a história de Felipe.</span
+                >
+                <span class="pause">PAUSA LONGA</span>
+              </p>
+              <br />
+              <p>
+                Felipe chegou aos 33 anos. Mais que o dobro da idade que o
+                médico disse que ele viveria.
+              </p>
+              <br />
+              <p><span class="pause">PAUSA</span></p>
+              <br />
+              <p>
+                E agora eu preciso te dizer uma coisa:
+                <span class="enfase">Felipe é meu irmão.</span>
+              </p>
+              <br />
+              <p><span class="pause">PAUSA LONGA</span></p>
+              <br />
+              <p>
+                Um homem albino, com uma doença rara — que lutou cada dia da sua
+                vida com a mesma força que minha mãe usou pra criar três filhos.
+              </p>
+              <br />
+              <p>Eu cresci vendo a dor dele. E a sobrecarga dela.</p>
+              <br />
+              <p>
+                <span class="emocional"
+                  >E eu sempre pensei: e se existisse algo melhor?</span
+                >
+                <span class="pause">PAUSA</span>
+              </p>
+              <br />
+              <p>
+                Felipe precisava de jovens como a gente — dispostos a parar e
+                pensar na dor dele. Pra que um projeto assim pudesse existir
+                quando ele mais precisava.
+              </p>
+              <br />
+              <p>
+                Criamos a EVERRISE por ele. Por cada pessoa que acorda todo dia
+                dependendo de alguém para se mover.
+              </p>
+              <br />
+              <p>
+                Essa é nossa resposta.
+                <span class="emocional"
+                  >Quando a tecnologia devolve o movimento.</span
+                >
+              </p>
+              <br />
+              <span class="chamada">→ Pausa. Rafa respira. Equipe se une.</span>
+            </div>
+            <div class="tooltip-note">
+              <span class="icon">💛</span>
+              <p>
+                <strong>Intenção:</strong> O "Felipe é meu irmão" deve ser dito
+                com voz firme — não chorosa. A força está na contenção. A banca
+                precisa sentir a revelação como peso, não como performance. O
+                silêncio depois dessa frase vale mais que qualquer palavra.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 16 — JOGRAL final -->
+        <div class="block jogral-block" id="block-16">
+          <div class="block-header" onclick="toggleBlock(16)">
+            <span class="block-tag tag-jogral">Jogral 07 — FINAL</span>
+            <div class="block-title">Encerramento coletivo — Todos juntos</div>
+            <div class="block-meta">
+              <span class="slide-ref">Slide 27 + Agradecimentos</span>
+              <span class="duration-badge">~12s</span>
+              <span class="collapse-arrow">▾</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="jogral-instructions">
+              <div class="jogral-instructions-title">📋 Instrução de Cena</div>
+              <p>
+                Todos os 8 membros se unem em linha. Rafa no centro. Voz unida,
+                com confiança e calor. Não é grito — é convicção coletiva. Slide
+                com foto da equipe ao fundo.
+              </p>
+            </div>
+            <div class="jogral-lines">
+              <div class="jogral-line">
+                <span class="jogral-speaker-name">Rafa</span>
+                <span class="jogral-line-text"
+                  >Muito obrigada por nos ouvir. Aos nossos professores,
+                  apoiadores e ao SENAC e PROA por tornarem isso possível.</span
+                >
+              </div>
+              <div class="jogral-together">
+                <span class="jogral-speaker-name">TODOS — 8 pessoas</span>
+                <span class="jogral-line-text">Nós somos a EVERRISE. 🌱</span>
+              </div>
+            </div>
+            <div class="tooltip-note">
+              <span class="icon">🌟</span>
+              <p>
+                <strong>Direção final:</strong> Ao dizer "Nós somos a EVERRISE",
+                todos fazem uma saudação discreta mas sincronizada — um aceno de
+                cabeça, um passo à frente, ou um gesto combinado pela equipe.
+                Simples, mas inesquecível.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 60px"></div>
+      </main>
+
+      <!-- RIGHT PANEL -->
+      <aside class="right-panel">
+        <!-- STATS -->
+        <div class="panel-section">
+          <div class="panel-title">Visão Geral</div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-value">8:30</span>
+              <div class="stat-label">Duração Total</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">17</span>
+              <div class="stat-label">Blocos</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">6</span>
+              <div class="stat-label">Jograis</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">8</span>
+              <div class="stat-label">Membros</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEAM LEGEND -->
+        <div class="panel-section">
+          <div class="panel-title">Equipe — Cores</div>
+          <div class="member-legend">
+            <div class="member-chip">
+              <div class="member-dot" style="background: #93e9be"></div>
+              Rafa
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #6ba8e0"></div>
+              Anderson
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #7dd4b0"></div>
+              João P.
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #e8a0d8"></div>
+              Duda
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #90b8f0"></div>
+              Nalbert
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #d4b870"></div>
+              Teko
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #f0a090"></div>
+              Kaue
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #b0d890"></div>
+              Leticia
+            </div>
+            <div class="member-chip">
+              <div class="member-dot" style="background: #ff8200"></div>
+              Jogral
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE REPORT TABS -->
+        <div class="panel-section">
+          <div class="panel-title">Relatório de Slides</div>
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="showTab('slides')">
+              SLIDES
+            </button>
+            <button class="tab-btn" onclick="showTab('criticas')">
+              CRÍTICAS
+            </button>
+          </div>
+
+          <div class="tab-content active" id="tab-slides">
+            <div class="slide-card">
+              <div class="slide-num">SLIDE 01 — ABERTURA</div>
+              <div class="slide-name">Cena de abertura — Silêncio</div>
+              <span class="slide-content-tag">CINEMATOGRÁFICO</span
+              ><span class="slide-content-tag">SEM TEXTO</span>
+              <div class="slide-desc">
+                Fundo escuro com partículas suaves se movendo (similar ao
+                Vouvi). Logo EVERRISE aparece pequena no canto superior
+                esquerdo. Nenhum texto. O silêncio visual amplifica a fala da
+                Rafa. Animação: fade in lento da logo.
+                <strong>Nada deve competir com a voz da Rafa.</strong>
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDE 02 — QUEM É FELIPE</div>
+              <div class="slide-name">Perfil do Felipe — Humanização</div>
+              <span class="slide-content-tag">FOTO</span
+              ><span class="slide-content-tag">EMOÇÃO</span
+              ><span class="slide-content-tag">SEM BULLETS</span>
+              <div class="slide-desc">
+                Foto humanizada do Felipe (ou ilustração calorosa). Apenas 3
+                informações: <strong>Nome. Idade. Doença.</strong> Sem
+                parágrafos. Animação: cada info aparece em sequência com fade,
+                sincronizado com a fala da Rafa. Background: beige quente ou
+                escuro acolhedor — nunca frio.
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDES 03–04 — O PROBLEMA</div>
+              <div class="slide-name">14,4M + 3 Falhas do Mercado</div>
+              <span class="slide-content-tag">DADO GRANDE</span
+              ><span class="slide-content-tag">ÍCONES</span
+              ><span class="slide-content-tag">FONTE NO RODAPÉ</span>
+              <div class="slide-desc">
+                Slide 3: Número "14,4 milhões" enorme, centralizado, com
+                animação de contagem. Mapa do Brasil ao fundo com pontos
+                pulsando. Fonte: IBGE/Ministério da Saúde no rodapé. Slide 4: 3
+                cards animados (aparecem um a um) com ícone grande + 1
+                palavra-chave (CUSTO | AUTONOMIA | REABILITAÇÃO). Sem texto
+                longo — a fala de Anderson faz o trabalho.
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDE 04B — PESQUISA DE CAMPO</div>
+              <div class="slide-name">Dados da pesquisa com famílias e ONG</div>
+              <span class="slide-content-tag">NOVO SLIDE</span
+              ><span class="slide-content-tag">GRÁFICO</span
+              ><span class="slide-content-tag">FOTO REAL</span>
+              <div class="slide-desc">
+                <strong>Adicionar:</strong> Percentuais da pesquisa de campo
+                (formulário + entrevistas). Fotos reais das entrevistas ao fundo
+                (desfocadas). Gráficos simples: barras ou pizza com 2–3 dados de
+                impacto. Fonte e data da coleta no rodapé. Esse slide valida
+                empiricamente o que Rafa e Anderson apresentaram.
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDES 05–09 — EVER RISE</div>
+              <div class="slide-name">
+                Logo grande + Origem do nome + 3 Pilares
+              </div>
+              <span class="slide-content-tag">LOGO BIG</span
+              ><span class="slide-content-tag">ANIMAÇÃO</span
+              ><span class="slide-content-tag">GUINCHO 3D</span>
+              <div class="slide-desc">
+                Slide 5: Logo EVERRISE grande, centralizada, com animação de
+                entrada. Slide 6: Animação do nome se separando — "EVER" |
+                "RISE" — com as traduções aparecendo abaixo. Slides 7–9: Cada
+                pilar (Acessibilidade / Autonomia / Segurança) ocupa um slide
+                com ícone grande + 1 palavra + 1 frase curta. Animação de slide
+                to slide com transição suave.
+                <strong
+                  >Adicionar modelo 3D ou ilustração do guincho em algum desses
+                  slides.</strong
+                >
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDES 10–11 — MVV + IDENTIDADE</div>
+              <div class="slide-name">Missão, Visão, Valores + Logo</div>
+              <span class="slide-content-tag">CORES DA MARCA</span
+              ><span class="slide-content-tag">LOGO GRANDE</span>
+              <div class="slide-desc">
+                Slide 10: Missão / Visão / Valores em 3 blocos side by side, com
+                ícones (não texto corrido). Animação: cada bloco entra em
+                sequência. Slide 11: Logo EVERRISE grande com o guincho
+                ilustrado ao lado.
+                <strong>Remover o slide duplicado de logo.</strong> Cores da
+                marca em destaque: aquamarine, azul báltico, laranja só em
+                emergência.
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDES 12–13 — PLATAFORMA</div>
+              <div class="slide-name">Demo — Landing, Dashboard, Controle</div>
+              <span class="slide-content-tag">VÍDEO FIGMA</span
+              ><span class="slide-content-tag">MOCKUP</span
+              ><span class="slide-content-tag">UI SCREENSHOT</span>
+              <div class="slide-desc">
+                Vídeo do Figma rodando mais devagar como background. Screenshots
+                das telas lado a lado: landing → login → dashboard → controle.
+                Destaque para o botão de emergência em laranja. Texto mínimo:
+                apenas nome da tela + 1 funcionalidade chave por tela. Animação:
+                revelação em sequência synced com a fala de Nalbert.
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDE 14 — HARDWARE</div>
+              <div class="slide-name">Diagrama de arquitetura do sistema</div>
+              <span class="slide-content-tag">DIAGRAMA</span
+              ><span class="slide-content-tag">ÍCONES GRANDES</span
+              ><span class="slide-content-tag">PEÇAS REAIS</span>
+              <div class="slide-desc">
+                Diagrama visual: ESP32 → Raspberry Pi → Plataforma Web. Cada
+                componente com ícone grande + nome. Foto ou render das peças
+                físicas (ESP32, sensores) integradas ao diagrama. Animação:
+                setas aparecendo em sequência mostrando o fluxo de dados.
+                <strong
+                  >Adicionar: capacidade de carga em kg do guincho em
+                  destaque.</strong
+                >
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDES 15–16 — IA</div>
+              <div class="slide-name">3 Módulos de Inteligência Artificial</div>
+              <span class="slide-content-tag">ÍCONES GRANDES</span
+              ><span class="slide-content-tag">DINÂMICO</span
+              ><span class="slide-content-tag">SEM TEXTO TÉCNICO</span>
+              <div class="slide-desc">
+                Slide 15: 3 cards revelados em sequência — cada um com ícone
+                grande + nome do módulo + tempo de resposta (500ms / 300ms) em
+                destaque. Zero texto técnico. Slide 16: Quem usa? Ilustração do
+                paciente e do cuidador. 2 personas visuais (não texto).
+                Animação: cards entram com "pop" suave. Background escuro com
+                traço laranja de acento.
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDES 17–23 — MERCADO</div>
+              <div class="slide-name">
+                Público, Modelo de Negócio, Diferenciais, ODS, Planos
+              </div>
+              <span class="slide-content-tag">COMPARAÇÃO</span
+              ><span class="slide-content-tag">PLANOS</span
+              ><span class="slide-content-tag">ODS</span>
+              <div class="slide-desc">
+                Slide 17: Público-alvo (mover do final para aqui) — 2 personas
+                visuais: paciente acamado + cuidador. Slide 18: Tabela de
+                comparação EVERRISE vs. mercado atual — visual limpo, com
+                checkmarks. Slide 19-20: Planos (Básico / Premium /
+                Institucional) — cada um com card separado, ícone e
+                diferenciais. Slide 21: Roadmap visual tipo timeline. Slides
+                22-23: ODS com ícones grandes + 1 frase de impacto por ODS.
+                <strong
+                  >Adicionar slide de planos futuros (app mobile, SUS,
+                  ONGs).</strong
+                >
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDE 24–25 — ROADMAP</div>
+              <div class="slide-name">Futuro + Escalabilidade</div>
+              <span class="slide-content-tag">TIMELINE</span
+              ><span class="slide-content-tag">FUTURO</span>
+              <div class="slide-desc">
+                Timeline horizontal com marcos: MVP → Parceria SUS → App Mobile
+                → Expansão Nacional. Visual tipo quebra-cabeça ou trilha. Tons
+                quentes (aquamarine + beige).
+                <strong
+                  >Remover o slide de persona (substituído por público-alvo no
+                  slide 17).</strong
+                >
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDE 26 — FECHAMENTO</div>
+              <div class="slide-name">
+                Compilado de fotos + vídeo sem áudio do Felipe
+              </div>
+              <span class="slide-content-tag">EMOCIONAL</span
+              ><span class="slide-content-tag">FOTOS REAIS</span
+              ><span class="slide-content-tag">SEM TEXTO</span>
+              <div class="slide-desc">
+                Fundo com collage de fotos do Felipe e da família, desfocadas
+                suavemente. Talvez vídeo sem áudio rodando. Apenas a tagline no
+                centro:
+                <strong>"Quando a tecnologia devolve o movimento."</strong> Nada
+                mais. Esse slide suporta a fala mais poderosa da Rafa — não deve
+                competir com ela.
+              </div>
+            </div>
+
+            <div class="slide-card">
+              <div class="slide-num">SLIDE 27 — EQUIPE</div>
+              <div class="slide-name">Foto da equipe + Agradecimentos</div>
+              <span class="slide-content-tag">FOTO REAL</span
+              ><span class="slide-content-tag">NOVO SLIDE</span>
+              <div class="slide-desc">
+                <strong>Adicionar:</strong> Foto real da equipe completa (os 8).
+                Agradecimentos: PROA, SENAC e pessoas nominadas. QR code para o
+                projeto/landing page. Logo EVERRISE grande. Esse slide fica na
+                tela enquanto o jogral final acontece — é a última imagem que a
+                banca vê.
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-criticas">
+            <div
+              style="
+                font-family: &quot;Raleway&quot;, sans-serif;
+                font-size: 11px;
+                color: rgba(232, 244, 240, 0.5);
+                line-height: 1.8;
+              "
+            >
+              <div
+                style="
+                  background: rgba(255, 130, 0, 0.08);
+                  border: 1px solid rgba(255, 130, 0, 0.2);
+                  border-radius: 8px;
+                  padding: 12px;
+                  margin-bottom: 10px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: 700;
+                    color: var(--orange);
+                    font-size: 10px;
+                    letter-spacing: 1px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  ✅ CRÍTICAS JÁ INCORPORADAS
+                </div>
+                <ul style="padding-left: 16px; line-height: 2">
+                  <li>
+                    Logo EVERRISE em todos os slides (canto superior esquerdo)
+                  </li>
+                  <li>Slide de pesquisa de campo adicionado</li>
+                  <li>
+                    MVV falado naturalmente (sem anunciar "agora vou falar")
+                  </li>
+                  <li>Slide de logo duplicado removido</li>
+                  <li>Slide de persona substituído por público-alvo</li>
+                  <li>Jograis em 6 momentos estratégicos</li>
+                  <li>Fala da Rafa roteirizada e emocionada</li>
+                  <li>Ganchos de transição reescritos</li>
+                  <li>Slides de IA deixados dinâmicos e sem texto técnico</li>
+                  <li>Agradecimentos ao PROA e SENAC incluídos</li>
+                  <li>Slide de foto da equipe adicionado</li>
+                  <li>Fontes de pesquisa indicadas para rodapé</li>
+                </ul>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 68, 68, 0.08);
+                  border: 1px solid rgba(255, 68, 68, 0.2);
+                  border-radius: 8px;
+                  padding: 12px;
+                  margin-bottom: 10px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: 700;
+                    color: #ff8888;
+                    font-size: 10px;
+                    letter-spacing: 1px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  ⚠️ PENDENTES — EQUIPE PRECISA FAZER
+                </div>
+                <ul style="padding-left: 16px; line-height: 2">
+                  <li>Preencher % da pesquisa de campo no Jogral 02</li>
+                  <li>Adicionar animação no background dos slides</li>
+                  <li>Confirmar modelo 3D com Ricardo (Tinkercad/Spline)</li>
+                  <li>Levantar capacidade de carga em kg do guincho</li>
+                  <li>Foto/vídeo real do Felipe (com autorização familiar)</li>
+                  <li>Foto oficial da equipe completa (8 membros)</li>
+                  <li>Mascote (Fin) segurando o guincho — arte final</li>
+                  <li>Criar QR code para landing page</li>
+                  <li>
+                    Partes físicas do equipamento fotografadas para os slides
+                  </li>
+                </ul>
+              </div>
+              <div
+                style="
+                  background: rgba(147, 233, 190, 0.06);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                  padding: 12px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: 700;
+                    color: var(--aqua);
+                    font-size: 10px;
+                    letter-spacing: 1px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  📌 NOTA DA DENISE
+                </div>
+                <ul style="padding-left: 16px; line-height: 2">
+                  <li>Slide 17 (mercado) movido para antes dos planos ✅</li>
+                  <li>Jograis adicionados em partes estratégicas ✅</li>
+                  <li>Falas longas divididas ✅</li>
+                  <li>Urgência ao problema enfatizada ✅</li>
+                  <li>Ganchos reescritos com emoção ✅</li>
+                  <li>Slides acompanham as falas (mapa 1:1 entregue) ✅</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      // ─── TIMER LOGIC ───
+      const TOTAL_SECONDS = 525; // 8:45
+      let elapsed = 0;
+      let blockElapsed = 0;
+      let timerInterval = null;
+      let running = false;
+      let currentBlock = 0;
+
+      // Block durations in seconds
+      const blockDurations = [
+        80, 20, 55, 15, 60, 40, 12, 60, 25, 12, 45, 15, 65, 20, 20, 55, 12,
+      ];
+      const blockStartTimes = [];
+      let acc = 0;
+      blockDurations.forEach((d) => {
+        blockStartTimes.push(acc);
+        acc += d;
+      });
+
+      function fmt(s) {
+        const m = Math.floor(s / 60);
+        const sec = s % 60;
+        return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+      }
+
+      function updateDisplay() {
+        const remaining = Math.max(0, TOTAL_SECONDS - elapsed);
+        const tEl = document.getElementById("totalTimer");
+        tEl.textContent = fmt(remaining);
+        if (remaining <= 30) tEl.className = "timer-box danger";
+        else if (remaining <= 90) tEl.className = "timer-box warning";
+        else tEl.className = "timer-box";
+
+        document.getElementById("blockTimer").textContent = fmt(blockElapsed);
+        document.getElementById("progressFill").style.width =
+          Math.min(100, (elapsed / TOTAL_SECONDS) * 100) + "%";
+
+        // Update active block
+        let activeIdx = 0;
+        for (let i = blockStartTimes.length - 1; i >= 0; i--) {
+          if (elapsed >= blockStartTimes[i]) {
+            activeIdx = i;
+            break;
+          }
+        }
+        if (activeIdx !== currentBlock) {
+          setActiveBlock(activeIdx);
+        }
+      }
+
+      function startTimer() {
+        if (running) return;
+        running = true;
+        document.getElementById("startBtn").style.display = "none";
+        document.getElementById("pauseBtn").style.display = "inline-block";
+        timerInterval = setInterval(() => {
+          elapsed++;
+          blockElapsed++;
+          // Reset block elapsed on block change
+          let activeIdx = 0;
+          for (let i = blockStartTimes.length - 1; i >= 0; i--) {
+            if (elapsed >= blockStartTimes[i]) {
+              activeIdx = i;
+              break;
+            }
+          }
+          if (activeIdx !== currentBlock) blockElapsed = 0;
+          updateDisplay();
+          if (elapsed >= TOTAL_SECONDS) {
+            pauseTimer();
+          }
+        }, 1000);
+      }
+
+      function pauseTimer() {
+        running = false;
+        clearInterval(timerInterval);
+        document.getElementById("startBtn").style.display = "inline-block";
+        document.getElementById("pauseBtn").style.display = "none";
+      }
+
+      function resetTimer() {
+        pauseTimer();
+        elapsed = 0;
+        blockElapsed = 0;
+        currentBlock = 0;
+        updateDisplay();
+        setActiveBlock(0);
+      }
+
+      function jumpToBlock(idx) {
+        elapsed = blockStartTimes[idx];
+        blockElapsed = 0;
+        setActiveBlock(idx);
+        updateDisplay();
+        document
+          .getElementById("block-" + idx)
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function setActiveBlock(idx) {
+        // Remove all active states
+        document
+          .querySelectorAll(".block")
+          .forEach((b) => b.classList.remove("active-block"));
+        document
+          .querySelectorAll(".nav-item")
+          .forEach((n) => n.classList.remove("active"));
+
+        currentBlock = idx;
+        const block = document.getElementById("block-" + idx);
+        const nav = document.getElementById("nav-" + idx);
+        if (block) block.classList.add("active-block");
+        if (nav) {
+          nav.classList.add("active");
+          nav.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+
+      function toggleBlock(idx) {
+        const block = document.getElementById("block-" + idx);
+        block.classList.toggle("collapsed");
+      }
+
+      function showTab(name) {
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((t) => t.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById("tab-" + name).classList.add("active");
+        event.target.classList.add("active");
+      }
+
+      // Init
+      updateDisplay();
+    </script>
+  </body>
+</html>

@@ -12,10 +12,14 @@
      <link rel="stylesheet" href="/css/pages/header.css">
 
      <script src="/js/services/header.js"></script>
+
+     <link rel="stylesheet" href="/css/footer.css">
+
+     <script src="/js/services/footer.js"> </script>
       
 </head>
 <body>
-
+ 
    
     <main-header></main-header>
 
@@ -54,7 +58,7 @@
 
                     <div class="card" onclick="abrirDetalhe('paranapiacaba')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/paranapiacaba.jpg" alt="Paranapiacaba">
+                            <img src="/assets/imgs/paranapiacaba.jpg" alt="Paranapiacaba">
                             <span class="badge historico">HISTÓRICO</span>
                         </div>
                         <div class="card-info">
@@ -65,7 +69,7 @@
 
                     <div class="card" onclick="abrirDetalhe('pedragrande')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/cantareira.webp" alt="Pedra Grande">
+                            <img src="/assets/imgs/cantareira.webp" alt="Pedra Grande">
                             <span class="badge natureza">NATUREZA</span>
                         </div>
                         <div class="card-info">
@@ -76,7 +80,7 @@
 
                     <div class="card" onclick="abrirDetalhe('holambra')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/downhill.jpg" alt="trilha de moto">
+                            <img src="/assets/imgs/downhill.jpg" alt="trilha de moto">
                             <span class="badge cidades">CIDADES</span>
                         </div>
                         <div class="card-info">
@@ -100,7 +104,7 @@
 
                     <div class="card" onclick="abrirDetalhe('masp')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/casabrasileira.jpg" alt="MASP">
+                            <img src="/assets/imgs/casabrasileira.jpg" alt="MASP">
                         </div>
                         <div class="card-info">
                             <h3>Museu da Casa Brasileira</h3>
@@ -110,7 +114,7 @@
 
                     <div class="card" onclick="abrirDetalhe('pinacoteca')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/teatro.jpg" alt="Pinacoteca">
+                            <img src="/assets/imgs/teatro.jpg" alt="Pinacoteca">
                         </div>
                         <div class="card-info">
                             <h3>Galeria Olido</h3>
@@ -120,7 +124,7 @@
 
                     <div class="card" onclick="abrirDetalhe('ibirapuera')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/mosteiro.jpg" alt="Ibirapuera">
+                            <img src="/assets/imgs/mosteiro.jpg" alt="Ibirapuera">
                         </div>
                         <div class="card-info">
                             <h3>Mosteiro de São Bento</h3>
@@ -145,7 +149,7 @@ São Bento.</p>
 
                     <div class="card" onclick="abrirDetalhe('pedragrande')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/pedra.jpg" alt="Pedra Grande">
+                            <img src="/assets/imgs/pedra.jpg" alt="Pedra Grande">
                         </div>
                         <div class="card-info">
                             <h3>Pedra Grande</h3>
@@ -155,7 +159,7 @@ São Bento.</p>
 
                     <div class="card" onclick="abrirDetalhe('horto')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/mato.jpg" alt="Horto Florestal">
+                            <img src="/assets/imgs/mato.jpg" alt="Horto Florestal">
                         </div>
                         <div class="card-info">
                             <h3>Horto Florestal</h3>
@@ -165,7 +169,7 @@ São Bento.</p>
 
                     <div class="card" onclick="abrirDetalhe('petar')">
                         <div class="card-img-box">
-                            <img src="/RespireSaoPaulo/assets/imgs/petar.jpg" alt="PETAR">
+                            <img src="/assets/imgs/petar.jpg" alt="PETAR">
                         </div>
                         <div class="card-info">
                             <h3>PETAR</h3>
@@ -268,129 +272,11 @@ São Bento.</p>
 
         </div>
     
-        <footer>
-            <div class="footer-grid">
-                <div class="footer-sobre">
-                    <p class="footer-logo">Respire SP</p>
-                    <p class="footer-desc">© 2024 Respire São Paulo. A pulsação urbana em cada clique.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Explorar</h4>
-                    <ul>
-                        <li><a onclick="mostrarCategoria('todos')">O que Fazer</a></li>
-                        <li><a onclick="irParaSecao('onde-comer')">Onde Comer</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Comunidade</h4>
-                    <ul>
-                        <li><a>Sobre Nós</a></li>
-                        <li><a>Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>Privacidade &nbsp;&nbsp; Termos</span>
-                <span>🌐 &nbsp; 📍</span>
-            </div>
-        </footer>
-
-    </div>
-   
-    <div id="paginaDetalhe" style="display: none;">
-
        
-        <div class="detalhe-hero" id="detalheHero">
-            <h1 id="detalheTitulo">Título</h1>
-            <p id="detalheSubtitulo">Subtítulo</p>
-        </div>
-
-        <div class="detalhe-corpo">
-
-            <button class="btn-voltar" onclick="voltarInicio()">← Voltar</button>
-
-            <div class="detalhe-layout">
-
-                <div class="detalhe-esquerda">
-                    <h2 id="detalheNome" class="detalhe-titulo-sec"></h2>
-                    <p id="detalheDesc1" class="detalhe-p"></p>
-
                   
-                    <div class="mapa-box">
-                        <iframe id="detalheMapa" src="" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-
-                    <p id="detalheDesc2" class="detalhe-p"></p>
-                </div>
-
-                <div class="detalhe-direita">
-                    <div class="info-card">
-
-                        <div class="info-item">
-                            <span class="info-icone">📍</span>
-                            <div>
-                                <p class="info-label">Endereço</p>
-                                <p id="detalheEndereco" class="info-valor"></p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <span class="info-icone">🚊</span>
-                            <div>
-                                <p class="info-label">Chegar (Trem/Metrô)</p>
-                                <p id="detalheTrem" class="info-valor"></p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <span class="info-icone">🚗</span>
-                            <div>
-                                <p class="info-label">Como Chegar (Carro)</p>
-                                <p id="detalheCarro" class="info-valor"></p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-     
-        <footer>
-            <div class="footer-grid">
-                <div class="footer-sobre">
-                    <p class="footer-logo">Respire SP</p>
-                    <p class="footer-desc">© 2024 Respire São Paulo. A pulsação urbana em cada clique.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Explorar</h4>
-                    <ul>
-                        <li><a onclick="voltarInicio()">O que Fazer</a></li>
-                        <li><a onclick="voltarInicio(); irParaSecao('onde-comer')">Onde Comer</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Comunidade</h4>
-                    <ul>
-                        <li><a>Sobre Nós</a></li>
-                        <li><a>Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>Privacidade &nbsp;&nbsp; Termos</span>
-                <span>🌐 &nbsp; 📍</span>
-            </div>
-        </footer>
-
-    </div>
-  
-
-
+<main-footer></main-footer>
     
-    <script src="script.js"></script>
+    
 
 </body>
 </html>

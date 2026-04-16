@@ -1,32 +1,34 @@
 .footer {
     width: 100%;
-    height: 674px;
+    /* Mudei de height fixo para min-height para ser mais flexível */
+    min-height: 400px; 
     position: relative;
     box-sizing: border-box;
     background-color: #0E1115;
     color: #fff;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 80px;
+    padding: 80px 40px; /* Padding ajustado */
     gap: 80px;
+    flex-wrap: wrap; /* Adicionado para não quebrar em telas menores */
 }
 
 .footer-line-top {
     position: absolute;
-    top: 57px;
-    left: 46px;
-    width: calc(100% - 92px);
+    top: 40px; /* Ajustado */
+    left: 40px;
+    width: calc(100% - 80px);
     height: 1px;
     background-color: rgba(255, 255, 255, 0.15);
 }
 
 .footer-line-bottom {
     position: absolute;
-    bottom: 57px;
-    left: 43px;
-    width: calc(100% - 86px);
+    bottom: 40px; /* Ajustado */
+    left: 40px;
+    width: calc(100% - 80px);
     height: 1px;
     background-color: rgba(255, 255, 255, 0.15);
 }
@@ -38,10 +40,8 @@
     max-width: 420px;
 }
 
-
-
 .respire-so-paulo-container {
-    font-size: 42px;
+    font-size: 38px; /* Ligeiramente menor para evitar quebras */
     color: #f5f3f0;
     line-height: 1.1;
 }
@@ -60,7 +60,7 @@
 
 .footer-divider {
     width: 1px;
-    height: 300px;
+    height: 200px; /* Reduzi um pouco a altura da linha vertical */
     background-color: rgba(255, 255, 255, 0.15);
     flex-shrink: 0;
 }
@@ -81,5 +81,17 @@
     letter-spacing: 0.11em;
     color: rgba(255, 255, 255, 0.4);
     margin-bottom: 4px;
+    text-transform: uppercase;
 }
 
+/* Estilo básico para os links que faltava */
+.nav-item1 {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-item1:hover {
+    color: #ff5500;
+}
