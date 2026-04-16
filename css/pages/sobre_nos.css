@@ -34,7 +34,7 @@ html {
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     background: var(--fundo);
     color: var(--branco);
     overflow-x: hidden;
@@ -108,7 +108,6 @@ body.tema-claro .hero-bg {
 }
 
 .hero-title {
-    font-family: "Playfair Display", serif;
     font-size: clamp(2.8rem, 6vw, 5rem);
     font-weight: 900;
     line-height: 1.05;
@@ -173,7 +172,6 @@ body.tema-claro .hero-bg {
 }
 
 .story-title {
-    font-family: "Playfair Display", serif;
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 900;
     line-height: 1.1;
@@ -258,7 +256,6 @@ body.tema-claro .hero-bg {
 }
 
 .section-title {
-    font-family: "Playfair Display", serif;
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 900;
     line-height: 1.1;
@@ -315,7 +312,6 @@ body.tema-claro .hero-bg {
 }
 
 .mission-card h3 {
-    font-family: "Playfair Display", serif;
     font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 16px;
@@ -398,7 +394,6 @@ body.tema-claro .team {
 }
 
 .team-name {
-    font-family: "Playfair Display", serif;
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 6px;
@@ -472,7 +467,6 @@ body.tema-claro .cta-bg {
 }
 
 .cta-title {
-    font-family: "Playfair Display", serif;
     font-size: clamp(2.2rem, 4vw, 3.5rem);
     font-weight: 900;
     line-height: 1.1;
@@ -572,7 +566,6 @@ footer {
 }
 
 .footer-logo {
-    font-family: "Playfair Display", serif;
     font-weight: 900;
     font-size: 1.1rem;
     color: var(--branco);

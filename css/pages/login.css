@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -11,6 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+     font-family: "Poppins", sans-serif;
 }
 
 .desktop-2 {
@@ -36,7 +36,6 @@ body {
 }
 
 .respire-sp {
-    font-family: "Patua One", serif;
     font-size: 22px;
     color: #fff;
     text-align: center;
