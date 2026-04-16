@@ -1,3 +1,6 @@
+/* ========================
+   VARIÁVEIS – TEMA ESCURO
+   ======================== */
 :root {
     --laranja: #ff5500;
     --branco: #f5f0ea;
@@ -9,6 +12,9 @@
     --texto: #ffffff;
 }
 
+/* ========================
+   VARIÁVEIS – TEMA CLARO
+   ======================== */
 body.tema-claro {
     --laranja: #ff5500;
     --branco: #1a1a1a;
@@ -26,11 +32,21 @@ body.tema-claro {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Poppins", sans-serif;
+    background: var(--fundo);
+    color: var(--branco);
+    overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
 }
 
+/* ========================
+   CONTAINER PRINCIPAL
+   ======================== */
 #container {
     width: 100%;
     min-height: 300vh;
@@ -48,6 +64,9 @@ body.tema-claro #container {
     background-color: var(--fundo);
 }
 
+/* ========================
+   SEÇÕES / BACK
+   ======================== */
 .back {
     height: 100vh;
     display: flex;
@@ -110,7 +129,9 @@ body.tema-claro .back3 {
     transition: background-color 0.3s;
 }
 
-/* GRADIENTES */
+/* ========================
+   GRADIENTES
+   ======================== */
 .gradient,
 .gradient2 {
     width: 100%;
@@ -134,7 +155,9 @@ body.tema-claro .gradient2 {
     background: linear-gradient(180deg, rgba(247, 244, 239, 0.5), var(--fundo));
 }
 
-/* CONTEÚDO CENTRAL */
+/* ========================
+   CONTEÚDO CENTRAL (HERO)
+   ======================== */
 .fundo1 {
     height: 100%;
     display: flex;
@@ -145,16 +168,29 @@ body.tema-claro .gradient2 {
     text-align: center;
 }
 
-/* TEXTOS */
+/* ========================
+   TEXTOS – HERO
+   ======================== */
 .p1 {
-    color: #ffa31a;
-    font-weight: 500;
-    font-size: 23px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 83, 0, 0.12);
+    border: 1px solid rgba(255, 83, 0, 0.25);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--laranja);
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
 .respire {
-    font-size: 96px;
-    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.05;
     color: var(--branco);
 }
 
@@ -163,56 +199,61 @@ body.tema-claro .gradient2 {
 }
 
 .p2 {
-    font-size: 22px;
+    font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.7);
-    max-width: 500px;
+    max-width: 520px;
+    line-height: 1.75;
+    margin: 0 auto;
 }
 
 body.tema-claro .p2 {
     color: rgba(0, 0, 0, 0.6);
 }
 
+/* ========================
+   TEXTOS – SEÇÃO CIDADE
+   ======================== */
 .cidade {
     text-align: center;
-    font-size: 80px;
-    line-height: 1;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1.05;
     color: var(--branco);
 }
 
 .cidade span {
-    font-size: 85px;
     color: var(--laranja);
 }
 
-.sp {
-    font-size: 36px;
-    font-weight: lighter;
-    margin-top: 30px;
-    text-align: center;
-    color: var(--branco);
-}
-
+.sp,
 .sp1 {
-    font-size: 36px;
-    font-weight: lighter;
-    margin-top: 30px;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 400;
+    margin-top: 20px;
     text-align: center;
     color: var(--branco);
+    line-height: 1.7;
 }
 
-/* INPUT */
+/* ========================
+   INPUT
+   ======================== */
 input {
     width: 500px;
-    height: 60px;
+    height: 56px;
     margin-top: 20px;
     background-color: rgba(39, 44, 53, 0.7);
-    border-radius: 15px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
     color: white;
     padding: 0 20px;
-    border: none;
+    border: 1px solid var(--borda);
     outline: none;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.2s;
+}
+
+input:focus {
+    border-color: rgba(255, 83, 0, 0.4);
 }
 
 body.tema-claro input {
@@ -220,7 +261,9 @@ body.tema-claro input {
     color: #1a1a1a;
 }
 
-/* CARDS BACK3 */
+/* ========================
+   CARDS – BACK3 (ESTATÍSTICAS)
+   ======================== */
 #back3 {
     width: 100%;
     min-height: 100vh;
@@ -236,15 +279,15 @@ body.tema-claro input {
 .fundo2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 28px;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1100px;
 }
 
 .card-estatistica {
     position: relative;
-    height: 380px;
-    border-radius: 40px;
+    height: 240px;
+    border-radius: 20px;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -258,7 +301,7 @@ body.tema-claro .card-estatistica {
 }
 
 .card-estatistica:hover {
-    transform: scale(1.03) translateY(-10px);
+    transform: scale(1.03) translateY(-8px);
 }
 
 .cards1 { background-image: url("/assets/imgs/PinDown.io_@jmazurfilho_1775518757.jpg"); }
@@ -284,31 +327,38 @@ body.tema-claro .card-estatistica {
 
 .h1-card {
     color: #FF5500;
-    font-size: 80px;
-    font-weight: 800;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 900;
     margin: 0;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .p-card {
-    font-size: 22px;
+    font-size: 1rem;
     color: #FFFFFF;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
 }
 
-/* BACK4 */
+/* ========================
+   BACK4 – DESTAQUES / PONTOS
+   ======================== */
 .paragrafo {
-    font-size: 30px;
+    font-size: 1rem;
     color: var(--laranja);
     background-color: var(--fundo);
     margin-left: 30px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
 .pontos {
     margin-left: 30px;
-    font-size: 90px;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1.1;
     color: var(--branco);
 }
 
@@ -317,137 +367,90 @@ body.tema-claro .card-estatistica {
 }
 
 .saiba-mais {
-    font-size: 30px;
+    font-size: 1rem;
     margin-left: 650px;
     color: var(--laranja);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
-.cards5 {
-    width: 430px;
-    height: 650px;
-    background-color: var(--card);
-    border-radius: 30px;
-    margin-bottom: 110px;
-    margin-left: 200px;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s;
-}
-
-.cards5:hover {
-    transform: scale(1.07) translateY(-10px);
-}
-
-.cards6 {
-    width: 430px;
-    height: 650px;
-    background-color: var(--card);
-    border-radius: 30px;
-    margin-bottom: 110px;
-    margin-left: 80px;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s;
-}
-
-.cards6:hover {
-    transform: scale(1.07) translateY(-10px);
-}
-
+/* ========================
+   CARDS DE PONTOS TURÍSTICOS
+   ======================== */
+.cards5,
+.cards6,
 .cards7 {
-    width: 430px;
-    height: 650px;
+    width: 300px;
+    height: 460px;
     background-color: var(--card);
-    border-radius: 30px;
-    margin-bottom: 110px;
-    margin-left: 80px;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s;
+    border-radius: 20px;
+    border: 1px solid var(--borda);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s, border-color 0.3s;
 }
 
+.cards5:hover,
+.cards6:hover,
 .cards7:hover {
-    transform: scale(1.07) translateY(-10px);
+    transform: scale(1.05) translateY(-8px);
+    border-color: rgba(255, 83, 0, 0.3);
 }
 
-.masp {
-    width: 430px;
-    height: 300px;
-    border-radius: 30px 30px 0 0;
-}
+.cards5 { margin-bottom: 80px; margin-left: 200px; }
+.cards6 { margin-bottom: 80px; margin-left: 80px; }
+.cards7 { margin-bottom: 80px; margin-left: 80px; }
 
-.masp img {
-    width: 100%;
-    border-radius: 30px 30px 0 0;
-}
-
-.text-masp {
-    font-size: 50px;
-    margin-left: 20px;
-    color: var(--branco);
-}
-
-body.tema-claro .text-masp {
-    color: #1a1a1a;
-}
-
-.museu {
-    font-size: 25px;
-    margin-left: 20px;
-    color: var(--cinza);
-}
-
-.ibira {
-    width: 430px;
-    height: 300px;
-    border-radius: 30px 30px 0 0;
-}
-
-.ibira img {
-    width: 100%;
-    border-radius: 30px 30px 0 0;
-}
-
-.text-ibira {
-    font-size: 50px;
-    margin-left: 20px;
-    line-height: 1;
-    color: var(--branco);
-}
-
-body.tema-claro .text-ibira {
-    color: #1a1a1a;
-}
-
-.parque {
-    font-size: 25px;
-    margin-left: 20px;
-    color: var(--cinza);
-}
-
+.masp,
+.ibira,
 .vila {
-    width: 430px;
-    height: 300px;
-    border-radius: 30px 30px 0 0;
+    width: 100%;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
 }
 
+.masp img,
+.ibira img,
 .vila img {
     width: 100%;
-    border-radius: 30px 30px 0 0;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    display: block;
+    overflow: hidden;
 }
 
+.text-masp,
+.text-ibira,
 .text-vila {
-    font-size: 50px;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 700;
     margin-left: 20px;
-    line-height: 1;
+    margin-top: 16px;
+    line-height: 1.1;
     color: var(--branco);
 }
 
+body.tema-claro .text-masp,
+body.tema-claro .text-ibira,
 body.tema-claro .text-vila {
     color: #1a1a1a;
 }
 
+.museu,
+.parque,
 .madalena {
-    font-size: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     margin-left: 20px;
+    margin-top: 6px;
     color: var(--cinza);
 }
 
-/* BACK5 */
+/* ========================
+   BACK5 – RAZÕES
+   ======================== */
 .back5 {
     width: 100%;
     min-height: 100vh;
@@ -455,14 +458,16 @@ body.tema-claro .text-vila {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     transition: background-color 0.3s;
 }
 
 .razoes {
-    margin-top: 100px;
+    margin-top: 70px;
     margin-right: 500px;
-    font-size: 90px;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1.1;
     color: var(--branco);
 }
 
@@ -474,67 +479,37 @@ body.tema-claro .text-vila {
     display: grid;
     gap: 20px;
     width: 90%;
-    max-width: 1900px;
+    max-width: 1100px;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 350px 350px;
-    height: 1000px;
+    grid-template-rows: 240px 240px;
+    height: auto;
     grid-template-areas:
         "card1 card2 card3"
         "card1 card4 card4";
 }
 
-.card1 {
-    grid-area: card1;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
+.card1 { grid-area: card1; transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1); }
+.card2 { grid-area: card2; transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1); }
+.card3 { grid-area: card3; transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1); }
+.card4 { grid-area: card4; transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1); }
 
-.card2 {
-    grid-area: card2;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.card3 {
-    grid-area: card3;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.card4 {
-    grid-area: card4;
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.card1:hover { transform: scale(1.05) translateY(-10px); }
-.card2:hover { transform: scale(1.07) translateY(-10px); }
-.card3:hover { transform: scale(1.07) translateY(-10px); }
-.card4:hover { transform: scale(1.05) translateY(-10px); }
-
-.card img {
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    object-fit: cover;
-    display: block;
-}
-
-.gradient3,
-.gradient4 {
-    width: 100%;
-    height: 200vh;
-    position: absolute;
-}
-
-.gradient3 {
-    background: linear-gradient(90deg, rgba(14, 17, 21, 0.37), transparent 60%);
-}
-
-.gradient4 {
-    background: linear-gradient(180deg, rgba(14, 17, 21, 0.445), #0e1115);
-}
+.card1:hover { transform: scale(1.03) translateY(-8px); }
+.card2:hover { transform: scale(1.05) translateY(-8px); }
+.card3:hover { transform: scale(1.05) translateY(-8px); }
+.card4:hover { transform: scale(1.03) translateY(-8px); }
 
 .card {
     position: relative;
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
 }
 
 .card::after {
@@ -551,8 +526,8 @@ body.tema-claro .text-vila {
 
 .card-info {
     position: absolute;
-    bottom: 28px;
-    left: 28px;
+    bottom: 24px;
+    left: 24px;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -560,36 +535,39 @@ body.tema-claro .text-vila {
 }
 
 .card-categoria {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: #ff5500;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
 }
 
 .card-numero {
-    font-size: 90px;
-    font-weight: 700;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 900;
     color: #ffffff;
     margin: 0;
     line-height: 1;
 }
 
 .card-desc {
-    font-size: 23px;
+    font-size: 1rem;
     color: #ffffff;
     margin: 0;
     opacity: 0.9;
 }
 
-/* BACK6 */
+/* ========================
+   BACK6 – ROTEIROS
+   ======================== */
 .back6 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--fundo);
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 80px;
     transition: background-color 0.3s;
 }
 
@@ -601,35 +579,49 @@ body.tema-claro .text-vila {
 
 .roteiros {
     margin-top: 60px;
-    font-size: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     color: var(--laranja);
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .sua-aventura {
-    font-size: 80px;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1.1;
     color: var(--branco);
 }
 
 .sua-aventura span {
-    font-size: 80px;
     color: var(--laranja);
 }
 
 .fundo-card {
-    width: 1600px;
-    height: 700px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 40px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    gap: 24px;
 }
 
 .roteiro-cards {
-    width: 450px;
-    height: 600px;
+    width: 340px;
+    min-height: 460px;
     background-color: var(--fundo2);
-    border-radius: 30px;
-    transition: background-color 0.3s;
+    border-radius: 20px;
+    border: 1px solid var(--borda);
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.roteiro-cards:hover {
+    border-color: rgba(255, 83, 0, 0.3);
+    transform: translateY(-6px);
 }
 
 body.tema-claro .roteiro-cards {
@@ -638,9 +630,10 @@ body.tema-claro .roteiro-cards {
 
 .express {
     width: 100%;
-    height: 80px;
+    height: 70px;
     color: var(--laranja);
-    font-size: 25px;
+    font-size: 1rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -649,27 +642,28 @@ body.tema-claro .roteiro-cards {
 
 .dia1 {
     width: 100%;
-    height: 100px;
+    height: 70px;
     display: flex;
     align-items: center;
     text-align: start;
-    font-size: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
     margin-left: 60px;
     color: var(--branco);
 }
 
 .local {
     color: var(--cinza);
-    font-size: 30px;
+    font-size: 0.97rem;
     margin-left: 50px;
-    margin-top: 40px;
+    margin-top: 28px;
 }
 
 .paradas {
     color: var(--cinza);
     width: 300px;
-    height: 100px;
-    margin-top: 30px;
+    height: 80px;
+    margin-top: 24px;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -681,8 +675,8 @@ body.tema-claro .roteiro-cards {
 .paradas1 {
     color: var(--cinza);
     width: 300px;
-    height: 100px;
-    margin-top: 70px;
+    height: 80px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -691,14 +685,27 @@ body.tema-claro .roteiro-cards {
     margin-left: 60px;
 }
 
-.respire {
-    font-size: 72px; /* antes 96px */
+/* ========================
+   ANIMAÇÕES
+   ======================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.cidade {
-    font-size: 60px; /* antes 80px */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
+<<<<<<< Updated upstream
 .cidade span {
     font-size: 64px; /* antes 85px */
 }
@@ -729,3 +736,9 @@ body.tema-claro .roteiro-cards {
     font-size: 60px;
 }
 
+=======
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+>>>>>>> Stashed changes
