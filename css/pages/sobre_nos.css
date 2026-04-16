@@ -651,3 +651,96 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+html, body { height: 100%; }
+body { overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* Layout geral: conter largura e espaçamento */
+.container-max {
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
+/* HERO — tornar fluido em telas pequenas */
+.hero { min-height: auto; padding: 64px 16px 48px; }
+.hero-content { max-width: 100%; padding: 0 12px; }
+.hero-title { font-size: clamp(2rem, 8vw, 4.5rem); }
+.hero-sub { max-width: 100%; margin: 0 auto; padding: 0 8px; font-size: 0.95rem; }
+
+/* Imagens e cards — responsivos */
+img, .story-card-inner img, .team-avatar img { width: 100%; height: auto; display: block; object-fit: cover; }
+.story-card { aspect-ratio: auto; height: auto; min-height: 320px; }
+.team-avatar { height: auto; min-height: 220px; }
+
+/* Sections: padding e grid mobile */
+.story, .mission, .team, .cta-section {
+  padding: 48px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Story grid -> 1 coluna mobile */
+.story { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
+
+/* Mission grid -> 1 coluna mobile */
+.mission-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+/* Team grid -> 1 coluna mobile */
+.team-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+/* Footer -> empilha no mobile */
+.footer-inner { grid-template-columns: 1fr; gap: 24px; padding: 24px 16px; }
+.footer-logo, .footer-brand img { width: 120px; height: auto; }
+
+/* CTA e botões — centralizar e ajustar espaçamento */
+.cta-inner { padding: 0 12px; }
+.cta-buttons { gap: 12px; }
+
+/* Ajustes de tipografia menores para dispositivos pequenos */
+.story-title, .section-title, .cta-title { font-size: clamp(1.6rem, 7vw, 2.8rem); }
+.story-text, .team-bio, .mission-card p, .footer-brand p { font-size: clamp(0.9rem, 3.5vw, 1rem); }
+
+/* Touch targets */
+.btn-primary, .btn-outline { padding: 12px 20px; font-size: 0.95rem; }
+
+/* ======= BREAKPOINT: TABLET >= 768px ======= */
+@media (min-width: 768px) {
+  .story { grid-template-columns: 1fr 1fr; gap: 48px; padding: 80px 32px; }
+  .mission-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 80px 32px; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 80px 32px; }
+  .footer-inner { grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding: 40px 32px; }
+  .hero { padding-top: 100px; }
+  .hero-title { font-size: clamp(2.6rem, 6.5vw, 4.2rem); }
+  .team-avatar { height: 300px; }
+}
+
+/* ======= BREAKPOINT: DESKTOP >= 1024px ======= */
+@media (min-width: 1024px) {
+  .mission-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .team-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .story { gap: 80px; padding: 120px 24px; }
+  .hero { min-height: 90vh; padding-top: 120px; }
+  .hero-glow { width: 900px; height: 420px; top: 18%; }
+  .cta-inner { max-width: 900px; }
+}
+
+/* ======= BREAKPOINT: LARGE >= 1400px ======= */
+@media (min-width: 1400px) {
+  .hero-content { max-width: 880px; }
+  .team-avatar { height: 350px; }
+  .story-card { min-height: 420px; }
+}
+
+/* ======= REMOÇÃO/OVERRIDE de regras que quebram responsividade ======= /
+/ Evitar vh fixo e background-attachment em mobile */
+.hero, .story-section, .mission, .team, .cta-section { min-height: auto; height: auto; }
+.hero-bg, .cta-bg { background-attachment: scroll; }
+
+/* Remover margens laterais fixas (se houver) /
+[class="margin-left"], .saiba-mais, .paragrafo { margin-left: 0 !important; margin-right: 0 !important; }
+
+/* Evitar overflow horizontal */
+html, body { overflow-x: hidden !important; }
