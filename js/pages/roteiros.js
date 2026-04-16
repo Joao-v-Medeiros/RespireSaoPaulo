@@ -51,20 +51,20 @@ function renderizarRoteiros() {
     if(!container) return;
 
     container.innerHTML = roteiros.map(r => `
-        <article class="bg-[#13171C] rounded-[16px] overflow-hidden group hover:translate-y-[-8px] transition-all duration-500 shadow-xl border border-white/5">
+        <article class="roteiro-card rounded-[16px] overflow-hidden group hover:translate-y-[-8px] transition-all duration-500 shadow-xl">
             <div class="relative h-64 overflow-hidden">
                 <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${r.img}" alt="${r.titulo}"/>
                 <div class="editorial-gradient absolute inset-0"></div>
-                <div class="absolute top-4 left-4 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                <div class="absolute top-4 left-4 roteiro-meta backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                     <span class="material-symbols-outlined text-xs">schedule</span> ${r.tempo}
                 </div>
                 <div class="absolute bottom-4 left-4">
-                    <span class="bg-white/10 backdrop-blur-md text-[#ff5500] text-[10px] font-bold tracking-[0.1rem] px-2 py-1 rounded uppercase">${r.tag}</span>
+                    <span class="roteiro-badge backdrop-blur-md text-[#ff5500] text-[10px] font-bold tracking-[0.1rem] px-2 py-1 rounded uppercase">${r.tag}</span>
                 </div>
             </div>
             <div class="p-8">
                 <h3 class="font-headline text-2xl font-black mb-6 group-hover:text-[#ff5500] transition-colors">${r.titulo}</h3>
-                <ul class="space-y-4 text-sm text-white/60">
+                <ul class="space-y-4 text-sm roteiro-item-list">
                     ${r.itens.map(item => `
                         <li class="flex items-start gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#ff5500] mt-1.5 shrink-0"></span>

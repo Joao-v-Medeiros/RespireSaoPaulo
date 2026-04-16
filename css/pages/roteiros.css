@@ -1,10 +1,41 @@
 /* Tailwind Configuration via CSS (Injetando no motor do Tailwind) */
 @layer base {
+    :root {
+        --roteiros-bg: #0E1115;
+        --roteiros-text: #f5f6fc;
+        --roteiros-surface: #13171C;
+        --roteiros-surface-strong: #0B1015;
+        --roteiros-muted: rgba(245, 246, 252, 0.65);
+        --roteiros-border: rgba(255,255,255,0.05);
+        --roteiros-gradient-from: rgba(11, 14, 18, 0);
+        --roteiros-gradient-to: rgba(11, 14, 18, 0.8);
+    }
+
+    body.tema-claro {
+        --roteiros-bg: #F8F8F8;
+        --roteiros-text: #111827;
+        --roteiros-surface: #FFFFFF;
+        --roteiros-surface-strong: #F3F4F6;
+        --roteiros-muted: rgba(17, 24, 39, 0.65);
+        --roteiros-border: rgba(15, 23, 42, 0.08);
+        --roteiros-gradient-from: rgba(248, 248, 248, 0);
+        --roteiros-gradient-to: rgba(248, 248, 248, 0.86);
+    }
+
     body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #0E1115;
-        color: #f5f6fc;
+        background-color: var(--roteiros-bg);
+        color: var(--roteiros-text);
         padding-bottom: 200px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.tema-claro .text-white\/60 {
+        color: var(--roteiros-muted) !important;
+    }
+
+    body.tema-claro .text-white {
+        color: var(--roteiros-text) !important;
     }
 }
 
@@ -22,9 +53,27 @@
     background: linear-gradient(to bottom, rgba(11, 14, 18, 0) 0%, rgba(11, 14, 18, 0.8) 100%);
 }
 
-.ai-chip {
-    background-color: #161a1f;
-    color: rgba(255, 255, 255, 0.8);
+.roteiro-meta {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+}
+
+body.tema-claro .roteiro-meta {
+    background-color: rgba(255, 255, 255, 0.72);
+    color: var(--roteiros-text);
+}
+
+.roteiro-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.tema-claro .roteiro-badge {
+    background-color: rgba(17, 24, 39, 0.08);
+}
+
+ .ai-chip {
+    background-color: var(--roteiros-surface-strong);
+    color: var(--roteiros-text);
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
@@ -35,7 +84,16 @@
     gap: 0.5rem;
 }
 
-.ai-chip:hover {
-    background-color: #22262c;
-    color: white;
+ .ai-chip:hover {
+    background-color: var(--roteiros-surface);
+    color: var(--roteiros-text);
+}
+
+.roteiro-card {
+    background: var(--roteiros-surface);
+    border: 1px solid var(--roteiros-border);
+}
+
+.roteiro-item-list {
+    color: var(--roteiros-muted);
 }
