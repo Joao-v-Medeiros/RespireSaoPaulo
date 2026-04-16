@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Respire SP — O que Fazer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/pages/o_que_fazer.css">
+<script src="/js/pages/o_que_fazer.js"></script>
+
+<link rel="stylesheet" href="/css/pages/header.css">
+
+<script src="/js/services/header.js"></script>
+
+<link rel="stylesheet" href="/css/pages/header.css">
+
+<script src="/js/services/footer.js"></script>
+
+
+</head>
+
+<body>
+<main-footer></main-footer>
+ <main-header></main-header>
+ 
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP-g1MbubCHqXWPvEB21yuMCoNv_xjDbbtDWc7JrZF_zn4cGiTHMGQKpBxZJ0pbqd51nREpDiDh5fuZ0ln3e0MMqm9ScnetzZhZA9eg9tSaQxe4Zv5n2MjMzyba-kTJvRmsHOGf7OV0o1M46dy380XbIVZquATqBoBkwA10Y6FN4pKNFFl4tI1NoUsv0Jf9vTZnHy9tluXydEumlRklcCsTjhYp4ekiBIPiamxs-IXvajd83eARai0_tPoZ-gQ2sxmAr274E6umLQi" alt="São Paulo skyline ao entardecer"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Exploração Urbana</span>
+    <h1 class="hero-title">O que fazer</h1>
+    <p class="hero-subtitle">Descubra as melhores atividades, marcos icônicos e segredos bem guardados da capital paulista.</p>
+  </div>
+
+  <div class="search-wrap">
+    <div class="search-bar">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" placeholder="O que você está procurando?"/>
+      <button>Buscar</button>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters" style="margin-top:4.5rem;">
+  <div class="filter-list">
+    <button class="filter-btn active" onclick="setFilter(this)">Em Destaque</button>
+    <button class="filter-btn" onclick="setFilter(this)">Cultura</button>
+    <button class="filter-btn" onclick="setFilter(this)">Natureza</button>
+    <button class="filter-btn" onclick="setFilter(this)">Vida Noturna</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- EM DESTAQUE -->
+  <section class="reveal">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">
+          <span class="material-symbols-outlined">star</span>
+          <span class="label">Recomendações</span>
+        </div>
+        <h2 class="section-title">Em Destaque</h2>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-img-wrap">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBADybJcjvZRUL5Xy-KF_SwiCmZZBRE-_C-QsuGGyD1JlIqRuxZiGlm-ezvOpKjq7Rt2ZLMqbn5EOrfpp0pXeAxAs_mhKdmWhMaYy_ktrA8dUSbll1GwF38OYrwaHn18BUtK6NAdN_YAZYEVMcBY_SYrVBkA9TDAMkHmnFt4ef_hZ8OJonkG4UPl2UJTwweaNM4Abf4nhQpTUbYCTvvwcdGoxfdn6oDvniuFUoRuRUNwOjbuzXcWN1Mi8T_wziOmkkQTMai6hgY1sin" alt="">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Paranapiacaba</h3>
+          <p class="card-desc">A vila ferroviária com influência inglesa que respira história.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-name">Respire SP</div>
+      <p>© 2024 Respire São Paulo.<br/>A pulsação urbana em cada clique.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link rel="stylesheet" href="../css/pages/login.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Patua+One&family=Montserrat:wght@400;500&display=swap" />
+        <title>RespireSP - Login</title>
+    </head>
+    <body>
+        <div class="desktop-2">
+            <div class="form-side">
+                <div class="respire-sp">Respire <span>SP</span></div>
+                <div class="seja-bem-vindoa">Seja bem-vindo(a)</div>
+                <div class="seja-bem-vindoa-de">Seja bem-vindo(a) de volta!</div>
+
+            <div class="insira-seu-e-mail-parent">
+                <input type="email" id="emailInput" placeholder="Insira seu e-mail" />
+            </div>
+
+            <div class="insira-sua-senha-parent">
+                <input type="password" id="senhaInput" placeholder="Insira sua senha" />
+                <img id="olhoIcon" src="../assets/imgs/Olho.png" onclick="toggleSenha()" style="cursor: pointer; width: 25px;" />
+            </div>
+
+            <div class="entrar-wrapper" id="btnEntrar" style="cursor: pointer;">
+                <span class="entrar">Entrar</span>
+            </div>
+
+            <div class="no-tem-conta-container">
+                <span>Não tem conta? </span>
+                <a href="cadastro.html"><span class="faa-seu-cadastro">Faça seu cadastro</span></a>
+            </div>
+        </div>
+        <img class="desktop-2-inner" src="../assets/imgs/imgLogin.png" alt="cidade" />
+    </div>
+
+    <script src="/js/services/login.js"></script>
+    <script>
+        function toggleSenha() {
+            const campo = document.getElementById("senhaInput");
+            const olho = document.getElementById("olhoIcon");
+            if (campo.type === "password") {
+                campo.type = "text";
+                olho.src = "../assets/imgs/OlhoAberto.png";
+            } else {
+                campo.type = "password";
+                olho.src = "../assets/imgs/Olho.png";
+            }
+        }
+
+        document.getElementById('btnEntrar').addEventListener('click', () => {
+            const email = document.getElementById('emailInput').value.trim();
+            const senha = document.getElementById('senhaInput').value;
+
+            if (!email || !senha) {
+                alert("Preencha todos os campos!");
+                return;
+            }
+
+            if (AuthService.login(email, senha)) {
+                window.location.href = '../index.html';
+            } else {
+                alert("Usuário não encontrado ou senha incorreta!");
+            }
+        });
+    </script>
+</body>
+</html>

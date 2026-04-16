@@ -1,0 +1,192 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+/* ── Variáveis ── */
+:root {
+  --bg-page:    #030303;
+  --bg-card:    #070707;
+  --bg-input:   #000000;
+  --border:     rgba(255,255,255,0.12);
+  --orange:     #f57200;
+  --blue:       #1877f2;
+  --text-white: #ffffff;
+  --text-muted: #48494a;
+  --font-main:  'Montserrat', sans-serif;
+  --font-title: 'Poppins', sans-serif;
+  --font-logo:  'Patua One', serif;
+}
+ 
+/* ── Página ── */
+body {
+  background-color: var(--bg-page);
+  font-family: var(--font-main);
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.page{
+ background: radial-gradient(ellipse, rgba(245, 165, 35, 0.207) 20%, transparent 70%);
+}
+ 
+/* ── Card ── */
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+ 
+/* ── Coluna formulário ── */
+.col-form {
+  flex: 1;
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+ 
+/* ── Logo ── */
+.logo {
+  font-family: var(--font-logo);
+  font-size: 18px;
+  color: var(--text-white);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: -4px;
+}
+ 
+.logo span{
+  color: #f57200;
+}
+/* ── Título ── */
+.titulo {
+  font-family: var(--font-title);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: -0.5px;
+  text-align: center;
+  line-height: 1.2;
+}
+ 
+/* ── Subtítulo ── */
+.subtitulo {
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+ 
+/* ── Linha nome + sobrenome ── */
+.row-names {
+  display: flex;
+  gap: 12px;
+}
+ 
+.row-names .input-group {
+  flex: 1;
+}
+ 
+/* ── Input group ── */
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color:  rgba(255, 255, 255, 0.88);
+  border: 1.8px solid var(--border);
+  border-radius: 12px;
+  padding: 0 14px;
+  height: 48px;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+ 
+.input-group:focus-within {
+  border-color: var(--orange);
+}
+ 
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: black;
+  letter-spacing: -0.2px;
+}
+ 
+.input-group input::placeholder {
+  color: var(--text-muted);
+}
+ 
+.input-group .icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+ 
+/* ── Botão Cadastrar ── */
+.btn-cadastrar {
+  width: 100%;
+  height: 50px;
+  background-color: #f57200;
+  color: var(--text-white);
+  font-family: var(--font-main);
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: -0.2px;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+ 
+.btn-cadastrar:hover  { background-color:#f98826; }
+.btn-cadastrar:active { transform: scale(0.98); }
+ 
+/* ── Link login ── */
+.link-login {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+ 
+.link-login a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+ 
+.link-login a:hover {
+  text-decoration: underline;
+}
+ 
+/* ── Coluna imagem ── */
+.col-img {
+  width: 50%;
+  height: 600px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+ 
+.col-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+
+ 
+ 
+
