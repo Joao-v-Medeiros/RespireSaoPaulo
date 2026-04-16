@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-class MyHeader extends HTMLElement { // Use PascalCase para classes (boa prática)
-    connectedCallback() {
-        // Use crases ( ` ) para conseguir quebrar linhas no HTML
-        this.innerHTML = ` 
-        <header id="cabecalho">
-            <nav id="navegacao">
-                <div class="imagem">
-                    <img src="/assets/imgs/image 2.png" alt="">
-                </div>
-
-                <div class="text">
-                    <a href="/pages/o_que_fazer.html"> O que fazer</a>
-                    <a href="#">Roteiros</a>
-                    <a href="#">Eventos</a>
-                    <a href="/pages/uc3.html">Dicas locais</a>
-                </div>
-
-                <div class="login">
-                    <a href="/pages/login.html" class="entrar"> Entrar </a>
-                    <a href="/pages/cadastro.html"> Cadastre-se </a>
-=======
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -27,10 +5,14 @@ class MyHeader extends HTMLElement {
     }
 
     render() {
-        // Verifica se o usuário está logado via sessionStorage
+
+        // Aplica o tema salvo ao carregar
+const temaSalvo = localStorage.getItem('tema');
+if (temaSalvo === 'claro') {
+    document.body.classList.add('tema-claro');
+}
+
         const sessao = sessionStorage.getItem('sessao_ativa');
-        
-        // Se estiver logado, mostra "Sair". Se não, mostra "Entrar/Cadastro"
         const authButtons = sessao 
             ? `<button onclick="AuthService.logout()" class="btn-entrar">Sair</button>`
             : `<a href="/pages/login.html" class="btn-entrar">Entrar</a>
@@ -43,48 +25,48 @@ class MyHeader extends HTMLElement {
                     <img src="/assets/imgs/logo.png" class="nav-logo-img" alt="RespireSP Logo" />
                     <span class="nav-nome">Respire<span>SP</span></span>
                 </a>
-
                 <ul class="nav-links">
                     <li><a href="/index.html">home</a></li>
-                    <li><a href="/pages/o_que_fazer.html">O Que Fazer</a></li>
-                    <li><a href="#">Roteiros</a></li>
+                    <li><a href="/pages/lugares.html">O Que Fazer</a></li>
+                    <li><a href="/pages/roteiros.html">Roteiros</a></li>
                     <li><a href="#">Eventos</a></li>
                     <li><a href="/pages/sobre_nos.html">Sobre nós</a></li>
                     <li><a href="/pages/dicas.html">Dicas Locais</a></li>
                 </ul>
-
                 <div class="nav-botoes">
-                    <button id="theme-toggle" class="theme-btn">🌙</button>
+                    <button id="theme-toggle" class="theme-btn" style="cursor:pointer; font-size: 20px; background:none; border:none;">🌙</button>
                     ${authButtons}
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
                 </div>
             </nav>
         </header>
         `;
     }
-<<<<<<< HEAD
-}
-
-// O nome da classe aqui deve ser exatamente o mesmo nome definido lá em cima
-=======
 
     initTheme() {
         const btn = this.querySelector('#theme-toggle');
-        
-        // Recupera o tema salvo
-        if (localStorage.getItem('tema') === 'claro') {
-            document.body.classList.add('tema-claro');
+        const body = document.body;
+
+        // 1. Verifica se já existe uma preferência salva
+        const temaSalvo = localStorage.getItem('tema');
+        if (temaSalvo === 'claro') {
+            body.classList.add('tema-claro');
             btn.textContent = '☀️';
         }
 
+        // 2. Evento de clique para alternar
         btn.addEventListener('click', () => {
-            document.body.classList.toggle('tema-claro');
-            const isClaro = document.body.classList.contains('tema-claro');
-            btn.textContent = isClaro ? '☀️' : '🌙';
-            localStorage.setItem('tema', isClaro ? 'claro' : 'escuro');
+            body.classList.toggle('tema-claro');
+            
+            if (body.classList.contains('tema-claro')) {
+                localStorage.setItem('tema', 'claro');
+                btn.textContent = '☀️';
+            } else {
+                localStorage.setItem('tema', 'escuro');
+                btn.textContent = '🌙';
+                
+            }
         });
     }
 }
 
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 customElements.define('main-header', MyHeader);

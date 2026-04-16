@@ -1,0 +1,583 @@
+/* ============================
+   VARIÁVEIS DE COR
+   (aqui eu defino as cores do tema claro)
+   ============================ */
+:root {
+    --cor-fundo: #ffffff;
+    --cor-fundo2: #f5f5f5;
+    --cor-texto: #111111;
+    --cor-texto2: #555555;
+    --cor-laranja: #e05a1c;
+    --cor-borda: #e0e0e0;
+    --cor-card: #ffffff;
+    --cor-nav: #ffffff;
+    --cor-footer: #1a1a1a;
+    --cor-footer-texto: #cccccc;
+    --cor-tag: #f0f0f0;
+    --cor-tag-texto: #333333;
+}
+
+/* tema escuro - quando o body tiver a classe "dark" */
+body.dark {
+    --cor-fundo: #121212;
+    --cor-fundo2: #1e1e1e;
+    --cor-texto: #f0f0f0;
+    --cor-texto2: #aaaaaa;
+    --cor-borda: #333333;
+    --cor-card: #1e1e1e;
+    --cor-nav: #1a1a1a;
+    --cor-tag: #2a2a2a;
+    --cor-tag-texto: #cccccc;
+}
+
+/* reset básico pra não ter margem estranha */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s; /* animação suave ao trocar tema */
+}
+
+/* ============================
+   NAVBAR
+   ============================ */
+.navbar {
+    background-color: var(--cor-nav);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; /* fica grudado no topo ao rolar */
+    top: 0;
+    z-index: 999;
+    transition: background-color 0.3s;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cor-laranja);
+    cursor: pointer;
+}
+
+/* a palavra SP fica na cor normal do texto */
+.logo span {
+    color: var(--cor-texto);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-item {
+    font-size: 14px;
+    color: var(--cor-texto2);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding-bottom: 2px;
+}
+
+.nav-item:hover {
+    color: var(--cor-laranja);
+}
+
+/* link ativo fica laranja com sublinhado */
+.nav-item.ativo {
+    color: var(--cor-laranja);
+    border-bottom: 2px solid var(--cor-laranja);
+}
+
+.nav-direita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* botão de trocar tema */
+#btnTema {
+    background: none;
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--cor-texto);
+    transition: border-color 0.2s;
+}
+
+#btnTema:hover {
+    border-color: var(--cor-laranja);
+}
+
+.btn-entrar {
+    background: none;
+    border: none;
+    font-size: 13px;
+    color: var(--cor-texto2);
+    cursor: pointer;
+    padding: 6px 12px;
+}
+
+.btn-cadastro {
+    background-color: var(--cor-laranja);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cadastro:hover {
+    opacity: 0.85;
+}
+
+/* ============================
+   HERO (banner do topo)
+   ============================ */
+.hero {
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://s2.best-wallpaper.net/wallpaper/1920x1080/1807/Sao-Paulo-Brazil-city-top-view-lights-night_1920x1080.jpg') center/cover no-repeat;
+    color: white;
+    padding: 80px 24px;
+    text-align: center;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+    opacity: 0.88;
+    margin-bottom: 22px;
+}
+
+/* barra de busca dentro do hero */
+.barra-busca {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+}
+
+.barra-busca input {
+    flex: 1;
+    padding: 10px 14px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+}
+
+/* ============================
+   CONTEÚDO PRINCIPAL
+   ============================ */
+.conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* ============================
+   TAGS / CATEGORIAS
+   ============================ */
+.categorias {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: var(--cor-tag);
+    color: var(--cor-tag-texto);
+    border: 1px solid var(--cor-borda);
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.tag:hover {
+    background-color: var(--cor-laranja);
+    color: white;
+    border-color: var(--cor-laranja);
+}
+
+/* tag selecionada fica laranja */
+.tag.ativo {
+    background-color: var(--cor-laranja);
+    color: white;
+    border-color: var(--cor-laranja);
+}
+
+/* ============================
+   SEÇÕES DE CARDS
+   ============================ */
+.secao {
+    margin-bottom: 50px;
+}
+
+/* cabeçalho de cada seção (título + "ver todos") */
+.secao-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 18px;
+}
+
+.secao-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cor-laranja);
+    margin-bottom: 3px;
+}
+
+.secao-titulo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+.ver-todos {
+    font-size: 13px;
+    color: var(--cor-laranja);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.ver-todos:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   GRID DE CARDS
+   ============================ */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 20px;
+}
+
+/* cada card */
+.card {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* caixa da imagem dentro do card */
+.card-img-box {
+    position: relative;
+}
+
+.card-img-box img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+/* badge colorido no canto da imagem */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+/* cores diferentes pra cada tipo de badge */
+.badge.historico { background-color: #7c5a2e; }
+.badge.natureza  { background-color: #2e7c4f; }
+.badge.cidades   { background-color: #2e507c; }
+.badge.sofisticado { background-color: #7c2e5a; }
+
+/* texto dentro do card */
+.card-info {
+    padding: 14px;
+}
+
+.card-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--cor-texto);
+}
+
+.card-info p {
+    font-size: 13px;
+    color: var(--cor-texto2);
+    line-height: 1.5;
+}
+
+/* ============================
+   PÁGINA DE DETALHE
+   ============================ */
+
+/* hero do detalhe (imagem de fundo dinâmica via JS) */
+.detalhe-hero {
+    background-position: center;
+    background-size: cover;
+    color: white;
+    padding: 70px 24px;
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalhe-hero h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.detalhe-hero p {
+    font-size: 15px;
+    opacity: 0.9;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* corpo da página de detalhe */
+.detalhe-corpo {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* botão de voltar */
+.btn-voltar {
+    background: none;
+    border: none;
+    color: var(--cor-laranja);
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 22px;
+    padding: 0;
+    font-family: inherit;
+    display: inline-block;
+}
+
+.btn-voltar:hover {
+    text-decoration: underline;
+}
+
+/* layout de 2 colunas no detalhe */
+.detalhe-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+}
+
+/* título da seção de detalhe */
+.detalhe-titulo-sec {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cor-laranja);
+    margin-bottom: 12px;
+}
+
+.detalhe-p {
+    font-size: 14px;
+    color: var(--cor-texto2);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* caixa do mapa */
+.mapa-box {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-borda);
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.mapa-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* card de informações práticas */
+.info-card {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 18px;
+}
+
+/* cada linha de info (ícone + texto) */
+.info-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icone {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.info-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--cor-laranja);
+    margin-bottom: 3px;
+}
+
+.info-valor {
+    font-size: 13px;
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
+/* ============================
+   RODAPÉ
+   ============================ */
+footer {
+    background-color: var(--cor-footer);
+    color: var(--cor-footer-texto);
+    padding: 50px 24px 24px;
+    margin-top: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 32px;
+}
+
+/* logo do footer em itálico */
+.footer-logo {
+    font-size: 22px;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-desc {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    font-size: 13px;
+    color: var(--cor-footer-texto);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+/* linha de baixo do footer */
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #555;
+}
+
+/* ============================
+   RESPONSIVIDADE BÁSICA
+   (pra funcionar no celular)
+   ============================ */
+@media (max-width: 700px) {
+    .grid-cards {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+
+    .detalhe-layout {
+        grid-template-columns: 1fr; /* também 1 coluna */
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .nav-links {
+        display: none; /* esconde os links no celular */
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}

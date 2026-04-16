@@ -7,24 +7,14 @@
  
 /* ── Variáveis ── */
 :root {
-<<<<<<< HEAD
-  --bg-page:    #21242c;
-  --bg-card:    #2b2f3a;
-  --bg-input:   #363b4a;
-=======
   --bg-page:    #030303;
   --bg-card:    #070707;
   --bg-input:   #000000;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   --border:     rgba(255,255,255,0.12);
   --orange:     #f57200;
   --blue:       #1877f2;
   --text-white: #ffffff;
-<<<<<<< HEAD
-  --text-muted: #9aa0b0;
-=======
   --text-muted: #48494a;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   --font-main:  'Montserrat', sans-serif;
   --font-title: 'Poppins', sans-serif;
   --font-logo:  'Patua One', serif;
@@ -34,29 +24,12 @@
 body {
   background-color: var(--bg-page);
   font-family: var(--font-main);
-<<<<<<< HEAD
-=======
-
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
 }
-<<<<<<< HEAD
- 
-/* ── Card ── */
-.card {
-  background-color: var(--bg-card);
-  border-radius: 20px;
-  width: 100%;
-  max-width: 780px;
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-=======
 
 .page{
  background: radial-gradient(ellipse, rgba(245, 165, 35, 0.207) 20%, transparent 70%);
@@ -67,7 +40,6 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 }
  
 /* ── Coluna formulário ── */
@@ -89,12 +61,9 @@ body {
   margin-bottom: -4px;
 }
  
-<<<<<<< HEAD
-=======
 .logo span{
   color: #f57200;
 }
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 /* ── Título ── */
 .titulo {
   font-family: var(--font-title);
@@ -109,11 +78,7 @@ body {
 /* ── Subtítulo ── */
 .subtitulo {
   font-size: 13px;
-<<<<<<< HEAD
-  color: var(--text-muted);
-=======
   color: white;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   text-align: center;
   line-height: 1.5;
   margin-bottom: 4px;
@@ -133,13 +98,8 @@ body {
 .input-group {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
-  background-color: var(--bg-input);
-  border: 1px solid var(--border);
-=======
   background-color:  rgba(255, 255, 255, 0.88);
   border: 1.8px solid var(--border);
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   border-radius: 12px;
   padding: 0 14px;
   height: 48px;
@@ -158,11 +118,7 @@ body {
   outline: none;
   font-family: var(--font-main);
   font-size: 14px;
-<<<<<<< HEAD
-  color: var(--text-white);
-=======
   color: black;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   letter-spacing: -0.2px;
 }
  
@@ -181,11 +137,7 @@ body {
 .btn-cadastrar {
   width: 100%;
   height: 50px;
-<<<<<<< HEAD
-  background-color: var(--blue);
-=======
   background-color: #f57200;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   color: var(--text-white);
   font-family: var(--font-main);
   font-size: 17px;
@@ -198,21 +150,13 @@ body {
   margin-top: 4px;
 }
  
-<<<<<<< HEAD
-.btn-cadastrar:hover  { background-color: #1464d0; }
-=======
 .btn-cadastrar:hover  { background-color:#f98826; }
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
 .btn-cadastrar:active { transform: scale(0.98); }
  
 /* ── Link login ── */
 .link-login {
   font-size: 14px;
-<<<<<<< HEAD
-  color: var(--text-muted);
-=======
   color: white;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   text-align: center;
 }
  
@@ -228,12 +172,8 @@ body {
  
 /* ── Coluna imagem ── */
 .col-img {
-<<<<<<< HEAD
-  width: 300px;
-=======
   width: 50%;
   height: 600px;
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -245,16 +185,6 @@ body {
   display: block;
 }
  
-<<<<<<< HEAD
-/* ── Responsivo: esconde imagem em telas pequenas ── */
-@media (max-width: 640px) {
-  .col-img { display: none; }
-  .col-form { padding: 36px 28px; }
-  .titulo { font-size: 24px; }
-}
-=======
-
->>>>>>> bb8996f7f515de0b2725d3d74e266ad11e7fcda8
  
  
 
