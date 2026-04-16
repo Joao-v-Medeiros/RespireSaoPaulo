@@ -690,3 +690,40 @@ body.tema-claro .roteiro-cards {
     gap: 10px;
     margin-left: 60px;
 }
+
+.respire {
+    font-size: 72px; /* antes 96px */
+}
+
+.cidade {
+    font-size: 60px; /* antes 80px */
+}
+
+.cidade span {
+    font-size: 64px; /* antes 85px */
+}
+
+.sp,
+.sp1 {
+    font-size: 28px; /* antes 36px */
+}
+
+.h1-card {
+    font-size: 60px; /* antes 80px */
+}
+
+.pontos {
+    font-size: 70px; /* antes 90px */
+}
+
+.card-numero {
+    font-size: 70px; /* antes 90px */
+}
+
+.sua-aventura {
+    font-size: 60px; /* antes 80px */
+}
+
+.sua-aventura span {
+    font-size: 60px;
+}
